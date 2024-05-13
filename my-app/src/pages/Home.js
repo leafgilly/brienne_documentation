@@ -2,9 +2,9 @@ import { Outlet, Link } from "react-router-dom";
 
 const Home = () => {
     return (
-    <><h1>Home</h1>
+    <><h1>This is the landing page</h1>
     <p>
-        <Link color="red" to="/blogs">blog</Link>
+        <Link color="red" to="/page2">Next Page</Link>
     </p></>
     );
     

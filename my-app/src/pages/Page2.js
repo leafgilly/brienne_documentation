@@ -1,13 +1,13 @@
 import { Outlet, Link } from "react-router-dom";
 
-const Blogs = () => {
+const Page2 = () => {
     return (
-     <><h1>Blog Articles</h1>
+     <><h1>This is the second page</h1>
      <p>
         <Link color="red" to="/">Home</Link>
     </p></>
     )
   };
   
-  export default Blogs;
+  export default Page2;
   

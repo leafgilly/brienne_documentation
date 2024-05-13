@@ -2,9 +2,9 @@
 import { Form, Field } from 'react-final-form'
 
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
-import Layout from "./pages/Layout";
+import DocList from "./pages/DocList";
 import Home from "./pages/Home";
-import Blogs from "./pages/Blogs";
+import Page2 from "./pages/Page2";
 
 import React from 'react'
 import Styles from './Styles'
@@ -19,13 +19,12 @@ const onSubmit = async values => {
 function App() {
   return (
     <Styles>
-    <h1>Hello, Brienne. Have a form.</h1>
-    
+    <h1>Hello, Brienne.</h1>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/" element={<DocList />}>
           <Route index element={<Home />} />
-          <Route path="blogs" element={<Blogs />} />
+          <Route path="page2" element={<Page2 />} />
         </Route>
       </Routes>
     </BrowserRouter>
