@@ -15,7 +15,6 @@ function App() {
 
   return (
     <Styles>
-    <h1>Hello, Brienne.</h1>
     <BrowserRouter>
       <Routes>
         <Route path="/">
