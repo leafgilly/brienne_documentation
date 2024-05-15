@@ -1,5 +1,7 @@
 import { Outlet, Link } from "react-router-dom";
 
+import Amanda from "./Amanda";
+
 const DocList = () => {
   return (
     <>
@@ -21,7 +23,8 @@ const DocList = () => {
         <Link to="/">Home</Link>
       </li>
     </ul>
-    
+    {/* <p> ------------- </p>
+     <Amanda /> */}
       <Outlet />
     </>
   )

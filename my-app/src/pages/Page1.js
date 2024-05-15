@@ -1,14 +1,14 @@
 import { Outlet, Link } from "react-router-dom";
 
-const Home = () => {
+const Page1 = () => {
     return (
     <><h1>This is the landing page</h1>
     <p>
-        <Link color="red" to="/page2">Next Page</Link>
+        <Link color="red" to="/page2">Go To Page2</Link>
     </p></>
     );
     
   };
   
-  export default Home;
+  export default Page1;
   

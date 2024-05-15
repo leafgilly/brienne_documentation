@@ -1,9 +1,9 @@
 // import './App.css';
 // import { Form, Field } from 'react-final-form'
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import DocList from "./pages/DocList";
-import Home from "./pages/Home";
+import Page1 from "./pages/Page1";
 import Amanda from "./pages/Amanda";
 import Sally from "./pages/Sally";
 import Morgan from "./pages/Morgan";
@@ -18,8 +18,8 @@ function App() {
     <h1>Hello, Brienne.</h1>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<DocList />}>
-        <Route index element={<Home />} />
+        <Route path="/">
+        <Route index element={<Page1 />} />
         <Route path="Amanda" element={<Amanda />} />
         <Route path="Sally" element={<Sally />} />
         <Route path="Morgan" element={<Morgan />} />
