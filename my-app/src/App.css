@@ -1,3 +1,14 @@
+
+/* NEW CSS WE MADE */
+
+#pseudolink {
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+}
+
+/* INHERITED FROM BASE REACT CSS */
+
 .App {
   text-align: center;
 }
