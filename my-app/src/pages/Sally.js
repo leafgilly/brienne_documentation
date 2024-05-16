@@ -4,7 +4,7 @@ const Sally = () => {
     return (
     <><h1>Sally Reed Documentation</h1>
     <p>
-        <Link color="red" to="/">Go Home</Link>
+        <Link color="red" to="/page2">Go Home</Link>
     </p></>
     );
     

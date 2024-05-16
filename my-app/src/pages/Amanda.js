@@ -48,7 +48,7 @@ const Amanda = () => {
     <h2>Relevant Cases</h2>
     <h2>Author's Notes</h2>
     <p>
-        <Link color="red" to="/">Go Home</Link>
+        <Link color="red" to="/page2">Go Home</Link>
     </p></>
     );
     

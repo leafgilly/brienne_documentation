@@ -20,6 +20,9 @@ const DocList = () => {
       <Link to="/Rita">Rita</Link>
       </li>
       <li>
+        <Link to="/misc">Misc</Link>
+      </li>
+      <li>
         <Link to="/">Home</Link>
       </li>
     </ul>
