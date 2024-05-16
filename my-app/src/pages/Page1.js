@@ -11,14 +11,27 @@ const Page1 = () => {
 
     var numClicks = 0;
 
+    const displayText = [
+        'Focus', 
+        'FOCUS', 
+        'You have to make this work', 
+        "...Where am I?", 
+        "It doesn't matter. I just have to find", 
+        "something that can help"
+    ]
+
     const handleClick = () => {
+        const pseudoLinkDiv = document.getElementById('pseudolink');
+        const textParagraph = pseudoLinkDiv.childNodes[0].childNodes[0];
         numClicks += 1;
         const displacement = numClicks*100;
         if (numClicks <= 3) {
             // console.log(document.getElementsByClassName('pseudolink').style.left += numClicks*100);
-            document.getElementById('pseudolink').style.left = displacement + 'px';
+            pseudoLinkDiv.style.left = displacement + 'px';
+            textParagraph.textContent = displayText[numClicks]; 
         } else if (numClicks > 3 && numClicks <= 5) {
-            document.getElementById('pseudolink').style.top = displacement + 'px';
+            pseudoLinkDiv.style.top = displacement + 'px';
+            textParagraph.textContent = displayText[numClicks]; 
         } else {
             document.getElementById('pseudolink').childNodes[0].style.display = 'none';
             document.getElementById('nextPage').style.display = 'block';
@@ -29,7 +42,7 @@ const Page1 = () => {
         <>
         <h1>Hello, Brienne.</h1>
         <div id='pseudolink' style={{position: 'relative', width: 'fit-content', left: 0, top: 300}} onClick={handleClick}> 
-            <p>Help</p>
+            <p>{displayText[0]}</p>
         </div>
         <p id='nextPage' style={{fontSize: '30px', display: 'none'}}>
             <Link color="red" to="/page2">Don't let it end like this</Link>
