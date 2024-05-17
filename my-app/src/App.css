@@ -1,4 +1,144 @@
+* {
+  margin: 0;
+  padding: 0; }
 
+body, html {
+  width: 100%;
+  height: 100%;
+  background-color: black; }
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .wrapper h1.glitch {
+    color: white;
+    font-family: sans-serif;
+    font-weight: 800;
+    position: relative;
+    font-size: 100px;
+    padding: 30px; }
+  .wrapper h1.glitch::before, .wrapper h1.glitch::after {
+    padding: 30px;
+    color: white;
+    content: "Customizable Glitch Text"; /* TO CHANGE THE GLITCHING WORD, UPDATE THIS TEXT */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: black;
+    overflow: hidden;
+    top: 0; }
+  .wrapper h1.glitch::before {
+    left: 3px;
+    text-shadow: -2px 0 red;
+    animation-name: glitch-animation-1;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse-alternate; }
+  .wrapper h1.glitch::after {
+    left: -3px;
+    text-shadow: -2px 0 blue;
+    animation-name: glitch-animation-2;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse-alternate; }
+
+    /* TO CHANGE THE LENGTH OF THE GLITCH TEXT BOX, CHANGE THE SECOND VARIABLE IN ALL THE RECTS */
+@keyframes glitch-animation-1 {
+  0% {
+    clip: rect(22px, 1500px, 67px, 30px); }
+  5% {
+    clip: rect(79px, 1500px, 28px, 30px); }
+  10% {
+    clip: rect(51px, 1500px, 91px, 30px); }
+  15% {
+    clip: rect(79px, 1500px, 62px, 30px); }
+  20% {
+    clip: rect(146px, 1500px, 3px, 30px); }
+  25% {
+    clip: rect(82px, 1500px, 123px, 30px); }
+  30% {
+    clip: rect(85px, 1500px, 42px, 30px); }
+  35% {
+    clip: rect(16px, 1500px, 85px, 30px); }
+  40% {
+    clip: rect(48px, 1500px, 47px, 30px); }
+  45% {
+    clip: rect(3px, 1500px, 76px, 30px); }
+  50% {
+    clip: rect(74px, 1500px, 102px, 30px); }
+  55% {
+    clip: rect(81px, 1500px, 90px, 30px); }
+  60% {
+    clip: rect(76px, 1500px, 15px, 30px); }
+  65% {
+    clip: rect(71px, 1500px, 109px, 30px); }
+  70% {
+    clip: rect(83px, 1500px, 49px, 30px); }
+  75% {
+    clip: rect(116px, 1500px, 69px, 30px); }
+  80% {
+    clip: rect(98px, 1500px, 57px, 30px); }
+  85% {
+    clip: rect(7px, 1500px, 63px, 30px); }
+  90% {
+    clip: rect(112px, 1500px, 13px, 30px); }
+  95% {
+    clip: rect(63px, 1500px, 41px, 30px); }
+  100% {
+    clip: rect(51px, 1500px, 33px, 30px); } }
+
+@keyframes glitch-animation-2 {
+  0% {
+    clip: rect(121px, 1500px, 4px, 30px); }
+  5% {
+    clip: rect(75px, 1500px, 114px, 30px); }
+  10% {
+    clip: rect(133px, 1500px, 126px, 30px); }
+  15% {
+    clip: rect(19px, 1500px, 30px, 30px); }
+  20% {
+    clip: rect(110px, 1500px, 119px, 30px); }
+  25% {
+    clip: rect(147px, 1500px, 89px, 30px); }
+  30% {
+    clip: rect(36px, 1500px, 36px, 30px); }
+  35% {
+    clip: rect(78px, 1500px, 83px, 30px); }
+  40% {
+    clip: rect(24px, 1500px, 34px, 30px); }
+  45% {
+    clip: rect(62px, 1500px, 150px, 30px); }
+  50% {
+    clip: rect(95px, 1500px, 141px, 30px); }
+  55% {
+    clip: rect(89px, 1500px, 46px, 30px); }
+  60% {
+    clip: rect(75px, 1500px, 81px, 30px); }
+  65% {
+    clip: rect(125px, 1500px, 23px, 30px); }
+  70% {
+    clip: rect(118px, 1500px, 131px, 30px); }
+  75% {
+    clip: rect(105px, 1500px, 141px, 30px); }
+  80% {
+    clip: rect(102px, 1500px, 52px, 30px); }
+  85% {
+    clip: rect(77px, 1500px, 103px, 30px); }
+  90% {
+    clip: rect(81px, 1500px, 142px, 30px); }
+  95% {
+    clip: rect(86px, 1500px, 113px, 30px); }
+  100% {
+    clip: rect(44px, 1500px, 127px, 30px); } }
+
+    
 /* NEW CSS WE MADE */
 
 #pseudolink {
