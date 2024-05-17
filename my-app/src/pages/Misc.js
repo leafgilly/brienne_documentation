@@ -6,6 +6,9 @@ const Misc = () => {
     <div class="wrapper">
         <h1 class="glitch">Customizable Glitch Text</h1> {/* TO UPDATE THE GLITCH, CHANGE THIS TEXT, THEN GO TO APP.CSS AND MAKE THE CHANGES THERE */}
     </div>
+    <p>
+        <Link color="red" to="/page2">Go Home</Link>
+    </p>
     <h2>All Caught Up</h2>
     <ul>
         <li>Fizzywizard</li>
