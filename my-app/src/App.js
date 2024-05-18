@@ -8,6 +8,7 @@ import Amanda from "./pages/Amanda";
 import Sally from "./pages/Sally";
 import Morgan from "./pages/Morgan";
 import Rita from "./pages/Rita";
+import Brienne from "./pages/Brienne";
 import Page2 from "./pages/Page2";
 import Misc from "./pages/Misc";
 import Styles from './Styles'
@@ -24,6 +25,7 @@ function App() {
         <Route path="Sally" element={<Sally />} />
         <Route path="Morgan" element={<Morgan />} />
         <Route path="Rita" element={<Rita />} />
+        <Route path="'Brienne'" element={<Brienne />} />
         <Route path="page2" element={<Page2 />} />
         <Route path="misc" element={<Misc />} />
         </Route>
