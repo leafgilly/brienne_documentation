@@ -33,7 +33,7 @@ const Amanda = () => {
     return (
     <><h1>Amanda Valentine Documentation</h1>
     <h1>Threat Level: C (previously A)</h1>
-    <h2>Previous Names</h2>
+    <h2>Previous Names and Aliases</h2>
     <ul>
         <li>Amanda Valentina</li>
     </ul>

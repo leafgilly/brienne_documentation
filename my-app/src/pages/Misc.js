@@ -9,6 +9,13 @@ const Misc = () => {
     <p>
         <Link color="red" to="/page2">Go Home</Link>
     </p>
+    <h2>Persons of Interest</h2>
+    <ul>
+        <li>Pianolote (PL)</li>
+        <li>Leafgilly (LG) </li>
+        <li>Digitalpen (DP) </li>
+        <li>FluffyRoro (FR) </li>
+    </ul>
     <h2>All Caught Up</h2>
     <ul>
         <li>Fizzywizard</li>
@@ -57,6 +64,7 @@ const Misc = () => {
         <li>koalahobbit</li>
         <li>TheGoodSamaritan</li>
         <li>bonvoyage_noona</li>
+        <li>Pigserpent</li>
     </ul>
     <h2>Read A Bit; Passive Audience</h2>
     <ul>

@@ -12,6 +12,7 @@ const Brienne = () => {
         <li>Adrian Marshall</li>
         <li>Taylor McDaniels</li>
         <li>NEW LIST OF GENERIC NAMES</li>
+        <li>LIST OF FUTURE GENERIC NAMES TO USE</li>
         <li>Emma Smith</li>
         <li>Olivia Thompson</li>
         <li>Isabella 'Izzy' Stewart</li>
@@ -28,6 +29,7 @@ const Brienne = () => {
         <li>Jacob Macdonald</li>
         <li>Liam Clark</li>
         <li>Logan Campbell</li>
+        <li>Jane Doe</li>
     </ul>
     <h2>Stand and Supernatural Abilities</h2>
     <h4>Paperback Writer</h4>
