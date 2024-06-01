@@ -1,7 +1,5 @@
 import { Outlet, Link } from "react-router-dom";
 
-import AmandaComplete from '../App.js';
-
 const DocList = () => {
 
   const pagesVisited = JSON.parse(document.cookie);

@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 
 const Morgan = () => {
 
+    //VISITED STATE
+
     var pagesVisited = JSON.parse(document.cookie);
     pagesVisited["Morgan"] = true;
     document.cookie = JSON.stringify(pagesVisited);
