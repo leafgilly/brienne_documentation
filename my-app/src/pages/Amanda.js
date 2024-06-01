@@ -3,6 +3,12 @@ import React, {useState, useCallback, useEffect } from 'react'
 
 const Amanda = () => {
 
+    //VISITED STATE
+
+    var pagesVisited = JSON.parse(document.cookie);
+    pagesVisited["Amanda"] = true;
+    document.cookie = JSON.stringify(pagesVisited);
+
     //CODE THAT CHANGES THE DISPLAYED TEXT ON A CLICK
 
     const [buttonText, setButtonText] = useState('vampire');
@@ -21,7 +27,7 @@ const Amanda = () => {
 
     const shuffle = useCallback(() => {
         const index = Math.floor(Math.random() * names.length);
-        console.log(index);
+        // console.log(index);
         setnewGlitch(names[index]);
     }, []);
 

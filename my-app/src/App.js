@@ -15,6 +15,8 @@ import Styles from './Styles'
 
 function App() {
 
+  document.cookie = JSON.stringify({});
+
   return (
     <Styles>
     <BrowserRouter>

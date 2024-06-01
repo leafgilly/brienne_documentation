@@ -141,6 +141,17 @@ body, html {
     
 /* NEW CSS WE MADE */
 
+.disabled-link:hover {
+  text-decoration:underline;
+  color:blue;
+}
+
+.disabled-link:hover {
+  cursor:help;
+  text-decoration: none !important;
+  color:gray;
+}
+
 #pseudolink {
   cursor: pointer;
   color: blue;

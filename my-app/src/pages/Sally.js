@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
 
 const Sally = () => {
+
+    var pagesVisited = JSON.parse(document.cookie);
+    pagesVisited["Sally"] = true;
+    document.cookie = JSON.stringify(pagesVisited);
+
     return (
     <><h1>Sally Reed Documentation</h1>
     <p>

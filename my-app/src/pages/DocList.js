@@ -1,8 +1,13 @@
 import { Outlet, Link } from "react-router-dom";
 
-import Amanda from "./Amanda";
+import AmandaComplete from '../App.js';
 
 const DocList = () => {
+
+  const pagesVisited = JSON.parse(document.cookie);
+  const enableBrienne = pagesVisited["Amanda"] && pagesVisited["Sally"] && pagesVisited["Morgan"] && pagesVisited["Rita"];
+  console.log(enableBrienne);
+ 
   return (
     <>
     <p>A permanent link tree for a list of documents.</p>
@@ -19,8 +24,12 @@ const DocList = () => {
       <li>
       <Link to="/Rita">Rita</Link>
       </li>
-      <li>
+      {/* <li>
       <Link to="/'Brienne'">"Brienne"</Link>
+      </li> */}
+      <li>
+      <Link to={enableBrienne ? "/'Brienne'" : "#"} className='disabled-link'>"Brienne"</Link>
+      {/* TODO: UPDATE THE CLASSNAME BASED ON WHETHER OR NOT ENABLEBRIENNE IS TRUE */}
       </li>
       <li>
         <Link to="/misc">Misc</Link>
