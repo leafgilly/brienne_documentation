@@ -1,9 +1,35 @@
 import { Link } from "react-router-dom";
 
 const Brienne = () => {
+    function handleSubmit(e) {
+        // Prevent the browser from reloading the page
+        e.preventDefault();
+    
+        // Read the form data
+        const form = e.target;
+        const formData = new FormData(form);
+    
+        // Or you can work with it as a plain object:
+        const formJson = Object.fromEntries(formData.entries());
+        console.log(formJson);
+    }
+
+    function revealTextBox() {
+        document.getElementById("appearingTextBox").style.display = 'inherit';
+    }
+
     return (
     <><h1>"Brienne Williams" Documentation</h1>
-    <h1>Threat Level: S (previously E)</h1>
+    <h1 onClick={revealTextBox}>Threat Level: S (previously E)</h1>
+    <div id="appearingTextBox" style={{textAlign:'center', display:'none'}}>
+        <form method="post" onSubmit={handleSubmit}>
+            <label>
+                <input name="myInput" defaultValue="???" />
+            </label>
+            <br></br>
+            <button type="submit" style={{marginTop:"0.5%"}}>Enter</button>
+        </form>
+    </div>
     <h2>Previous Names</h2>
     <ul>
         <li>Brienne Williams</li>
