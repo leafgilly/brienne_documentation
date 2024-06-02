@@ -141,9 +141,31 @@ body, html {
     
 /* NEW CSS WE MADE */
 
-.disabled-link:hover {
-  text-decoration:underline;
-  color:blue;
+/* The appearance of enabled and disabled links on the DocList page */
+
+.enabled-link-a {
+  color:yellow !important;
+}
+
+.enabled-link-s {
+  color:purple !important;
+}
+
+.enabled-link-m {
+  color:pink !important;
+}
+
+.enabled-link-r {
+  color:red !important;
+}
+
+.enabled-link-b {
+  color:blue !important;
+  cursor: not-allowed;
+}
+
+.disabled-link {
+  text-decoration: underline;
 }
 
 .disabled-link:hover {
