@@ -34,6 +34,7 @@ const Brienne = () => {
     <ul>
         <li>Brienne Williams</li>
         <li>Jordyn Jones</li>
+        <li>Eleanor Rigby</li>
         <li>Benjamin Williams</li>
         <li>Adrian Marshall</li>
         <li>Taylor McDaniels</li>

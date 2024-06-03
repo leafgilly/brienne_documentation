@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import React, {useState, useCallback, useEffect } from 'react'
+import React, {useState, useCallback, useEffect } from 'react';
 
 const Amanda = () => {
 

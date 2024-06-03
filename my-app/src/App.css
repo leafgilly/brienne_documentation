@@ -141,6 +141,19 @@ body, html {
     
 /* NEW CSS WE MADE */
 
+#interactive {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.morStep {
+  font-size: 20px;
+}
+
+.morPass {
+  font-size: 25px;
+}
+
 /* The appearance of enabled and disabled links on the DocList page */
 
 .enabled-link-a {
