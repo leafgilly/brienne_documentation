@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import React, {useState, useCallback, useEffect } from 'react';
+import {connect} from 'react-redux';
 
-const Amanda = () => {
+const Amanda = (props) => {
 
     //VISITED STATE
 
@@ -47,12 +48,21 @@ const Amanda = () => {
     <div>
         <p>something something something <b id="vampire" onClick={handleClick} color="red">{buttonText}</b> something else</p>
         <p id="glitch" >glitch text</p>
-        <p>{newGlitch}</p>
+        <p>{props.AmandaCorruption > 30 ? newGlitch : ''}</p>
     </div>
     <h2>Known Relationships</h2>
     <h2>Psychological Profile</h2>
     <h2>Relevant Cases</h2>
     <h2>Author's Notes</h2>
+    <h1>Current Corruption Value: </h1>
+    <p>{props.AmandaCorruption}</p>
+    <p>{props.AmandaHighCorruption}</p>
+    <button onClick={()=>{
+        props.dispatch({
+            type: 'corruptAmanda',
+            value: 49,
+        });
+    }} disabled={props.AmandaCorruption>100}>Test</button>
     <p>
         <Link color="red" to="/page2">Go Home</Link>
     </p></>
@@ -60,5 +70,10 @@ const Amanda = () => {
     
   };
   
-  export default Amanda;
+  export default connect(function mapStateToProps(state){
+    return {
+        AmandaCorruption: state.AmandaCorruption,
+        AmandaHighCorruption: state.AmandaCorruption > 30 ? 'amanda is corrupted' : 'amanda is NOT corrupted'
+    };
+  })(Amanda);
   

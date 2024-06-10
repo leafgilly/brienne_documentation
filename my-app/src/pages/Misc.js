@@ -16,7 +16,7 @@ const Misc = () => {
         <li>Digitalpen (DP) </li>
         <li>FluffyRoro (FR) </li>
     </ul>
-    <h2>All Caught Up</h2>
+    <h2>All Caught Up update</h2>
     <ul>
         <li>Fizzywizard</li>
         <li>Arc</li>
