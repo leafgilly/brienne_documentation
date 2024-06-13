@@ -65,6 +65,7 @@ const Misc = () => {
         <li>TheGoodSamaritan</li>
         <li>bonvoyage_noona</li>
         <li>Pigserpent</li>
+        <li>Syntaxblitz</li>
     </ul>
     <h2>Read A Bit; Passive Audience</h2>
     <ul>

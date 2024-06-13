@@ -60,9 +60,16 @@ const Amanda = (props) => {
     <button onClick={()=>{
         props.dispatch({
             type: 'corruptAmanda',
-            value: 49,
+            value: 10,
         });
     }} disabled={props.AmandaCorruption>100}>Test</button>
+    <p onClick={()=>{
+        props.dispatch({
+            type: 'corruptAmanda',
+            value: 49,
+        });
+    }} id='interactive' class='enabled-link-a'>Test 
+    </p>
     <p>
         <Link color="red" to="/page2">Go Home</Link>
     </p></>

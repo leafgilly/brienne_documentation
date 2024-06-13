@@ -141,7 +141,7 @@ body, html {
     
 /* NEW CSS WE MADE */
 
-#interactive {
+.interactive {
   text-decoration: underline;
   cursor: pointer;
 }
@@ -165,7 +165,9 @@ body, html {
 }
 
 .enabled-link-m {
-  color:pink !important;
+  /* color: pink !important; */
+  color: rgba(255, 192, 203, 1) !important;
+  font-weight: bold;
 }
 
 .enabled-link-r {
@@ -174,7 +176,7 @@ body, html {
 
 .enabled-link-b {
   color:blue !important;
-  cursor: not-allowed;
+  /* cursor: not-allowed; */
 }
 
 .disabled-link {
