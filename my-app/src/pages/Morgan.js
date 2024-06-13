@@ -35,9 +35,9 @@ const Morgan = (props) => {
         The longer the exposure to the user's skin, the brighter the object gets.</p>
     <h3>Neon Trees Act 2: Favorite Daze</h3>
     <p>Neon Trees' light spreads through root-like veins along the user's body, creating sparks as it travels.
-        Excluding the circuitry--the physical form of her Stand--Morgan's body becomes 
-        <span class='enabled-link-m' style={{display: props.MorganCorruption===2 ? 'inline' : 'none'}}>blindingly bright.</span>
-        <span class='interactive enabled-link-m' style={{display: props.MorganCorruption>=3 && props.MorganCorruption<13 ? 'inline' : 'none'}}
+        Excluding the circuitry--the physical form of her Stand--Morgan's body becomes&nbsp;
+        <span id='flicker' class='enabled-link-m no-select-text' style={{display: props.MorganCorruption===2 ? 'inline' : 'none'}}>blindingly bright.</span>
+        <span class='interactive enabled-link-m no-select-text' style={{display: props.MorganCorruption>=3 && props.MorganCorruption<13 ? 'inline' : 'none'}}
         onClick={()=>{
             props.dispatch({
                 type: 'corruptMorgan',
@@ -48,7 +48,7 @@ const Morgan = (props) => {
                 value: 0.1,
             });
     }}>blindingly bright.</span> 
-        <span style={{display: props.MorganCorruption>=13 ? 'inline' : 'none'}}> blindingly bright.</span>
+        <span style={{display: props.MorganCorruption>=13 ? 'inline' : 'none'}}>blindingly bright.</span>
     
         Those who are close enough to Morgan will benefit from slow healing properties. 
         Physical ailements of any kind save for death can be fixed from remaining in this Stand's rays for long enough.
@@ -68,7 +68,7 @@ const Morgan = (props) => {
             type: 'corruptMorgan',
             value: 1,
         });
-    }} class='interactive enabled-link-b' style={{display: props.MorganCorruption===0 ? 'block' : 'none'}}>
+    }} class='interactive enabled-link-b no-select-text' style={{display: props.MorganCorruption===0 ? 'block' : 'none'}}>
         <p>There's... nothing here?</p>
     </div>
 
@@ -77,7 +77,7 @@ const Morgan = (props) => {
             type: 'corruptMorgan',
             value: 1,
         });
-    }} class='interactive enabled-link-b' style={{display: props.MorganCorruption===1 ? 'block' : 'none'}}>
+    }} class='interactive enabled-link-b no-select-text' style={{display: props.MorganCorruption===1 ? 'block' : 'none'}}>
         <p>But this can't just be it! There has to be something.</p>
     </div>
 
@@ -86,8 +86,16 @@ const Morgan = (props) => {
             type: 'corruptMorgan',
             value: 1,
         });
-    }} class='interactive enabled-link-b' style={{display: props.MorganCorruption===2 ? 'block' : 'none'}}>
+    }} class='interactive enabled-link-b no-select-text' style={{display: props.MorganCorruption===2 ? 'block' : 'none'}}>
         <p>Wait. What is that?</p>
+    </div>
+    <div onClick={()=>{
+        props.dispatch({
+            type: 'corruptMorgan',
+            value: 1,
+        });
+    }} class='interactive enabled-link-b no-select-text' style={{display: props.MorganCorruption===13 ? 'block' : 'none'}}>
+        <p>There's got to be something here, somewhere. I just have to find it.</p>
     </div>
 
     <p>Corruption: {props.MorganCorruption}</p>

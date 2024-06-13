@@ -16,23 +16,23 @@ const DocList = () => {
     <p>A permanent link tree for a list of documents.</p>
     <ul>
       <li>
-      <Link to={disableAmanda ? "/Amanda" : "#"} className={disableAmanda ? 'enabled-link-a' : 'disabled-link'}>Amanda</Link>
+      <Link to={disableAmanda ? "/Amanda" : "#"} className={disableAmanda ? 'main-link-a' : 'disabled-link'}>Amanda</Link>
       </li>
       <li>
-      <Link to={disableSally ? "/Sally" : "#"} className={disableSally ? 'enabled-link-s' : 'disabled-link'}>Sally</Link>
+      <Link to={disableSally ? "/Sally" : "#"} className={disableSally ? 'main-link-s' : 'disabled-link'}>Sally</Link>
       {/* <Link to="/Sally">Sally</Link> */}
       </li>
       <li>
-      <Link to={disableMorgan ? "/Morgan" : "#"} className={disableMorgan ? 'enabled-link-m' : 'disabled-link'}>Morgan</Link>
+      <Link to={disableMorgan ? "/Morgan" : "#"} className={disableMorgan ? 'main-link-m' : 'disabled-link'}>Morgan</Link>
       </li>
       <li>
-      <Link to={disableRita ? "/Rita" : "#"} className={disableRita ? 'enabled-link-r' : 'disabled-link'}>Rita</Link>
+      <Link to={disableRita ? "/Rita" : "#"} className={disableRita ? 'main-link-r' : 'disabled-link'}>Rita</Link>
       </li>
       {/* <li>
       <Link to="/'Brienne'">"Brienne"</Link>
       </li> */}
       <li>
-      <Link to={enableBrienne ? "/'Brienne'" : "#"} className={enableBrienne ? 'enabled-link-b' : 'disabled-link'}>"Brienne"</Link>
+      <Link to={enableBrienne ? "/'Brienne'" : "#"} className={enableBrienne ? 'main-link-b' : 'disabled-link'}>"Brienne"</Link>
       </li>
       <li>
         <Link to="/misc">Misc</Link>

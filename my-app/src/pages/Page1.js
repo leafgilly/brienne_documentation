@@ -36,7 +36,7 @@ const Page1 = () => {
     return (
         <>
         <h1>Hello, Brienne.</h1>
-        <div id='pseudolink' style={{position: 'relative', width: 'fit-content', left: 0, top: 300}} onClick={handleClick}> 
+        <div id='pseudolink' class='no-select-text' style={{position: 'relative', width: 'fit-content', left: 0, top: 300}} onClick={handleClick}> 
             <p>{displayText[0]}</p>
         </div>
         <p id='nextPage' style={{fontSize: '30px', display: 'none'}}>
