@@ -38,7 +38,8 @@ export default styled.div`
 
   h1 {
     text-align: center;
-    color: #222;
+    // color: #222;
+    // color: black;
   }
 
   & > div {
@@ -48,7 +49,8 @@ export default styled.div`
   a {
     display: block;
     text-align: center;
-    color: #222;
+    // color: #222;
+    // color: black;
   }
 
   form {

@@ -1,6 +1,18 @@
   
 /* NEW CSS WE MADE */
 
+body, html {
+  width: 100%;
+  height: 100%;
+  background-color: #131516;
+  text-align: center;
+  color: white;
+}
+
+a {
+  color: white;
+}
+
 #flicker {
   text-align: center;
   display: inline-block;
@@ -111,12 +123,12 @@
 .disabled-link:hover {
   cursor:help;
   text-decoration: none !important;
-  color:gray;
+  color:gray !important;
 }
 
 #pseudolink {
   cursor: pointer;
-  color: blue;
+  color: blue !important;
   text-decoration: underline;
 }
 
@@ -126,10 +138,11 @@
   margin: 0;
   padding: 0; } */
 
+  /*
   body, html {
     width: 100%;
     height: 100%;
-    /*background-color: black;*/ } /* EDIT BACKGROUND COLOR HERE (PART 1 OF 2) */
+    /*background-color: black; } */  /* EDIT BACKGROUND COLOR HERE (PART 1 OF 2) */
   
   .wrapper {
     width: 100%;

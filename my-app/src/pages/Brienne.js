@@ -68,7 +68,7 @@ const Brienne = () => {
     <h2>Relevant Cases</h2>
     <h2>Author's Notes</h2>
     <p>
-        <Link color="red" to="/page2">Go Home</Link>
+        <Link style={{color: 'red'}} to="/page2">Go Home</Link>
     </p></>
     );
     

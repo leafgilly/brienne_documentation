@@ -38,7 +38,7 @@ const DocList = () => {
         <Link to="/misc">Misc</Link>
       </li>
       <li>
-        <Link to="/">Home</Link>
+        <Link style={{color: 'red'}} to="/">Home</Link>
       </li>
     </ul>
       <Outlet />

@@ -71,7 +71,7 @@ const Amanda = (props) => {
     }} id='interactive' class='enabled-link-a'>Test 
     </p>
     <p>
-        <Link color="red" to="/page2">Go Home</Link>
+        <Link style={{color: 'red'}} to="/page2">Go Home</Link>
     </p></>
     );
     

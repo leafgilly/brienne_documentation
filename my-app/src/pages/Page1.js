@@ -40,7 +40,7 @@ const Page1 = () => {
             <p>{displayText[0]}</p>
         </div>
         <p id='nextPage' style={{fontSize: '30px', display: 'none'}}>
-            <Link color="red" to="/page2">Don't let it end like this</Link>
+            <Link style={{color: 'red'}} to="/page2">Don't let it end like this</Link>
         </p>
         </>
 

@@ -153,7 +153,7 @@ const Misc = () => {
         <li>grandadmiralchee</li>
     </ul>
     <p>
-        <Link color="red" to="/page2">Go Home</Link>
+        <Link style={{color: 'red'}} to="/page2">Go Home</Link>
     </p></>
     );
     
