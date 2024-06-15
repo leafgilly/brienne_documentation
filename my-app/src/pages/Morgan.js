@@ -4,15 +4,34 @@ import {connect} from 'react-redux';
 
 const Morgan = (props) => {
 
-    //VISITED STATE
-
     var pagesVisited = JSON.parse(document.cookie);
     pagesVisited["Morgan"] = true;
     document.cookie = JSON.stringify(pagesVisited);
 
+    const optionsCursorTrueWithMargin = {
+        followCursor: true,
+        shiftX: 20,
+        shiftY: 0
+      };
+
     return (
     <>
-    <body style={{backgroundColor: 'black', color: 'white'}}>
+    <div onMouseOver={()=>{
+            if (props.MorganCorruption >= 14 && props.MorganNeonTrees < 255) {
+                props.dispatch({
+                    type: 'morganNeonTrees',
+                    value: 1,
+                });
+            } else if (props.MorganNeonTrees >= 255 && props.MorganVisited != 1) {
+                props.dispatch({
+                    type: 'visitMorgan',
+                    value: 1,
+                });
+            }
+        }} style={{backgroundColor: props.MorganCorruption>=14 ? 
+        'rgba(' + props.MorganNeonTrees + ',' + props.MorganNeonTrees + ',' + props.MorganNeonTrees + ')' : 'black', 
+        color: 'white'}}>
+
         <div style={{color: 'rgba(255, 255, 255,' + props.MorganOpacity}}>
         <h1>Morgan Becquerel Documentation</h1>
         <h1>Threat Level: E</h1>
@@ -89,9 +108,14 @@ const Morgan = (props) => {
         }} class='interactive enabled-link-b no-select-text' style={{display: props.MorganCorruption===13 ? 'block' : 'none'}}>
             <p>There's got to be something here, somewhere. I just have to find it.</p>
         </div>
+        <div class='interactive enabled-link-b no-select-text' style={{display: props.MorganVisited===1 ? 'block' : 'none'}}>
+            <Link style={{color: 'blue'}} to="/page2">It's too bright to see...</Link>
+        </div>
 
         <p>Corruption: {props.MorganCorruption}</p>
         <p>Opacity: {props.MorganOpacity}</p>
+        <p>Morgan Visited: {props.MorganVisited}</p>
+        <p>Morgan Name: {props.MorganName}</p>
         <button onClick={()=>{
             props.dispatch({
                 type: 'morganOpacity',
@@ -103,14 +127,10 @@ const Morgan = (props) => {
             });
         }} display={props.MorganOpacity>=30}>Test</button>
 
-        <div style={{brightness: '200%'}}>
-            <p>TEST</p>
-        </div>
-
         <p>
             <Link style={{color: 'red'}} to="/page2">Go Home</Link>
         </p>
-    </body>
+    </div>
     
     </>
     );
@@ -119,9 +139,11 @@ const Morgan = (props) => {
   
   export default connect(function mapStateToProps(state){
     return {
+        MorganName: state.MorganName,
         MorganCorruption: state.MorganCorruption,
-        MorganHighCorruption: state.MorganCorruption > 30 ? 'morgan is corrupted' : 'morgan is NOT corrupted',
-        MorganOpacity: state.MorganOpacity
+        MorganNeonTrees: state.MorganNeonTrees,
+        MorganOpacity: state.MorganOpacity,
+        MorganVisited: state.MorganVisited,
     };
   })(Morgan);
   
