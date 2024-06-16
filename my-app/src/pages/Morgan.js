@@ -4,17 +4,60 @@ import { Link } from "react-router-dom";
 
 import {connect} from 'react-redux';
 
+import pencil_sound from '../audio/pencil_sound.mp3';
+import pencil_sound2 from '../audio/pencil_sound_2.mp3';
+
 const Morgan = (props) => {
 
-    // var pagesVisited = JSON.parse(document.cookie);
-    // pagesVisited["Morgan"] = true;
-    // document.cookie = JSON.stringify(pagesVisited);
-
+    //TEMPORARY AUDIO SOLUTION. CONSIDER MAKING THIS MORE GLOBAL, EITHER PUTTING IT IN APP.JS OR SOMEHOW INTO STORE.JS (SEE SYNTAXBLITZ SUGGESTIONS)
 
     const [counter, setCounter] = React.useState(0);
     const [hover, setHover] = React.useState(0);
     const timeUntilCorrupted = 5;
 
+    let pencilSound = new Audio(pencil_sound);
+    let pencilSound2 = new Audio(pencil_sound2);
+
+    const [audioError, setAudioError] = React.useState();
+    const [audio, setAudio1] = React.useState();
+    const [audio2, setAudio2] = React.useState();
+  
+    // 1. load the audio in a user interaction
+    const loadAudio = () => {
+      const _audio = pencilSound;
+      const __audio = pencilSound2;
+      _audio.load();
+      __audio.load();
+      _audio.addEventListener('canplaythrough', () => {
+        console.log('loaded audio');
+        setAudio1(_audio);
+      });
+      __audio.addEventListener('canplaythrough', () => {
+        console.log('loaded audio');
+        setAudio2(__audio);
+      });
+    };
+
+    const [swap, changeAudio] = React.useState(0);
+  
+    // 2. now you can play the audio on all subsequent events
+    const playAudio = async () => {
+        if (swap === 0) {
+            changeAudio(1);
+            setAudioError(undefined);
+            await new Promise((r) => setTimeout(r, 100));
+            audio && audio.play().catch((e) => {
+                setAudioError(e);
+            });
+        } else if (swap === 1) {
+            changeAudio(0);
+            setAudioError(undefined);
+            await new Promise((r) => setTimeout(r, 100));
+            audio2 && audio2.play().catch((e) => {
+                setAudioError(e);
+            });
+        }
+    };
 
     // A TIMER THAT INCREMENTS MORGAN'S CORRUPTION
 
@@ -30,7 +73,6 @@ const Morgan = (props) => {
 
     return (
     <>
-    <div>Countdown: {counter}</div>
     <div onMouseLeave={()=>{
         if (props.MorganCorruption >= 14) {
             setHover(0);
@@ -39,7 +81,7 @@ const Morgan = (props) => {
         onMouseOver={()=>{
             if (props.MorganCorruption >= 14 && counter*timeUntilCorrupted < 255) {
                 setHover(1);
-            } else if (counter*timeUntilCorrupted >= 255 && props.MorganVisited != 1) {
+            } else if (counter*timeUntilCorrupted >= 255 && props.MorganVisited !== 1) {
                 props.dispatch({
                     type: 'visitMorgan',
                     value: 1,
@@ -92,6 +134,7 @@ const Morgan = (props) => {
 
     {/* BRIENNE'S INTERACTIONS */}
         <div onClick={()=>{
+            loadAudio();
             props.dispatch({
                 type: 'corruptMorgan',
                 value: 1,
@@ -101,6 +144,7 @@ const Morgan = (props) => {
         </div>
 
         <div onClick={()=>{
+            playAudio();
             props.dispatch({
                 type: 'corruptMorgan',
                 value: 1,
@@ -125,25 +169,15 @@ const Morgan = (props) => {
         }} class='interactive enabled-link-b no-select-text' style={{display: props.MorganCorruption===13 ? 'block' : 'none'}}>
             <p>There's got to be something here, somewhere. I just have to find it.</p>
         </div>
+        <div class='enabled-link-b no-select-text' style={{display: counter*timeUntilCorrupted >= 85 && counter*timeUntilCorrupted < 153 ? 'block' : 'none'}}>
+            <p>Is this... Neon Trees?</p>
+        </div>
+        <div class='enabled-link-b no-select-text' style={{display: counter*timeUntilCorrupted >= 153 && counter*timeUntilCorrupted < 255 ? 'block' : 'none'}}>
+            <p>Maybe this is what I get for taking her light from her.</p>
+        </div>
         <div class='interactive enabled-link-b no-select-text' style={{display: props.MorganVisited===1 ? 'block' : 'none'}}>
             <Link style={{color: 'blue'}} to="/page2">It's too bright to see...</Link>
         </div>
-
-        <p>Corruption: {props.MorganCorruption}</p>
-        <p>Opacity: {props.MorganOpacity}</p>
-        <p>Morgan Visited: {props.MorganVisited}</p>
-        <p>Morgan Name: {props.MorganName}</p>
-        <button onClick={()=>{
-            props.dispatch({
-                type: 'morganOpacity',
-                value: 0.1,
-            });
-            props.dispatch({
-                type: 'corruptMorgan',
-                value: 1,
-            });
-        }} display={props.MorganOpacity>=30}>Test</button>
-
         <p>
             <Link style={{color: 'red'}} to="/page2">Go Home</Link>
         </p>

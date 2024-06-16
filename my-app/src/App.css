@@ -68,6 +68,7 @@ a {
 .interactive {
   text-decoration: underline;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .enabled-link-a {
