@@ -1,35 +1,52 @@
+import * as React from "react";
+
 import { Link } from "react-router-dom";
 
 import {connect} from 'react-redux';
 
 const Morgan = (props) => {
 
-    var pagesVisited = JSON.parse(document.cookie);
-    pagesVisited["Morgan"] = true;
-    document.cookie = JSON.stringify(pagesVisited);
+    // var pagesVisited = JSON.parse(document.cookie);
+    // pagesVisited["Morgan"] = true;
+    // document.cookie = JSON.stringify(pagesVisited);
 
-    const optionsCursorTrueWithMargin = {
-        followCursor: true,
-        shiftX: 20,
-        shiftY: 0
-      };
+
+    const [counter, setCounter] = React.useState(0);
+    const [hover, setHover] = React.useState(0);
+    const timeUntilCorrupted = 5;
+
+
+    // A TIMER THAT INCREMENTS MORGAN'S CORRUPTION
+
+    React.useEffect(() => {
+        if (hover === 0) {
+            return;
+        }
+        const timer =
+        counter < 255 && setInterval(() => setCounter(counter + 1), 500);
+        return () => clearInterval(timer);
+    }, [counter, hover]);
+    console.log(hover);
 
     return (
     <>
-    <div onMouseOver={()=>{
-            if (props.MorganCorruption >= 14 && props.MorganNeonTrees < 255) {
-                props.dispatch({
-                    type: 'morganNeonTrees',
-                    value: 1,
-                });
-            } else if (props.MorganNeonTrees >= 255 && props.MorganVisited != 1) {
+    <div>Countdown: {counter}</div>
+    <div onMouseLeave={()=>{
+        if (props.MorganCorruption >= 14) {
+            setHover(0);
+        }
+    }}
+        onMouseOver={()=>{
+            if (props.MorganCorruption >= 14 && counter*timeUntilCorrupted < 255) {
+                setHover(1);
+            } else if (counter*timeUntilCorrupted >= 255 && props.MorganVisited != 1) {
                 props.dispatch({
                     type: 'visitMorgan',
                     value: 1,
                 });
             }
         }} style={{backgroundColor: props.MorganCorruption>=14 ? 
-        'rgba(' + props.MorganNeonTrees + ',' + props.MorganNeonTrees + ',' + props.MorganNeonTrees + ')' : 'black', 
+        'rgba(' + counter*timeUntilCorrupted + ',' + counter*timeUntilCorrupted + ',' + counter*timeUntilCorrupted + ')' : 'black', 
         color: 'white'}}>
 
         <div style={{color: 'rgba(255, 255, 255,' + props.MorganOpacity}}>
@@ -141,7 +158,6 @@ const Morgan = (props) => {
     return {
         MorganName: state.MorganName,
         MorganCorruption: state.MorganCorruption,
-        MorganNeonTrees: state.MorganNeonTrees,
         MorganOpacity: state.MorganOpacity,
         MorganVisited: state.MorganVisited,
     };
