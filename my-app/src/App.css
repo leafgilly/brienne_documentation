@@ -5,12 +5,25 @@ body, html {
   width: 100%;
   height: 100%;
   background-color: #131516;
-  text-align: center;
+  /* text-align: center; */
   color: white;
 }
 
 a {
   color: white;
+}
+
+.document {
+  margin: auto !important;
+  width: 50%;
+}
+
+.disturbia {
+    background-image: url('https://t3.ftcdn.net/jpg/03/50/33/58/360_F_350335810_tVlcjj68ZlShA2rbNhcHDwJudoEEZQQJ.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: #FFFFFF;
 }
 
 #flicker {
@@ -90,7 +103,7 @@ a {
 }
 
 .enabled-link-b {
-  color:blue !important;
+  color:rgb(51, 125, 255) !important;
 }
 
 /* The appearance of enabled and disabled links on the DocList page */

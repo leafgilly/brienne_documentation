@@ -13,7 +13,7 @@ const Morgan = (props) => {
 
     const [counter, setCounter] = React.useState(0);
     const [hover, setHover] = React.useState(0);
-    const timeUntilCorrupted = 5;
+    const timeUntilCorrupted = 10;
 
     let pencilSound = new Audio(pencil_sound);
     let pencilSound2 = new Audio(pencil_sound2);
@@ -71,9 +71,23 @@ const Morgan = (props) => {
     }, [counter, hover]);
     console.log(hover);
 
+    function corrupt (amt) {
+        props.dispatch({
+            type: 'corruptMorgan',
+            value: amt,
+        });
+    }
+
+    function changeOpacity (amt) {
+        props.dispatch({
+            type: 'morganOpacity',
+            value: amt,
+        });
+    }
+
     return (
     <>
-    <div onMouseLeave={()=>{
+    <div class='document' onMouseLeave={()=>{
         if (props.MorganCorruption >= 14) {
             setHover(0);
         }
@@ -109,14 +123,8 @@ const Morgan = (props) => {
             <span id='flicker' class='enabled-link-m no-select-text' style={{display: props.MorganCorruption===2 ? 'inline' : 'none'}}>blindingly bright.</span>
             <span class='interactive enabled-link-m no-select-text' style={{display: props.MorganCorruption>=3 && props.MorganCorruption<13 ? 'inline' : 'none'}}
             onClick={()=>{
-                props.dispatch({
-                    type: 'corruptMorgan',
-                    value: 1,
-                });
-                props.dispatch({
-                    type: 'morganOpacity',
-                    value: 0.1,
-                });
+                corrupt(1);
+                changeOpacity(.1);
         }}>blindingly bright.</span> 
             <span style={{display: props.MorganCorruption>=13 ? 'inline' : 'none'}}>blindingly bright.</span>
         
@@ -135,37 +143,25 @@ const Morgan = (props) => {
     {/* BRIENNE'S INTERACTIONS */}
         <div onClick={()=>{
             loadAudio();
-            props.dispatch({
-                type: 'corruptMorgan',
-                value: 1,
-            });
+            corrupt(1);
         }} class='interactive enabled-link-b no-select-text' style={{display: props.MorganCorruption===0 ? 'block' : 'none'}}>
             <p>There's... nothing here?</p>
         </div>
 
         <div onClick={()=>{
             playAudio();
-            props.dispatch({
-                type: 'corruptMorgan',
-                value: 1,
-            });
+            corrupt(1);
         }} class='interactive enabled-link-b no-select-text' style={{display: props.MorganCorruption===1 ? 'block' : 'none'}}>
             <p>But this can't just be it! There has to be something.</p>
         </div>
 
         <div onClick={()=>{
-            props.dispatch({
-                type: 'corruptMorgan',
-                value: 1,
-            });
+            corrupt(1);
         }} class='interactive enabled-link-b no-select-text' style={{display: props.MorganCorruption===2 ? 'block' : 'none'}}>
             <p>Wait. What is that?</p>
         </div>
         <div onClick={()=>{
-            props.dispatch({
-                type: 'corruptMorgan',
-                value: 1,
-            });
+            corrupt(1);
         }} class='interactive enabled-link-b no-select-text' style={{display: props.MorganCorruption===13 ? 'block' : 'none'}}>
             <p>There's got to be something here, somewhere. I just have to find it.</p>
         </div>

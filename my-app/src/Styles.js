@@ -37,18 +37,18 @@ export default styled.div`
   font-family: sans-serif;
 
   h1 {
-    text-align: center;
+    // text-align: center;
     // color: #222;
     // color: black;
   }
 
   & > div {
-    text-align: center;
+    // text-align: center;
   }
 
   a {
     display: block;
-    text-align: center;
+    // text-align: center;
     // color: #222;
     // color: black;
   }
