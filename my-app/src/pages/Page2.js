@@ -3,10 +3,14 @@ import DocList from "./DocList";
 
 const Page2 = () => {
     return (
-     <><><h1>This is the second page</h1>
+     <><>
+     <div class='document'>
+     <h1>Informer Company Internal Team Documentation</h1>
         <p>
           <Link style={{color: 'red'}} to="/">Go to Page1</Link>
-        </p></><DocList />
+        </p>
+        </div>
+        </><DocList />
         </>
     )
   };

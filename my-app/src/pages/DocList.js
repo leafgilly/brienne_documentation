@@ -16,7 +16,7 @@ const DocList = (props) => {
 
   return (
     <>
-    <p>A permanent link tree for a list of documents.</p>
+    <div class='document'>
     <ul>
       <li>
       <Link to={disableAmanda ? "/Amanda" : "#"} class={disableAmanda ? 'main-link-a' : 'disabled-link'}>Amanda</Link>
@@ -45,6 +45,7 @@ const DocList = (props) => {
       </li>
     </ul>
       <Outlet />
+      </div>
     </>
   )
 };

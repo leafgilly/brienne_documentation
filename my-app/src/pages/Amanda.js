@@ -10,14 +10,6 @@ const Amanda = (props) => {
     pagesVisited["Amanda"] = true;
     document.cookie = JSON.stringify(pagesVisited);
 
-    //CODE THAT CHANGES THE DISPLAYED TEXT ON A CLICK
-
-    const [buttonText, setButtonText] = useState('vampire');
- 
-    const handleClick = () => {
-        setButtonText(buttonText === 'vampire' ? 'y̸̘͐ö̸͎ǔ̸͚ ̶̘̈́k̷̼͊i̴͚͝ĺ̴̝l̷͕̂e̷̙͌d̶̞̚ ̵͓̉h̶͚͝e̸͍̎r̴̡̐. YOU BURNED HER WITH THE SUN' : 'vampire');
-    };
-
     //CODE THAT PERIODICALLY CHANGES THE TEXT DISPLAYED ON THE SCREEN USING A TIMER
 
     const names = [
@@ -43,6 +35,29 @@ const Amanda = (props) => {
             value: amt,
         });
     }
+
+    function hoverOn () {
+        props.dispatch({
+            type: 'amandaHover',
+            value: 1,
+        })
+        setCounter(0);
+    }
+
+    function hoverOff () {
+        props.dispatch({
+            type: 'amandaHover',
+            value: -1,
+        })
+    }
+
+    const [counter, setCounter] = React.useState(0);
+
+    React.useEffect(() => {
+        const timer =
+        setInterval(() => setCounter(counter + 1), 1000);
+        return () => clearInterval(timer);
+    }, [counter]);
 
     return (
     <>
@@ -105,7 +120,7 @@ const Amanda = (props) => {
         <div style={{display: props.AmandaCorruption===4 ? 'block' : 'none'}} class='disturbia'>
             <h3 style={{color: 'black'}}>Disturbia</h3>
             <p style={{color: 'black'}}>Disturbia is a humanoid made of geometric glass shards. She is able to transform both itself and its user into <b class='enabled-link-b'>monsters like you</b> that 
-                the user used to be <b class='enabled-link-b'>you seriously think she wouldn't be afraid of you, after what you did to her?</b>. In the case of animals and objects, only Disturbia transforms. In the case of people (and Stand users), 
+                the user used to be <b class='enabled-link-b'>you seriously think she wouldn't be afraid of you, after what you did to her?</b> In the case of animals and objects, only Disturbia transforms. In the case of people (and Stand users), 
                 the user becomes the person, and Disturbia becomes the Stand. When transformed into a Stand user, Disturbia can use the transformed 
                 Stand's abilities, but cannot sustain the <span onClick={()=>{
                 corrupt(1);
@@ -272,14 +287,60 @@ const Amanda = (props) => {
         <li style={{display: props.AmandaCorruption>=24 ? 'list-item' : 'none', color: 'black'}}>Margarita Zeppeli and Rockin’ Robin</li>
         </ul>
         <h3>"2nd Generation" Vampirism</h3>
-        <p>Valentine was afflicted with vampirism in 1986 by DIO Brando. Her affliction was the result of a combination of exsanguination 
-            and blood ingestion, not the vampire mask. This process leads to Valentine being a “second generation” vampire, one who retains 
-            the abilities of blood drinking, extreme healing, super strength, enhanced senses, and aura but to a lesser degree than her 
-            sire. She also lacks other reported mask vampire abilities, including laser eyes, flesh buds and all variant mind control, 
+
+        <p style={{display: props.AmandaCorruption<24 ? 'block' : 'none'}}>Valentine was afflicted with vampirism in 1986 by DIO Brando. Her 
+            affliction was the result of a combination of exsanguination and blood ingestion, not the vampire mask. This process leads to 
+            Valentine being a “second generation” vampire, one who retains the abilities of blood drinking, extreme healing, super 
+            strength, enhanced senses, and aura but to a lesser degree than her sire. She also lacks other reported mask vampire abilities, 
+            including laser eyes, flesh buds and all variant mind control, reanimation, and freezing powers.</p>
+        <p style={{display: props.AmandaCorruption===24 ? 'block' : 'none'}}>Valentine was afflicted with vampirism in 1986 by <span onClick={()=>{
+                corrupt(1);
+            }} class='interactive enabled-link-a no-select-text'>DIO Brando</span>. Her 
+        affliction was the result of a combination of exsanguination and blood ingestion, not the vampire mask. This process leads to 
+        Valentine being a “second generation” vampire, one who retains the abilities of blood drinking, extreme healing, super 
+        strength, enhanced senses, and aura but to a lesser degree than her sire. She also lacks other reported mask vampire abilities, 
+        including laser eyes, flesh buds and all variant mind control, reanimation, and freezing powers.</p>
+        <p style={{display: props.AmandaCorruption===25 ? 'block' : 'none'}}>Valentine was afflicted with vampirism in 1986 by <b class='enabled-link-b'>You read the report of his death a dozen times. Memorized it.</b> Her 
+        affliction was the result of a combination of exsanguination and blood ingestion, not the vampire mask. This process leads to 
+        Valentine being a “second generation” vampire, one who retains the abilities of blood drinking, <span onClick={()=>{
+                corrupt(1);
+            }} class='interactive enabled-link-a no-select-text'>extreme healing,</span> super 
+        strength, enhanced senses, and aura but to a lesser degree than her sire. She also lacks other reported mask vampire abilities, 
+        including laser eyes, flesh buds and all variant mind control, reanimation, and freezing powers.</p>
+        <p style={{display: props.AmandaCorruption===26 ? 'block' : 'none'}}>Valentine was afflicted with vampirism in 1986 by <b class='enabled-link-b'>You read the report of his death a dozen times. Memorized it.</b> Her 
+        affliction was the result of a combination of exsanguination and blood ingestion, not the vampire mask. This process leads to 
+        Valentine being a “second generation” vampire, one who retains the abilities of blood drinking, <b class='enabled-link-b'>You used that knowledge to break her. Snapped her in half with such force her skin caught flame.</b> super 
+        strength, enhanced senses, and aura but to a lesser degree than her sire. She also lacks other reported mask vampire abilities, including <span onClick={()=>{
+                corrupt(1);
+            }} class='interactive enabled-link-a no-select-text'>laser eyes,</span> flesh buds and all variant mind control, 
             reanimation, and freezing powers.</p>
-        <p>something something something <b id="vampire" onClick={handleClick} color="red">{buttonText}</b> something else</p>
-        <p id="glitch" >glitch text</p>
-        <p>{props.AmandaCorruption > 30 ? newGlitch : ''}</p>
+
+        <p style={{display: props.AmandaCorruption===27 ? 'block' : 'none'}}>Valentine was afflicted with vampirism in 1986 by <b class='enabled-link-b'>You read the report of his death a dozen times. Memorized it.</b> Her 
+        affliction was the result of a combination of exsanguination and blood ingestion, not the vampire mask. This process leads to 
+        Valentine being a “second generation” vampire, one who retains the abilities of blood drinking, <b class='enabled-link-b'>You used that knowledge to break her. Snapped her in half with such force her skin caught flame.</b> super 
+        strength, enhanced senses, and aura but to a lesser degree than her sire. She also lacks other reported mask vampire abilities, including <b class='enabled-link-b'>She stood by you.</b> <span onClick={()=>{
+                corrupt(1);
+            }} class='interactive enabled-link-a no-select-text'>flesh buds and all variant mind control,</span> reanimation, and freezing powers.</p>
+        
+        <p style={{display: props.AmandaCorruption===28 ? 'block' : 'none'}}>Valentine was afflicted with vampirism in 1986 by <b class='enabled-link-b'>You read the report of his death a dozen times. Memorized it.</b> Her 
+        affliction was the result of a combination of exsanguination and blood ingestion, not the vampire mask. This process leads to 
+        Valentine being a “second generation” vampire, one who retains the abilities of blood drinking, <b class='enabled-link-b'>You used that knowledge to break her. Snapped her in half with such force her skin caught flame.</b> super 
+        strength, enhanced senses, and aura but to a lesser degree than her sire. She also lacks other reported mask vampire abilities, including <b class='enabled-link-b'>She stood by you. When you deserved it the least.</b> <span onClick={()=>{
+                corrupt(1);
+            }} class='interactive enabled-link-a no-select-text'>reanimation,</span> and freezing powers.</p>
+
+        <p style={{display: props.AmandaCorruption===29 ? 'block' : 'none'}}>Valentine was afflicted with vampirism in 1986 by <b class='enabled-link-b'>You read the report of his death a dozen times. Memorized it.</b> Her 
+        affliction was the result of a combination of exsanguination and blood ingestion, not the vampire mask. This process leads to 
+        Valentine being a “second generation” vampire, one who retains the abilities of blood drinking, <b class='enabled-link-b'>You used that knowledge to break her. Snapped her in half with such force her skin caught flame.</b> super 
+        strength, enhanced senses, and aura but to a lesser degree than her sire. She also lacks other reported mask vampire abilities, including <b class='enabled-link-b'>She stood by you. When you deserved it the least. Twice.</b> and <span onClick={()=>{
+                corrupt(1);
+            }} class='interactive enabled-link-a no-select-text'>freezing powers.</span></p>
+
+        <p style={{display: props.AmandaCorruption>=30 ? 'block' : 'none'}}>Valentine was afflicted with vampirism in 1986 by <b style={{color: "red"}}>You read the report of his death a dozen times. Memorized it.</b> Her 
+        affliction was the result of a combination of exsanguination and blood ingestion, not the vampire mask. This process leads to 
+        Valentine being a “second generation” vampire, one who retains the abilities of blood drinking, <b style={{color: "red"}}>You used that knowledge to break her. Snapped her in half with such force her skin caught flame.</b> super 
+        strength, enhanced senses, and aura but to a lesser degree than her sire. She also lacks other reported mask vampire abilities, including <b style={{color: "red"}}>She stood by you. When you deserved it the least. Twice.</b> and <b style={{color: "red"}}> you BURNED HER ALIVE</b></p>
+
     <h2>Known Relationships</h2>
     <ul>
         <li>Martin III Valentina: father, estranged. Open to reinitiating contact?
@@ -296,26 +357,69 @@ const Amanda = (props) => {
         <li>Victoria Secret: No longer antagonistic. Have met up together in private to discuss the aftermath of Mask Den. Doesn't seem to retain
             romantic affections since parting.
         </li>
+        <li style={{display: props.AmandaCorruption<30 ? 'list-item' : 'none'}}></li>
+        <li style={{display: props.AmandaCorruption===30 ? 'list-item' : 'none'}}onClick={()=>{
+                corrupt(1);
+            }} class='interactive enabled-link-a no-select-text'>_____ _________ ______</li>
+        <li style={{display: props.AmandaCorruption===31 ? 'list-item' : 'none'}}><b class='enabled-link-b'>Does it hurt more or less to not see <span onClick={()=>{
+                corrupt(1);
+            }} class='interactive enabled-link-a no-select-text'>your name</span> on this list?</b></li>
+        <li style={{display: props.AmandaCorruption>=32 ? 'list-item' : 'none'}}><b class='enabled-link-b'>Does it hurt more or less to not see <span style={{color: 'red', textDecoration: 'bold', fontSize: '30px'}}>YOU DON'T HAVE ONE</span> on this list?</b></li>
+        <li style={{display: props.AmandaCorruption>=32 ? 'list-item' : 'none', color: '#231516'}}><b style={{color: '#131516'}}>Brienne Williams: Coworker, close friend. Worked together for four years. <i>I wish it could've been more.</i></b></li>
     </ul>
+    <div style={{display: props.AmandaCorruption<32 ? 'block' : 'none'}}>
     <h2>Psychological Profile</h2>
-    <p>Amanda is resilient but characteristically self destructive. She often chooses the “easiest” path, whether that be running away from DIO or 
-        tanking Stand attacks head on and relying on vampiric healing. She responds exceptionally well to praise. Over time, she has evolved into a 
-        deeply protective person, clinging to the friends she made at Informer Co as the pillar of support in her life. Informer Co keeps her grounded 
-        and mentally strong.
+    <p>Amanda is resilient but characteristically self destructive. She often chooses 
+        the “easiest” path, whether that be running away from DIO or tanking Stand attacks head on and relying on vampiric healing. She responds 
+        exceptionally well to praise. Over time, she has evolved into a deeply protective person, clinging to the friends she made at Informer Co 
+        as the pillar of support in her life. Informer Co keeps her grounded and mentally strong.
     </p>
+    </div>
+    <div style={{display: props.AmandaCorruption===32 ? 'block' : 'none'}}>
+    <h2>Psychological Profile <span onClick={()=>{
+                corrupt(1);
+            }} class='interactive enabled-link-a no-select-text'>(update)</span></h2>
+    <p>Amanda is resilient but characteristically self destructive. She often chooses 
+        the “easiest” path, whether that be running away from DIO or tanking Stand attacks head on and relying on vampiric healing. She responds 
+        exceptionally well to praise. Over time, she has evolved into a deeply protective person, clinging to the friends she made at Informer Co 
+        as the pillar of support in her life. Informer Co keeps her grounded and mentally strong.
+    </p>
+    </div>
+    <div style={{display: props.AmandaCorruption>=33 ? 'block' : 'none'}}>
+    <h2>Psychological Profile</h2>
+    <p><b class='enabled-link-b'>She's dead. No psychology to it.</b></p>
+    </div>
     <h2>Author's Notes</h2>
-    Valentine is loyal, reliable, and resilient. She has grown so much in the five years that I’ve known her. While our relationship began purely 
+    <p style={{display: props.AmandaCorruption<33 ? 'block' : 'none'}}>Valentine is loyal, reliable, and resilient. She has grown so much in the five years that I’ve known her. While our relationship began purely 
     professionally, with a good bit of hesitation on my part due to her vampiric nature, I grew to trust her most deeply of all my employees. She is 
-    my confidant, my sword, my first real friend.
-    <h1>Current Corruption Value: </h1>
-    <p>{props.AmandaCorruption}</p>
-    <p>{props.AmandaHighCorruption}</p>
-    {/* <button onClick={()=>{
-        props.dispatch({
-            type: 'corruptAmanda',
-            value: 1,
-        });
-    }} disabled={props.AmandaCorruption>100}>Test</button> */}
+    my confidant, my sword, my first real friend.</p>
+    <p style={{display: props.AmandaCorruption===33 ? 'block' : 'none'}} onClick={()=>{
+                corrupt(1);
+                props.dispatch({
+                    type: 'visitAmanda',
+                    value: 1,
+                });
+            }} onMouseOver={()=>{
+                hoverOn();
+            }} onMouseLeave={()=>{
+                hoverOff();
+            }}
+            class='interactive enabled-link-a no-select-text'>Valentine is loyal, reliable, and resilient. She has grown so much in the five years that I’ve known her. While our relationship began purely 
+    professionally, with a good bit of hesitation on my part due to her vampiric nature, I grew to trust her most deeply of all my employees. She is 
+    my confidant, my sword, my first real friend.</p>
+    <p style={{display: props.AmandaCorruption>=34 ? 'block' : 'none'}}><b class='enabled-link-b'>N/A</b></p>
+    <p style={{display: props.AmandaHover===1 && counter <=3 ? 'block' : 'none', color: 'rgb(51, 125, 255)', textAlign: 'right'}}><b>Wait!</b></p>
+    <p style={{display: props.AmandaHover===1 && counter >3 && counter <= 5 ? 'block' : 'none', color: '#909098', textAlign: 'right'}}><b>Go on, do it.</b></p>
+    <p style={{display: props.AmandaHover===1 && counter > 5 && counter <= 8 ? 'block' : 'none', color: '#909098', textAlign: 'right'}}><b>You've already altered the rest of the document.</b></p>
+    <p style={{display: props.AmandaHover===1 && counter > 8 && counter <= 11 ? 'block' : 'none', color: '#909098', textAlign: 'right'}}><b>Why is this any different?</b></p>
+    <p style={{display: props.AmandaHover===1 && counter > 11 && counter <= 14 ? 'block' : 'none', color: 'rgb(51, 125, 255)', textAlign: 'right'}}><b>This... this is permanent.</b></p>
+    <p style={{display: props.AmandaHover===1 && counter > 14 && counter <= 17 ? 'block' : 'none', color: 'rgb(51, 125, 255)', textAlign: 'right'}}><b>The file's almost completely corrupted. If I do this...</b></p>
+    <p style={{display: props.AmandaHover===1 && counter > 17 && counter <= 22 ? 'block' : 'none', color: 'red', textAlign: 'right'}}><b>She'll be gone.</b></p>
+    <p style={{display: props.AmandaHover===1 && counter > 22 && counter <= 26 ? 'block' : 'none', color: '#909098', textAlign: 'right'}}><b>And what is that, if not a reflection of the truth?</b></p>
+    <p style={{display: props.AmandaHover===1 && counter > 26 && counter <= 29 ? 'block' : 'none', color: '#909098', textAlign: 'right'}}><b>That's all you've ever done.</b></p>
+    <p style={{display: props.AmandaHover===1 && counter > 29 && counter <= 33 ? 'block' : 'none', color: '#909098', textAlign: 'right'}}><b>You sit at your desk editing your documents. Making sure they reflect reality.</b></p>
+    <p style={{display: props.AmandaHover===1 && counter > 33 && counter <= 36 ? 'block' : 'none', color: '#909098', textAlign: 'right'}}><b>Come on now, Agent.</b></p>
+    <p style={{display: props.AmandaHover===1 && counter > 36 && counter <= 1000 ? 'block' : 'none', color: '#909098', textAlign: 'right'}}><b>Do your duty.</b></p>
     <p>
         <Link style={{color: 'red'}} to="/page2">Go Home</Link>
     </p>
@@ -327,7 +431,8 @@ const Amanda = (props) => {
   export default connect(function mapStateToProps(state){
     return {
         AmandaCorruption: state.AmandaCorruption,
-        AmandaHighCorruption: state.AmandaCorruption > 30 ? 'amanda is corrupted' : 'amanda is NOT corrupted'
+        AmandaHover: state.AmandaHover,
+        AmandaVisited: state.AmandaVisited
     };
   })(Amanda);
   
