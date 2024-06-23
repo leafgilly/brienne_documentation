@@ -11,7 +11,7 @@ const Sally = () => {
     return (
     <><h1>Sally Reed Documentation</h1>
     <p>
-        <Link style={{color: 'red'}} to="/page2">Go Home</Link>
+        <Link style={{color: 'red'}} to="/">Go Home</Link>
     </p></>
     );
     

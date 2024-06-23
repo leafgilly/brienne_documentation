@@ -4,12 +4,6 @@ import {connect} from 'react-redux';
 
 const Amanda = (props) => {
 
-    //VISITED STATE
-
-    var pagesVisited = JSON.parse(document.cookie);
-    pagesVisited["Amanda"] = true;
-    document.cookie = JSON.stringify(pagesVisited);
-
     //CODE THAT PERIODICALLY CHANGES THE TEXT DISPLAYED ON THE SCREEN USING A TIMER
 
     const names = [
@@ -349,7 +343,7 @@ const Amanda = (props) => {
         </li>
         <li>Sally Reed: Coworker, close friend. Goes with her to bars, concerts on the weekends. Watches her dogs on night holidays.
         </li>
-        <li>Morgan Becquerel: Coworker, close friend. Lived together in late summer of 1993. Heavily protective.
+        <li>{props.MorganName} Becquerel: Coworker, close friend. Lived together in late summer of 1993. Heavily protective.
         </li>
         <li>Rita Zeppeli: Coworker, close friend. Once was a student-teacher relationship, now is more equal footing. Often do chores together.
         </li>
@@ -421,7 +415,7 @@ const Amanda = (props) => {
     <p style={{display: props.AmandaHover===1 && counter > 33 && counter <= 36 ? 'block' : 'none', color: '#909098', textAlign: 'right'}}><b>Come on now, Agent.</b></p>
     <p style={{display: props.AmandaHover===1 && counter > 36 && counter <= 1000 ? 'block' : 'none', color: '#909098', textAlign: 'right'}}><b>Do your duty.</b></p>
     <p>
-        <Link style={{color: 'red'}} to="/page2">Go Home</Link>
+        <Link style={{color: 'red'}} to="/">Go Home</Link>
     </p>
     </div></>
     );
@@ -432,7 +426,8 @@ const Amanda = (props) => {
     return {
         AmandaCorruption: state.AmandaCorruption,
         AmandaHover: state.AmandaHover,
-        AmandaVisited: state.AmandaVisited
+        AmandaVisited: state.AmandaVisited,
+        MorganName: state.MorganName,
     };
   })(Amanda);
   

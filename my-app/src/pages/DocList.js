@@ -7,9 +7,7 @@ const DocList = (props) => {
   const pagesVisited = JSON.parse(document.cookie);
   const enableBrienne = pagesVisited["Amanda"] && pagesVisited["Sally"] && pagesVisited["Morgan"] && pagesVisited["Rita"];
 
-  const disableAmanda = !(pagesVisited["Amanda"]);
   const disableSally = !(pagesVisited["Sally"]);
-  const disableMorgan = !(pagesVisited["Morgan"]);
   const disableRita = !(pagesVisited["Rita"]);
 
   console.log(pagesVisited);
@@ -19,7 +17,7 @@ const DocList = (props) => {
     <div class='document'>
     <ul>
       <li>
-      <Link to={disableAmanda ? "/Amanda" : "#"} class={disableAmanda ? 'main-link-a' : 'disabled-link'}>Amanda</Link>
+      <Link to={props.AmandaVisited===0 ? "/Amanda" : "#"} class={props.AmandaVisited===0 ? 'main-link-a' : 'disabled-link'}>{props.AmandaName}</Link>
       </li>
       <li>
       <Link to={disableSally ? "/Sally" : "#"} class={disableSally ? 'main-link-s' : 'disabled-link'}>Sally</Link>
@@ -40,9 +38,6 @@ const DocList = (props) => {
       <li>
         <Link to="/misc">Misc</Link>
       </li>
-      <li>
-        <Link style={{color: 'red'}} to="/">Home</Link>
-      </li>
     </ul>
       <Outlet />
       </div>
@@ -54,5 +49,7 @@ export default connect(function mapStateToProps(state){
   return {
       MorganVisited: state.MorganVisited,
       MorganName: state.MorganName,
+      AmandaVisited: state.AmandaVisited,
+      AmandaName: state.AmandaName
   };
 })(DocList)

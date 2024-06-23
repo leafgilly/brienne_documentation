@@ -85,23 +85,20 @@ const Morgan = (props) => {
         });
     }
 
+    React.useEffect(() => {
+        if (props.MorganCorruption >= 14 && counter*timeUntilCorrupted < 255) {
+            setHover(1);
+        } else if (counter*timeUntilCorrupted >= 255 && props.MorganVisited !== 1) {
+            props.dispatch({
+                type: 'visitMorgan',
+                value: 1,
+            });
+        }
+    }, [props.MorganCorruption, counter, timeUntilCorrupted]);
+
     return (
     <>
-    <div class='document' onMouseLeave={()=>{
-        if (props.MorganCorruption >= 14) {
-            setHover(0);
-        }
-    }}
-        onMouseOver={()=>{
-            if (props.MorganCorruption >= 14 && counter*timeUntilCorrupted < 255) {
-                setHover(1);
-            } else if (counter*timeUntilCorrupted >= 255 && props.MorganVisited !== 1) {
-                props.dispatch({
-                    type: 'visitMorgan',
-                    value: 1,
-                });
-            }
-        }} style={{backgroundColor: props.MorganCorruption>=14 ? 
+    <div class='document' style={{backgroundColor: props.MorganCorruption>=14 ? 
         'rgba(' + counter*timeUntilCorrupted + ',' + counter*timeUntilCorrupted + ',' + counter*timeUntilCorrupted + ')' : 'black', 
         color: 'white'}}>
 
@@ -123,8 +120,8 @@ const Morgan = (props) => {
             <span id='flicker' class='enabled-link-m no-select-text' style={{display: props.MorganCorruption===2 ? 'inline' : 'none'}}>blindingly bright.</span>
             <span class='interactive enabled-link-m no-select-text' style={{display: props.MorganCorruption>=3 && props.MorganCorruption<13 ? 'inline' : 'none'}}
             onClick={()=>{
-                corrupt(1);
-                changeOpacity(.1);
+                corrupt(2);
+                changeOpacity(.2);
         }}>blindingly bright.</span> 
             <span style={{display: props.MorganCorruption>=13 ? 'inline' : 'none'}}>blindingly bright.</span>
         
@@ -132,12 +129,24 @@ const Morgan = (props) => {
             Physical ailements of any kind save for death can be fixed from remaining in this Stand's rays for long enough.
             It also has the ability to impart positive feelings among those who are affected by the light.</p>
         <h2>Known Relationships</h2>
+        <li>Henri Becquerel: father. Amicable public relationship, unspoken distance in private. Wishes he would make a greater effort to understand her.</li>
+        <li>Flora Becquerel: mother. Superficial love. Feels her attempts at connection are hollow.</li>
+        <li>Jeeves [deceased]: bodyguard and father figure. They were inseparable. Losing him nearly broke her, but she seems to have made some peace with it.</li>
+        <li>Jordyn Jones: Speedwagon Foundation field agent. Feels indebted and intensely grateful.</li>
+        <li>Amanda Valentine: Coworker, close friend. Always liked her, even if their friendship developed slowly. Their time cohabitating led to a mutual respect and trust.</li>
+        <li>Sally Reed: Coworker, close friend. Would regularly share the lab and work silently together. Highly respects her intelligence and wit.</li>
+        <li>Rita Zeppeli: Coworker, close friend. Get takeout and go birdwatching together in Central Park at least once a month. Once loved having a rookie on the team, but grew to appreciate her equal companionship.</li>
+        <li>Patagonia: Close friend. Met on work assignment, now do weekly outings. Trusts her enough to introduce her to her parents and take her to company dinners. Might be romantically interested, more observation needed. </li>
 
         <h2>Psychological Profile</h2>
-        <h2>Relevant Cases</h2>
-        <p>Case 1</p>
-        <p>Case 3</p>
+        <p>Morgan’s childhood upbringing shaped her into a person who is desperate for social interaction and overjoyed by new experiences. Her desire 
+        to seek out people has made her highly emotionally intelligent, and she possesses great skills in understanding both her own and others’ emotional states. 
+        Her unrelenting positivity is one of her greatest strengths, but she also harbors some guilt and resentment towards herself and her Stand. She is also 
+        highly dependent on her few, close relationships. The loss of a close friend will affect her especially greatly.</p>
         <h2>Author's Notes</h2>
+        <p>Becquerel is a kind, gentle person who loves freely and greatly. I remember when I first met her: she would bounce on her heels with her hands 
+            clasped tightly together. Now she shares her light freely. I used to keep my professional distance, but we share a familial love. She is my 
+            greatest supporter, my heart, my conscience.</p>
         </div>
 
     {/* BRIENNE'S INTERACTIONS */}
@@ -174,8 +183,8 @@ const Morgan = (props) => {
         <div class='interactive enabled-link-b no-select-text' style={{display: props.MorganVisited===1 ? 'block' : 'none'}}>
             <Link style={{color: 'blue'}} to="/page2">It's too bright to see...</Link>
         </div>
-        <p>
-            <Link style={{color: 'red'}} to="/page2">Go Home</Link>
+        <p style={{display: props.MorganVisited===0 ? 'block' : 'none'}}>
+            <Link style={{color: 'red'}} to="/">Go Home</Link>
         </p>
     </div>
     

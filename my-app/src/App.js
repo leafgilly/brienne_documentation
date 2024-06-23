@@ -22,13 +22,13 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/">
-        <Route index element={<Page1 />} />
+        <Route index element={<Page2 />} />
+        {/* <Route index element={<Page1 />} /> */}
         <Route path="Amanda" element={<Amanda />} />
         <Route path="Sally" element={<Sally />} />
         <Route path="Morgan" element={<Morgan />} />
         <Route path="Rita" element={<Rita />} />
         <Route path="'Brienne'" element={<Brienne />} />
-        <Route path="page2" element={<Page2 />} />
         <Route path="misc" element={<Misc />} />
         </Route>
       </Routes>

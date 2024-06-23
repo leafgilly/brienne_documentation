@@ -42,7 +42,7 @@ function reducer(state, action) {
     } else if (action.type === 'visitAmanda') {
         const newState = {...state};
         newState.AmandaVisited += action.value;
-        newState.AmandaName = 'AMANDAAAAAA';
+        newState.AmandaName = 'A̵̧̬̺̣̞͈͇̭͚̥͍̜͌̽͂̓͆͛̂͛͆̽͂̑͊̐m̵̧̬̦̝͉̭̙͕̅̌̍̆̍̀̀̃̑̓́̂͜å̵̻̼͕̲͓̘͉̥̤͙̦̞͔̟ņ̵̧̪̬̬̝̮͍̙̼̩̬̉ͅd̴̨̨̛͙͔̠̰̪̰͔͇̩̪̘́͂͌̅͐́̚ͅͅạ̶̢̛̘̥̫̖̳̘̱̦̞͍́͊͠ͅ';
         return newState;
     }
     else {
