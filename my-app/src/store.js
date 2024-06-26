@@ -10,6 +10,7 @@ const initialState = {
     MorganName: 'Morgan',
     MorganCorruption: 0,
     MorganOpacity: 0.0,
+    MorganLight: 0,
 
     //AMANDA VALUES
     AmandaName: 'Amanda',
@@ -30,6 +31,10 @@ function reducer(state, action) {
     } else if (action.type === 'morganOpacity') {
         const newState = {...state};
         newState.MorganOpacity += action.value;
+        return newState;
+    } else if (action.type === 'morganLight') {
+        const newState = {...state};
+        newState.MorganLight += action.value;
         return newState;
     } else if (action.type === 'corruptAmanda') {
         const newState = {...state};
