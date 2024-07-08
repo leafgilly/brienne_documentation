@@ -48,8 +48,8 @@ const DocList = (props) => {
 export default connect(function mapStateToProps(state){
   return {
       MorganVisited: state.MorganVisited,
-      MorganName: state.MorganName,
       AmandaVisited: state.AmandaVisited,
-      AmandaName: state.AmandaName
+      MorganName: state.MorganName,
+      AmandaName: state.AmandaName,
   };
 })(DocList)

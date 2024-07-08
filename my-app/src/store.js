@@ -7,13 +7,13 @@ const initialState = {
     MorganVisited: 0,
     AmandaVisited: 0,
     //MORGAN VALUES
-    MorganName: 'Morgan',
+    MorganName: ['Morgan', ' ', 'Becquerel'],
     MorganCorruption: 0,
     MorganOpacity: 0.0,
     MorganLight: 0,
 
     //AMANDA VALUES
-    AmandaName: 'Amanda',
+    AmandaName: ['Amanda', ' ', 'Valentine'],
     AmandaCorruption: 0,
     AmandaHover: 0,
 };
@@ -22,7 +22,8 @@ function reducer(state, action) {
     if (action.type === 'visitMorgan') {
         const newState = {...state};
         newState.MorganVisited += action.value;
-        newState.MorganName = '██████';
+        newState.MorganName[0] = '██████';
+        newState.MorganName[2] = '█████████';
         return newState;
     }else if (action.type === 'corruptMorgan') {
         const newState = {...state};
@@ -47,7 +48,8 @@ function reducer(state, action) {
     } else if (action.type === 'visitAmanda') {
         const newState = {...state};
         newState.AmandaVisited += action.value;
-        newState.AmandaName = 'A̵̧̬̺̣̞͈͇̭͚̥͍̜͌̽͂̓͆͛̂͛͆̽͂̑͊̐m̵̧̬̦̝͉̭̙͕̅̌̍̆̍̀̀̃̑̓́̂͜å̵̻̼͕̲͓̘͉̥̤͙̦̞͔̟ņ̵̧̪̬̬̝̮͍̙̼̩̬̉ͅd̴̨̨̛͙͔̠̰̪̰͔͇̩̪̘́͂͌̅͐́̚ͅͅạ̶̢̛̘̥̫̖̳̘̱̦̞͍́͊͠ͅ';
+        newState.AmandaName[0] = 'Ä̷̼́m̴͜͝█̸̳̾ń̷̼d̴̼̑ȃ̴̮';
+        newState.AmandaName[2] = 'V̵̂ͅa̵̢͗l̸̮̆█̶̟̂n̸̖̕t̵̮͆i̵͖̎n̷̛̖█̷̯̍';
         return newState;
     }
     else {

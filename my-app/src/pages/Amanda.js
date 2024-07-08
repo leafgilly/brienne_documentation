@@ -62,7 +62,7 @@ const Amanda = (props) => {
             <p>There's... nothing here?</p>
     </div> */}
     <div class='document'>
-    <h1 style={{textAlign: 'center'}}>Amanda Valentine Documentation</h1>
+    <h1 style={{textAlign: 'center'}}>{props.AmandaName} Documentation</h1>
     <h2 style={{textAlign: 'center'}}>Threat Level: C (previously A)</h2>
     <h2>Previous Names and Aliases</h2>
     <ul>
@@ -330,9 +330,9 @@ const Amanda = (props) => {
                 corrupt(1);
             }} class='interactive enabled-link-a no-select-text'>freezing powers.</span></p>
 
-        <p style={{display: props.AmandaCorruption>=30 ? 'block' : 'none'}}>Valentine was afflicted with vampirism in 1986 by <b style={{color: "red"}}>You read the report of his death a dozen times. Memorized it.</b> Her 
+        <p style={{display: props.AmandaCorruption>=30 ? 'block' : 'none'}}>{props.AmandaName[2]} was afflicted with vampirism in 1986 by <b style={{color: "red"}}>You read the report of his death a dozen times. Memorized it.</b> Her 
         affliction was the result of a combination of exsanguination and blood ingestion, not the vampire mask. This process leads to 
-        Valentine being a “second generation” vampire, one who retains the abilities of blood drinking, <b style={{color: "red"}}>You used that knowledge to break her. Snapped her in half with such force her skin caught flame.</b> super 
+        {props.AmandaName[2]} being a “second generation” vampire, one who retains the abilities of blood drinking, <b style={{color: "red"}}>You used that knowledge to break her. Snapped her in half with such force her skin caught flame.</b> super 
         strength, enhanced senses, and aura but to a lesser degree than her sire. She also lacks other reported mask vampire abilities, including <b style={{color: "red"}}>She stood by you. When you deserved it the least. Twice.</b> and <b style={{color: "red"}}> you BURNED HER ALIVE</b></p>
 
     <h2>Known Relationships</h2>
@@ -343,11 +343,11 @@ const Amanda = (props) => {
         </li>
         <li>Sally Reed: Coworker, close friend. Goes with her to bars, concerts on the weekends. Watches her dogs on night holidays.
         </li>
-        <li>{props.MorganName} Becquerel: Coworker, close friend. Lived together in late summer of 1993. Heavily protective.
+        <li>{props.MorganName}: Coworker, close friend. Lived together in late summer of 1993. Heavily protective.
         </li>
         <li>Rita Zeppeli: Coworker, close friend. Once was a student-teacher relationship, now is more equal footing. Often do chores together.
         </li>
-        <li>Patagonia: No longer antagonistic. Polite with each other, especially around Morgan. Appears to be a tentative mutual respect.</li>
+        <li>Patagonia: No longer antagonistic. Polite with each other, especially around {props.MorganName[0]}. Appears to be a tentative mutual respect.</li>
         <li>Victoria Secret: No longer antagonistic. Have met up together in private to discuss the aftermath of Mask Den. Doesn't seem to retain
             romantic affections since parting.
         </li>
@@ -363,7 +363,7 @@ const Amanda = (props) => {
     </ul>
     <div style={{display: props.AmandaCorruption<32 ? 'block' : 'none'}}>
     <h2>Psychological Profile</h2>
-    <p>Amanda is resilient but characteristically self destructive. She often chooses 
+    <p>{props.AmandaName[2]} is resilient but characteristically self destructive. She often chooses 
         the “easiest” path, whether that be running away from DIO or tanking Stand attacks head on and relying on vampiric healing. She responds 
         exceptionally well to praise. Over time, she has evolved into a deeply protective person, clinging to the friends she made at Informer Co 
         as the pillar of support in her life. Informer Co keeps her grounded and mentally strong.
@@ -373,7 +373,7 @@ const Amanda = (props) => {
     <h2>Psychological Profile <span onClick={()=>{
                 corrupt(1);
             }} class='interactive enabled-link-a no-select-text'>(update)</span></h2>
-    <p>Amanda is resilient but characteristically self destructive. She often chooses 
+    <p>{props.AmandaName[2]} is resilient but characteristically self destructive. She often chooses 
         the “easiest” path, whether that be running away from DIO or tanking Stand attacks head on and relying on vampiric healing. She responds 
         exceptionally well to praise. Over time, she has evolved into a deeply protective person, clinging to the friends she made at Informer Co 
         as the pillar of support in her life. Informer Co keeps her grounded and mentally strong.
@@ -428,6 +428,7 @@ const Amanda = (props) => {
         AmandaHover: state.AmandaHover,
         AmandaVisited: state.AmandaVisited,
         MorganName: state.MorganName,
+        AmandaName: state.AmandaName,
     };
   })(Amanda);
   

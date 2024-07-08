@@ -250,8 +250,8 @@ const Morgan = (props) => {
         <li style={{display: props.MorganCorruption>=26 ? 'list-item' : 'none'}}>Jeeves [<b style={{color: 'red'}}>RETIRED</b>]: bodyguard and father figure. They were inseparable. <b class="enabled-link-b">He'd have already killed you.</b></li>
         <li style={{display: props.MorganCorruption<=25 ? 'list-item' : 'none'}}>Jordyn Jones: Speedwagon Foundation field agent. Feels indebted and intensely grateful.</li>
         <li style={{display: props.MorganCorruption>=26 ? 'list-item' : 'none'}}>Jordyn Jones [<b style={{color: 'red'}}>RETIRED</b>]: Speedwagon Foundation field agent. Feels indebted and intensely grateful.</li>
-        <li style={{display: props.MorganCorruption<=25 ? 'list-item' : 'none'}}>Amanda Valentine: Coworker, close friend. Always liked her, even if their friendship developed slowly. Their time cohabitating led to a mutual respect and trust.</li>
-        <li style={{display: props.MorganCorruption>=26 ? 'list-item' : 'none'}}>Amanda Valentine [<b style={{color: 'red'}}>RETIRED</b>]: Coworker, close friend. Always liked her, even if their friendship developed slowly. Their time cohabitating led to a mutual respect and trust.</li>
+        <li style={{display: props.MorganCorruption<=25 ? 'list-item' : 'none'}}>{props.AmandaName}: Coworker, close friend. Always liked her, even if their friendship developed slowly. Their time cohabitating led to a mutual respect and trust.</li>
+        <li style={{display: props.MorganCorruption>=26 ? 'list-item' : 'none'}}>{props.AmandaName} [<b style={{color: 'red'}}>RETIRED</b>]: Coworker, close friend. Always liked her, even if their friendship developed slowly. Their time cohabitating led to a mutual respect and trust.</li>
         <li style={{display: props.MorganCorruption<=25 ? 'list-item' : 'none'}}>Sally Reed: Coworker, close friend. Would regularly share the lab and work silently together. Highly respects her intelligence and wit.</li>
         <li style={{display: props.MorganCorruption>=26 ? 'list-item' : 'none'}}>Sally Reed [<b style={{color: 'red'}}>RETIRED</b>]: Coworker, close friend. Would regularly share the lab and work silently together. Highly respects her intelligence and wit.</li>
         <li style={{display: props.MorganCorruption<=25 ? 'list-item' : 'none'}}>Rita Zeppeli: Coworker, close friend. Get takeout and go birdwatching together in Central Park at least once a month. Once loved having a rookie on the team, but grew to appreciate her equal companionship.</li>
@@ -313,11 +313,12 @@ const Morgan = (props) => {
   
   export default connect(function mapStateToProps(state){
     return {
-        MorganName: state.MorganName,
         MorganCorruption: state.MorganCorruption,
         MorganOpacity: state.MorganOpacity,
         MorganVisited: state.MorganVisited,
-        MorganLight: state.MorganLight
+        MorganLight: state.MorganLight,
+        MorganName: state.MorganName,
+        AmandaName: state.AmandaName,
     };
   })(Morgan);
   
