@@ -11,11 +11,13 @@ const initialState = {
     MorganCorruption: 0,
     MorganOpacity: 0.0,
     MorganLight: 0,
-
     //AMANDA VALUES
     AmandaName: ['Amanda', ' ', 'Valentine'],
     AmandaCorruption: 0,
     AmandaHover: 0,
+    //RITA VALUES
+    RitaName: ['Rita', ' ', 'Zeppeli'],
+    RitaCorruption: 0,
 };
 
 function reducer(state, action) {
@@ -51,8 +53,11 @@ function reducer(state, action) {
         newState.AmandaName[0] = 'Ä̷̼́m̴͜͝█̸̳̾ń̷̼d̴̼̑ȃ̴̮';
         newState.AmandaName[2] = 'V̵̂ͅa̵̢͗l̸̮̆█̶̟̂n̸̖̕t̵̮͆i̵͖̎n̷̛̖█̷̯̍';
         return newState;
-    }
-    else {
+    } else if (action.type === 'corruptRita') {
+        const newState = {...state};
+        newState.RitaCorruption += action.value;
+        return newState;
+    } else {
         return state;
     }
 }

@@ -1,17 +1,32 @@
 import { Link } from "react-router-dom";
 import {connect} from 'react-redux';
+import robin from '../images/RockinRobin.png';
+import LEGS from '../images/LEGS.png';
 
 const Rita = (props) => {
 
     //VISITED STATE
 
-    var pagesVisited = JSON.parse(document.cookie);
-    pagesVisited["Rita"] = true;
-    document.cookie = JSON.stringify(pagesVisited);
+    // var pagesVisited = JSON.parse(document.cookie);
+    // pagesVisited["Rita"] = true;
+    // document.cookie = JSON.stringify(pagesVisited);
+
+    function corrupt (amt) {
+        props.dispatch({
+            type: 'corruptRita',
+            value: amt,
+        });
+    }
 
     return (
     <>
+    <img src={robin}></img>
+    <p>{props.RitaCorruption}</p>
+    <button onClick={()=>{
+        corrupt(2);
+    }}>Corrupt</button>
     <div class='document'>
+    <div class='TEST' style={{margin: 'auto', width: '50' - props.RitaCorruption + '%'}}>
     <h1 style={{textAlign: 'center'}}>Margarita Zeppeli Documentation</h1>
     <h2 style={{textAlign: 'center'}}>Threat Level: E</h2>
     <h2>Previous Names and Aliases</h2>
@@ -61,7 +76,10 @@ const Rita = (props) => {
     <p>
         <Link style={{color: 'red'}} to="/">Go Home</Link>
     </p>
-    </div></>
+    </div>
+    </div>
+    <img src={LEGS}></img>
+    </>
     );
     
   };
@@ -70,6 +88,7 @@ const Rita = (props) => {
     return {
         MorganName: state.MorganName,
         AmandaName: state.AmandaName,
+        RitaCorruption: state.RitaCorruption,
     };
   })(Rita);
   
