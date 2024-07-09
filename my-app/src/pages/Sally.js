@@ -1,19 +1,105 @@
 import { Link } from "react-router-dom";
+import React, {useState, useCallback, useEffect } from 'react';
 import {connect} from 'react-redux';
+
+import music from '../audio/SweetDreams.mp3'
 
 const Sally = (props) => {
 
     //VISITED STATE
 
-    var pagesVisited = JSON.parse(document.cookie);
-    pagesVisited["Sally"] = true;
-    document.cookie = JSON.stringify(pagesVisited);
+    // var pagesVisited = JSON.parse(document.cookie);
+    // pagesVisited["Sally"] = true;
+    // document.cookie = JSON.stringify(pagesVisited);
+
+    function beat (amt) {
+        props.dispatch({
+            type: 'updatebeat',
+            value: amt,
+        });
+    }
+
+
+    const [counter, setCounter] = React.useState(0);
+
+    React.useEffect(() => {
+        if (props.SallyCorruption>=1) {
+                const timer =
+            setInterval(() => setCounter(counter + 1), 948);
+            if (counter === 4) {
+                setCounter(0);
+                beat(-10);
+                
+            }
+            beat(counter);
+            return () => clearInterval(timer);
+        }
+    }, [counter, props.SallyCorruption]);
+
+    function corrupt (amt) {
+        props.dispatch({
+            type: 'corruptSally',
+            value: amt,
+        });
+    }
+
+    let sweetdreams = new Audio(music);
+
+    const [audioError, setAudioError] = React.useState();
+    const [audio, setAudio1] = React.useState();
+  
+    // 1. load the audio in a user interaction
+    const loadAudio = () => {
+      const _audio = sweetdreams;
+      _audio.load();
+      _audio.addEventListener('canplaythrough', () => {
+        console.log('loaded audio');
+        setAudio1(_audio);
+      });
+    };
+
+    const [swap, changeAudio] = React.useState(0);
+  
+    // 2. now you can play the audio on all subsequent events
+    const playAudio = async () => {
+        // if (swap === 0) {
+            // changeAudio(1);
+            setAudioError(undefined);
+            await new Promise((r) => setTimeout(r, 100));
+            audio && audio.play().catch((e) => {
+                setAudioError(e);
+            });
+        // } else if (swap === 1) {
+        //     changeAudio(0);
+        //     setAudioError(undefined);
+        //     await new Promise((r) => setTimeout(r, 100));
+        //     audio2 && audio2.play().catch((e) => {
+        //         setAudioError(e);
+        //     });
+        // }
+    };
+
+
 
     return (
     <>
+    <button onClick={()=>{
+            loadAudio();
+        }}>Play music</button>
+        <button onClick={()=>{
+            corrupt(1);
+            playAudio();
+        }}>Play music</button>
+    <p>{props.SallyCorruption}</p>
+    <p>{props.SallyBeat}</p>
+    <p>{counter}</p>
+    <p style={{display: props.SallyBeat===0 ? 'block' : 'none'}}>BEAT1</p>
+    <p style={{display: props.SallyBeat===1 ? 'block' : 'none'}}>BEAT2</p>
+    <p style={{display: props.SallyBeat===3 ? 'block' : 'none'}}>BEAT3</p>
+    <p style={{display: props.SallyBeat===6 ? 'block' : 'none'}}>BEAT4</p>
     <div class='document'>
     <h1 style={{textAlign: 'center'}}>Sally Joanna Reed</h1>
-    <h2 style={{textAlign: 'center'}}>Threat Level: D</h2>
+    <h2 style={{textAlign: 'center'}}>Threat Level: D</h2> {/*CHANGE D TO DISCO AND HAVE THE COLOR CHANGING/MUSIC START*/}
     <h2>Previous Names and Aliases</h2>
     <ul>
         <li>n/a</li>
@@ -68,6 +154,8 @@ const Sally = (props) => {
     return {
         MorganName: state.MorganName,
         AmandaName: state.AmandaName,
+        SallyCorruption: state.SallyCorruption,
+        SallyBeat: state.SallyBeat,
     };
   })(Sally);
   

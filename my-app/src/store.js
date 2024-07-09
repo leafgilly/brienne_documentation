@@ -18,6 +18,11 @@ const initialState = {
     //RITA VALUES
     RitaName: ['Rita', ' ', 'Zeppeli'],
     RitaCorruption: 0,
+    
+    //SALLY VALUES
+    SallyName: ['Sally', ' ', 'Reed'],
+    SallyCorruption: 0,
+    SallyBeat: 0,
 };
 
 function reducer(state, action) {
@@ -56,6 +61,14 @@ function reducer(state, action) {
     } else if (action.type === 'corruptRita') {
         const newState = {...state};
         newState.RitaCorruption += action.value;
+        return newState;
+    } else if (action.type === 'corruptSally') {
+        const newState = {...state};
+        newState.SallyCorruption += action.value;
+        return newState;
+    } else if (action.type === 'updatebeat') {
+        const newState = {...state};
+        newState.SallyBeat += action.value;
         return newState;
     } else {
         return state;
