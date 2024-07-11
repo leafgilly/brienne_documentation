@@ -6,6 +6,7 @@ const initialState = {
     //VISITED PAGES
     MorganVisited: 0,
     AmandaVisited: 0,
+    RitaVisited: 0,
     //MORGAN VALUES
     MorganName: ['Morgan', ' ', 'Becquerel'],
     MorganCorruption: 0,
@@ -69,6 +70,16 @@ function reducer(state, action) {
     } else if (action.type === 'updatebeat') {
         const newState = {...state};
         newState.SallyBeat += action.value;
+        return newState;
+    } else if (action.type === 'visitRita') {
+        const newState = {...state};
+        newState.RitaVisited += action.value;
+        return newState;
+    } 
+    else if (action.type === 'renameRita') {
+        const newState = {...state};
+        newState.RitaName[0] = action.value;
+        newState.RitaName[2] = 'Z̷͚͊ě̶͓p̶̦̔p̵͙̄e̸͍͠l̸̨̐ḯ̶͓';
         return newState;
     } else {
         return state;

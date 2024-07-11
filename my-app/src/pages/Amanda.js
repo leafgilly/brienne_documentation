@@ -63,7 +63,7 @@ const Amanda = (props) => {
     </div> */}
     <div class='document'>
     <h1 style={{textAlign: 'center'}}>{props.AmandaName} Documentation</h1>
-    <h2 style={{textAlign: 'center'}}>Threat Level: C (previously A)</h2>
+    <h2 style={{textAlign: 'center'}}> Threat Level: C (previously A)</h2>
     <h2>Previous Names and Aliases</h2>
     <ul>
     <li style={{display: props.AmandaCorruption===0 ? 'list-item' : 'none'}}> Amanda Valentina - as of 1989, upon arriving in New York, documentee had her name changed to <span 
@@ -277,8 +277,8 @@ const Amanda = (props) => {
         <li style={{display: props.AmandaCorruption<24 ? 'list-item' : 'none'}}>Brienne Williams and Paperback Writer</li>
         <li style={{display: props.AmandaCorruption>=24 ? 'list-item' : 'none', color: 'black'}}>Brienne Williams and Paperback Writer</li>
 
-        <li style={{display: props.AmandaCorruption<24 ? 'list-item' : 'none'}}>Margarita Zeppeli and Rockin’ Robin</li>
-        <li style={{display: props.AmandaCorruption>=24 ? 'list-item' : 'none', color: 'black'}}>Margarita Zeppeli and Rockin’ Robin</li>
+        <li style={{display: props.AmandaCorruption<24 ? 'list-item' : 'none'}}>{props.RitaName} and Rockin’ Robin</li>
+        <li style={{display: props.AmandaCorruption>=24 ? 'list-item' : 'none', color: 'black'}}>{props.RitaName} and Rockin’ Robin</li>
         </ul>
         <h3>"2nd Generation" Vampirism</h3>
 
@@ -345,7 +345,7 @@ const Amanda = (props) => {
         </li>
         <li>{props.MorganName}: Coworker, close friend. Lived together in late summer of 1993. Heavily protective.
         </li>
-        <li>Rita Zeppeli: Coworker, close friend. Once was a student-teacher relationship, now is more equal footing. Often do chores together.
+        <li>{props.RitaName}: Coworker, close friend. Once was a student-teacher relationship, now is more equal footing. Often do chores together.
         </li>
         <li>Patagonia: No longer antagonistic. Polite with each other, especially around {props.MorganName[0]}. Appears to be a tentative mutual respect.</li>
         <li>Victoria Secret: No longer antagonistic. Have met up together in private to discuss the aftermath of Mask Den. Doesn't seem to retain
@@ -429,6 +429,7 @@ const Amanda = (props) => {
         AmandaVisited: state.AmandaVisited,
         MorganName: state.MorganName,
         AmandaName: state.AmandaName,
+        RitaName: state.RitaName,
     };
   })(Amanda);
   

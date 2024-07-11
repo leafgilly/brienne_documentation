@@ -62,22 +62,16 @@ const Sally = (props) => {
   
     // 2. now you can play the audio on all subsequent events
     const playAudio = async () => {
-        // if (swap === 0) {
-            // changeAudio(1);
             setAudioError(undefined);
             await new Promise((r) => setTimeout(r, 100));
             audio && audio.play().catch((e) => {
                 setAudioError(e);
             });
-        // } else if (swap === 1) {
-        //     changeAudio(0);
-        //     setAudioError(undefined);
-        //     await new Promise((r) => setTimeout(r, 100));
-        //     audio2 && audio2.play().catch((e) => {
-        //         setAudioError(e);
-        //     });
-        // }
     };
+
+    const pauseAudio = async () => {
+        audio.pause();
+    }
 
 
 
@@ -127,7 +121,7 @@ const Sally = (props) => {
         </li>
         <li>{props.MorganName}: Coworker, close friend. Occasionally intimidated by her wealth. Deeply values her carefree, positive nature.
         </li>
-        <li>Rita Zeppeli: Coworker, close friend. Always go out for coffee and lunch hours together during slow days. Loves teasing her, 
+        <li>{props.RitaName}: Coworker, close friend. Always go out for coffee and lunch hours together during slow days. Loves teasing her, 
             but appreciates her for being her most normal friend at work.
         </li>
     </ul>
@@ -154,6 +148,7 @@ const Sally = (props) => {
     return {
         MorganName: state.MorganName,
         AmandaName: state.AmandaName,
+        RitaName: state.RitaName,
         SallyCorruption: state.SallyCorruption,
         SallyBeat: state.SallyBeat,
     };

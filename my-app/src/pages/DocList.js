@@ -27,7 +27,7 @@ const DocList = (props) => {
       <Link to={props.MorganVisited===0 ? "/Morgan" : "#"} class={props.MorganVisited===0 ? 'main-link-m' : 'disabled-link'}>{props.MorganName}</Link>
       </li>
       <li>
-      <Link to={disableRita ? "/Rita" : "#"} class={disableRita ? 'main-link-r' : 'disabled-link'}>Rita</Link>
+      <Link to={props.RitaVisited===0 ? "/Rita" : "#"} class={props.RitaVisited===0 ? 'main-link-r' : 'disabled-link'}>{props.RitaName}</Link>
       </li>
       {/* <li>
       <Link to="/'Brienne'">"Brienne"</Link>
@@ -49,7 +49,9 @@ export default connect(function mapStateToProps(state){
   return {
       MorganVisited: state.MorganVisited,
       AmandaVisited: state.AmandaVisited,
+      RitaVisited: state.RitaVisited,
       MorganName: state.MorganName,
       AmandaName: state.AmandaName,
+      RitaName: state.RitaName,
   };
 })(DocList)
