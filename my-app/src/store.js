@@ -23,7 +23,6 @@ const initialState = {
     //SALLY VALUES
     SallyName: ['Sally', ' ', 'Reed'],
     SallyCorruption: 0,
-    SallyBeat: 0,
 };
 
 function reducer(state, action) {
@@ -66,10 +65,6 @@ function reducer(state, action) {
     } else if (action.type === 'corruptSally') {
         const newState = {...state};
         newState.SallyCorruption += action.value;
-        return newState;
-    } else if (action.type === 'updatebeat') {
-        const newState = {...state};
-        newState.SallyBeat += action.value;
         return newState;
     } else if (action.type === 'visitRita') {
         const newState = {...state};

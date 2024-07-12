@@ -1,40 +1,32 @@
 import { Link } from "react-router-dom";
 import React, {useState, useCallback, useEffect } from 'react';
 import {connect} from 'react-redux';
+import Sound from 'react-sound';
 
 import music from '../audio/SweetDreams.mp3'
 
 const Sally = (props) => {
 
-    //VISITED STATE
-
-    // var pagesVisited = JSON.parse(document.cookie);
-    // pagesVisited["Sally"] = true;
-    // document.cookie = JSON.stringify(pagesVisited);
-
-    function beat (amt) {
-        props.dispatch({
-            type: 'updatebeat',
-            value: amt,
-        });
-    }
-
+    const audio = document.getElementById('audio_tag');
+    const [play, setPlay] = useState(false);
 
     const [counter, setCounter] = React.useState(0);
 
+    const palette = ['yellow', 'red', 'purple', 'pink'];
+
     React.useEffect(() => {
-        if (props.SallyCorruption>=1) {
+        if (play) {
+            console.log('play is true');
+        }
+        if (props.SallyCorruption>=4 && play) {
                 const timer =
             setInterval(() => setCounter(counter + 1), 948);
             if (counter === 4) {
                 setCounter(0);
-                beat(-10);
-                
             }
-            beat(counter);
             return () => clearInterval(timer);
         }
-    }, [counter, props.SallyCorruption]);
+    }, [counter, props.SallyCorruption, play]);
 
     function corrupt (amt) {
         props.dispatch({
@@ -43,57 +35,57 @@ const Sally = (props) => {
         });
     }
 
-    let sweetdreams = new Audio(music);
-
-    const [audioError, setAudioError] = React.useState();
-    const [audio, setAudio1] = React.useState();
-  
-    // 1. load the audio in a user interaction
-    const loadAudio = () => {
-      const _audio = sweetdreams;
-      _audio.load();
-      _audio.addEventListener('canplaythrough', () => {
-        console.log('loaded audio');
-        setAudio1(_audio);
-      });
-    };
-
-    const [swap, changeAudio] = React.useState(0);
-  
-    // 2. now you can play the audio on all subsequent events
-    const playAudio = async () => {
-            setAudioError(undefined);
-            await new Promise((r) => setTimeout(r, 100));
-            audio && audio.play().catch((e) => {
-                setAudioError(e);
-            });
-    };
-
-    const pauseAudio = async () => {
-        audio.pause();
-    }
-
-
-
     return (
     <>
-    <button onClick={()=>{
-            loadAudio();
-        }}>Play music</button>
-        <button onClick={()=>{
-            corrupt(1);
-            playAudio();
-        }}>Play music</button>
+    <p style={{display: audio ? 'none' : 'block'}}>AUDIO ISNT LOADED</p>
     <p>{props.SallyCorruption}</p>
-    <p>{props.SallyBeat}</p>
     <p>{counter}</p>
-    <p style={{display: props.SallyBeat===0 ? 'block' : 'none'}}>BEAT1</p>
-    <p style={{display: props.SallyBeat===1 ? 'block' : 'none'}}>BEAT2</p>
-    <p style={{display: props.SallyBeat===3 ? 'block' : 'none'}}>BEAT3</p>
-    <p style={{display: props.SallyBeat===6 ? 'block' : 'none'}}>BEAT4</p>
-    <div class='document'>
-    <h1 style={{textAlign: 'center'}}>Sally Joanna Reed</h1>
-    <h2 style={{textAlign: 'center'}}>Threat Level: D</h2> {/*CHANGE D TO DISCO AND HAVE THE COLOR CHANGING/MUSIC START*/}
+    <p>Play: {play.toString()}</p>
+    <div style={{backgroundColor: play ? palette[counter] : 'black'}}>
+    <div class='document' style={{backgroundColor: 'black !important'}}>
+     <audio id="audio_tag" src={music} loop />
+    <h1 style={{textAlign: 'center', display: props.SallyCorruption===0 ? 'block' : 'none'}}><span onClick={()=>{
+        corrupt(1);
+    }} class='interactive enabled-link-s no-select-text'>Sally</span> Joanna Reed</h1>
+    <h1 style={{textAlign: 'center', display: props.SallyCorruption===1 ? 'block' : 'none'}}><b class="enabled-link-b">One beat,</b> <span onClick={()=>{
+        corrupt(1);
+    }} class='interactive enabled-link-s no-select-text'>Joanna</span> Reed</h1>
+    <h1 style={{textAlign: 'center', display: props.SallyCorruption===2 ? 'block' : 'none'}}><b class="enabled-link-b">One beat, two beats,</b> <span onClick={()=>{
+        corrupt(1);
+    }} class='interactive enabled-link-s no-select-text'>Reed</span></h1>
+    <h1 style={{textAlign: 'center', display: props.SallyCorruption>=3 ? 'block' : 'none'}}><b class="enabled-link-b">One beat, two beats, three beats,</b></h1>
+    
+    <h2 style={{textAlign: 'center', display: props.SallyCorruption<3 ? 'block' : 'none'}}>Threat Level: D</h2>
+    <h2 style={{textAlign: 'center', display: props.SallyCorruption>=3 && !play && audio ? 'block' : 'none'}}>Threat Level: <span onClick={()=>{
+        if (props.SallyCorruption===3) {
+            corrupt(1);
+        }
+        play ? setPlay(false) : setPlay(true);
+        play ? audio.pause() : audio.play();
+        audio.volume = 0.5;
+    }} class='interactive enabled-link-s no-select-text'>D</span></h2>
+    <div style={{display: props.SallyCorruption>=4 && !play && !audio ? 'inline' : 'none'}}>
+        <h2 style={{textAlign: 'center'}}>Threat Level: <span onClick={() => {
+            corrupt(0.5);
+            corrupt(-0.5);
+            console.log("Why did you leave?");
+            }} class='interactive enabled-link-s no-select-text'>Bring the Beat Back!
+        </span></h2>
+    </div>
+    <div style={{display: props.SallyCorruption>=2 && play ? 'inline' : 'none'}}>
+        <h2 style={{textAlign: 'center'}}>Threat Level: <span onClick={() => {
+            play ? setPlay(false) : setPlay(true);
+            play ? audio.pause() : audio.play();
+            audio.volume = 0.5;
+            }} class='enabled-link-b'><i>Disco</i>
+        </span></h2>
+    </div>
+
+    <p style={{display: play && counter===0 ? 'block' : 'none'}}>BEAT1</p>
+    <p style={{display: play && counter===1 ? 'block' : 'none'}}>BEAT2</p>
+    <p style={{display: play && counter===2 ? 'block' : 'none'}}>BEAT3</p>
+    <p style={{display: play && counter===3 ? 'block' : 'none'}}>BEAT4</p>
+
     <h2>Previous Names and Aliases</h2>
     <ul>
         <li>n/a</li>
@@ -139,6 +131,7 @@ const Sally = (props) => {
         <Link style={{color: 'red'}} to="/">Go Home</Link>
     </p>
     </div>
+    </div>
     </>
     );
     
@@ -150,7 +143,6 @@ const Sally = (props) => {
         AmandaName: state.AmandaName,
         RitaName: state.RitaName,
         SallyCorruption: state.SallyCorruption,
-        SallyBeat: state.SallyBeat,
     };
   })(Sally);
   
