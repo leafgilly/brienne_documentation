@@ -7,6 +7,7 @@ const initialState = {
     MorganVisited: 0,
     AmandaVisited: 0,
     RitaVisited: 0,
+    SallyVisited: 0,
     //MORGAN VALUES
     MorganName: ['Morgan', ' ', 'Becquerel'],
     MorganCorruption: 0,
@@ -76,6 +77,11 @@ function reducer(state, action) {
         newState.RitaName[0] = action.value;
         newState.RitaName[2] = 'Z̷͚͊ě̶͓p̶̦̔p̵͙̄e̸͍͠l̸̨̐ḯ̶͓';
         return newState;
+    } else if (action.type === 'visitSally') {
+        const newState = {...state};
+        newState.SallyVisited += action.value;
+        newState.SallyName[0] = 'TEST';
+        newState.SallyName[2] = 'TEST2';
     } else {
         return state;
     }

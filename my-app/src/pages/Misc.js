@@ -43,6 +43,7 @@ const Misc = () => {
         <li>Egghead</li>
         <li>Maxtot</li>
         <li>Wilbur D Rake</li>
+        <li>fauxmantis</li>
     </ul>
     <h2>Friends of the Show/Did Art</h2>
     <ul>
@@ -66,6 +67,7 @@ const Misc = () => {
         <li>bonvoyage_noona</li>
         <li>Pigserpent</li>
         <li>Syntaxblitz</li>
+        <li>0plus2equals1</li>
     </ul>
     <h2>Read A Bit; Passive Audience</h2>
     <ul>
