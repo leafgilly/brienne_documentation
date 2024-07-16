@@ -252,8 +252,8 @@ const Morgan = (props) => {
         <li style={{display: props.MorganCorruption>=26 ? 'list-item' : 'none'}}>Jordyn Jones [<b style={{color: 'red'}}>RETIRED</b>]: Speedwagon Foundation field agent. Feels indebted and intensely grateful.</li>
         <li style={{display: props.MorganCorruption<=25 ? 'list-item' : 'none'}}>{props.AmandaName}: Coworker, close friend. Always liked her, even if their friendship developed slowly. Their time cohabitating led to a mutual respect and trust.</li>
         <li style={{display: props.MorganCorruption>=26 ? 'list-item' : 'none'}}>{props.AmandaName} [<b style={{color: 'red'}}>RETIRED</b>]: Coworker, close friend. Always liked her, even if their friendship developed slowly. Their time cohabitating led to a mutual respect and trust.</li>
-        <li style={{display: props.MorganCorruption<=25 ? 'list-item' : 'none'}}>Sally Reed: Coworker, close friend. Would regularly share the lab and work silently together. Highly respects her intelligence and wit.</li>
-        <li style={{display: props.MorganCorruption>=26 ? 'list-item' : 'none'}}>Sally Reed [<b style={{color: 'red'}}>RETIRED</b>]: Coworker, close friend. Would regularly share the lab and work silently together. Highly respects her intelligence and wit.</li>
+        <li style={{display: props.MorganCorruption<=25 ? 'list-item' : 'none'}}>{props.SallyName}: Coworker, close friend. Would regularly share the lab and work silently together. Highly respects her intelligence and wit.</li>
+        <li style={{display: props.MorganCorruption>=26 ? 'list-item' : 'none'}}>{props.SallyName} [<b style={{color: 'red'}}>RETIRED</b>]: Coworker, close friend. Would regularly share the lab and work silently together. Highly respects her intelligence and wit.</li>
         <li style={{display: props.MorganCorruption<=25 ? 'list-item' : 'none'}}>{props.RitaName}: Coworker, close friend. Get takeout and go birdwatching together in Central Park at least once a month. Once loved having a rookie on the team, but grew to appreciate her equal companionship.</li>
         <li style={{display: props.MorganCorruption>=26 ? 'list-item' : 'none'}}>{props.RitaName} [<b style={{color: 'red'}}>RETIRED</b>]: Coworker, close friend. Get takeout and go birdwatching together in Central Park at least once a month. Once loved having a rookie on the team, but grew to appreciate her equal companionship.</li>
         <li style={{display: props.MorganCorruption<26 ? 'list-item' : 'none'}}>Patagonia: Close friend. Met on work assignment, now do weekly outings. Trusts her enough to introduce her to her parents and take her to company dinners. Might be romantically interested, more observation needed. </li>
@@ -320,6 +320,7 @@ const Morgan = (props) => {
         MorganName: state.MorganName,
         AmandaName: state.AmandaName,
         RitaName: state.RitaName,
+        SallyName: state.SallyName,
     };
   })(Morgan);
   

@@ -57,7 +57,7 @@ const Sally = (props) => {
     <h1 style={{textAlign: 'center', display: props.SallyCorruption>=3 ? 'block' : 'none'}}><b class="enabled-link-b">One beat, two beats, three beats,</b></h1>
     
     <h2 style={{textAlign: 'center', display: props.SallyCorruption<3 ? 'block' : 'none'}}>Threat Level: D</h2>
-    <h2 style={{textAlign: 'center', display: props.SallyCorruption>=3 && !play && audio ? 'block' : 'none'}}>Threat Level: <span onClick={()=>{
+    <h2 style={{textAlign: 'center', display: props.SallyCorruption>=3 && props.SallyCorruption<11 && !play && audio ? 'block' : 'none'}}>Threat Level: <span onClick={()=>{
         if (props.SallyCorruption===3) {
             corrupt(1);
         }
@@ -65,7 +65,7 @@ const Sally = (props) => {
         play ? audio.pause() : audio.play();
         audio.volume = 0.2;
     }} class='interactive enabled-link-s no-select-text'>D</span></h2>
-    <div style={{display: props.SallyCorruption>=4 && !play && !audio ? 'inline' : 'none'}}>
+    <div style={{display: props.SallyCorruption>=4 && props.SallyCorruption<11 && !play && !audio ? 'inline' : 'none'}}>
         <h2 style={{textAlign: 'center'}}>Threat Level: <span onClick={() => {
             corrupt(0.5);
             corrupt(-0.5);
@@ -339,7 +339,7 @@ const Sally = (props) => {
         </li>
     </ul>
 
-    <h2>Psychological Profile</h2>
+    <div style={{display: props.SallyCorruption<10 ? 'block' : 'none'}}><h2>Psychological Profile</h2>
     <p>Reed is highly intelligent and perceptive with great aptitude for leadership, although she struggles with being unable to perfectly 
         control people. The latter quality has developed into a form of survivor’s guilt: she hates watching people get injured to save 
         her. While she is outwardly suave, she has a penchant for trickery and carefree fun. This is more clearly seen in Eurythmics, 
@@ -348,6 +348,55 @@ const Sally = (props) => {
     <p>Reed is unerringly logical, even in interpersonal relationships, which is something I’ve valued deeply throughout our time working 
         together. While I was resentful of her during our initial meeting—Amanda returned with her and not the Stand arrow—I quickly grew 
         to value her academic background and leader’s demeanor. She is my most reliable employee, my mind, my protégé.</p>
+    </div>
+    <div style={{display: props.SallyCorruption===10 && play ? 'block' : 'none'}}><h2>Psychological Profile</h2>
+    <p style={{display: counter<=1 ? 'block' : 'none'}}>Reed is highly intelligent and perceptive with great aptitude for leadership, although she struggles with being unable to perfectly 
+        control people. The latter quality has developed into a form of <span onClick={()=>{
+        corrupt(1);
+        play ? setPlay(false) : setPlay(true);
+        play ? audio.pause() : audio.play();
+        props.dispatch({
+            type: 'visitSally',
+            value: 1,
+        });
+    }} class='interactive enabled-link-s no-select-text'>survivor's</span> guilt: she hates watching people get injured to save 
+        her. While she is outwardly suave, she has a penchant for trickery and carefree fun. This is more clearly seen in Eurythmics, 
+        who often encourages or instigates harmless pranks.</p>
+    <p style={{display: counter>1 && counter<=3 ? 'block' : 'none'}}>Reed is highly intelligent and perceptive with great aptitude for leadership, although she struggles with being unable to perfectly 
+        control people. The latter quality has developed into a form of survivor's <span onClick={()=>{
+        corrupt(1);
+        play ? setPlay(false) : setPlay(true);
+        play ? audio.pause() : audio.play();
+        props.dispatch({
+            type: 'visitSally',
+            value: 1,
+        });
+    }} class='interactive enabled-link-s no-select-text'>guilt</span>: she hates watching people get injured to save 
+        her. While she is outwardly suave, she has a penchant for trickery and carefree fun. This is more clearly seen in Eurythmics, 
+        who often encourages or instigates harmless pranks.</p>
+    <h2>Author's Notes</h2>
+    <p>Reed is unerringly logical, even in interpersonal relationships, which is something I’ve valued deeply throughout our time working 
+        together. While I was resentful of her during our initial meeting—Amanda returned with her and not the Stand arrow—I quickly grew 
+        to value her academic background and leader’s demeanor. She is my most reliable employee, my mind, my protégé.</p>
+    </div>
+    <div style={{display: props.SallyCorruption===10 && !play ? 'block' : 'none'}}><h2>Psychological Profile</h2>
+    <p>Reed is highly intelligent and perceptive with great aptitude for leadership, although she struggles with being unable to perfectly 
+        control people. The latter quality has developed into a form of survivor’s guilt: she hates watching people get injured to save 
+        her. While she is outwardly suave, she has a penchant for trickery and carefree fun. This is more clearly seen in Eurythmics, 
+        who often encourages or instigates harmless pranks.</p>
+    <h2>Author's Notes</h2>
+    <p>Reed is unerringly logical, even in interpersonal relationships, which is something I’ve valued deeply throughout our time working 
+        together. While I was resentful of her during our initial meeting—Amanda returned with her and not the Stand arrow—I quickly grew 
+        to value her academic background and leader’s demeanor. She is my most reliable employee, my mind, my protégé.</p>
+    </div>
+    <div style={{display: props.SallyCorruption>=11 ? 'block' : 'none'}}><h2><b class='enabled-link-b'>Survivor's Guilt</b></h2>
+    <p><i style={{color: 'slateblue'}}>“The only thing we can do to help each other is get out of here. Together.”</i></p>
+    <h2>Author's Notes</h2>
+    <p>She <b class='enabled-link-b'>was</b> my most reliable employee, my mind, my protégé. <b class='enabled-link-b'>She had an uncanny ability
+        to survive the worst, often at the cost of others.</b></p>
+    </div>
+
+    <p style={{display: props.SallyCorruption===11 ? 'block' : 'none'}}><b style={{color: 'red'}}>And yet you survived even her.</b></p>
 
     <p>
         <Link style={{color: 'red'}} to="/">Go Home</Link>
@@ -365,6 +414,7 @@ const Sally = (props) => {
         AmandaName: state.AmandaName,
         RitaName: state.RitaName,
         SallyCorruption: state.SallyCorruption,
+        SallyVisited: state.SallyVisited,
     };
   })(Sally);
   

@@ -80,8 +80,9 @@ function reducer(state, action) {
     } else if (action.type === 'visitSally') {
         const newState = {...state};
         newState.SallyVisited += action.value;
-        newState.SallyName[0] = 'TEST';
-        newState.SallyName[2] = 'TEST2';
+        newState.SallyName[0] = 'S16Al13Ly̸̡͂3';
+        newState.SallyName[2] = 'Re75Ę̵̀d101';
+        return newState;
     } else {
         return state;
     }

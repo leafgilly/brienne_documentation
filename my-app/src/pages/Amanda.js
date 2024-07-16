@@ -341,7 +341,7 @@ const Amanda = (props) => {
         </li>
         <li>Anna Valentina: mother, estranged. Allegedly dislikes her.
         </li>
-        <li>Sally Reed: Coworker, close friend. Goes with her to bars, concerts on the weekends. Watches her dogs on night holidays.
+        <li>{props.SallyName}: Coworker, close friend. Goes with her to bars, concerts on the weekends. Watches her dogs on night holidays.
         </li>
         <li>{props.MorganName}: Coworker, close friend. Lived together in late summer of 1993. Heavily protective.
         </li>
@@ -430,6 +430,7 @@ const Amanda = (props) => {
         MorganName: state.MorganName,
         AmandaName: state.AmandaName,
         RitaName: state.RitaName,
+        SallyName: state.SallyName,
     };
   })(Amanda);
   
