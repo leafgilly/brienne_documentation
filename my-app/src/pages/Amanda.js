@@ -351,7 +351,6 @@ const Amanda = (props) => {
         <li>Victoria Secret: No longer antagonistic. Have met up together in private to discuss the aftermath of Mask Den. Doesn't seem to retain
             romantic affections since parting.
         </li>
-        <li style={{display: props.AmandaCorruption<30 ? 'list-item' : 'none'}}></li>
         <li style={{display: props.AmandaCorruption===30 ? 'list-item' : 'none'}}onClick={()=>{
                 corrupt(1);
             }} class='interactive enabled-link-a no-select-text'>_____ _________ ______</li>

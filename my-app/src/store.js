@@ -24,6 +24,11 @@ const initialState = {
     //SALLY VALUES
     SallyName: ['Sally', ' ', 'Reed'],
     SallyCorruption: 0,
+
+    //BRIENNE VALUES
+    BrienneName: ['Agent', ' ', 'Paperback Writer'],
+    BrienneCorruption: 0,
+    BrienneTracker: 0,
 };
 
 function reducer(state, action) {
@@ -82,6 +87,24 @@ function reducer(state, action) {
         newState.SallyVisited += action.value;
         newState.SallyName[0] = 'S16Al13Ly̸̡͂3';
         newState.SallyName[2] = 'Re75Ę̵̀d101';
+        return newState;
+    } else if (action.type === 'corruptBrienne') {
+        const newState = {...state};
+        newState.BrienneCorruption += action.value;
+        return newState;
+    } else if (action.type === 'visitBrienne') {
+        const newState = {...state};
+        newState.BrienneVisited += action.value;
+        return newState;
+    } 
+    else if (action.type === 'renameBrienne') {
+        const newState = {...state};
+        newState.BrienneName[0] = action[0].value;
+        newState.BrienneName[2] = action[1].value;
+        return newState;
+    } else if (action.type === 'trackBrienne') {
+        const newState = {...state};
+        newState.BrienneTracker += action.value;
         return newState;
     } else {
         return state;

@@ -4,20 +4,12 @@ import {connect} from 'react-redux';
 
 const DocList = (props) => {
 
-  const pagesVisited = JSON.parse(document.cookie);
-  const enableBrienne = pagesVisited["Amanda"] && pagesVisited["Sally"] && pagesVisited["Morgan"] && pagesVisited["Rita"];
-
-  const disableSally = !(pagesVisited["Sally"]);
-  const disableRita = !(pagesVisited["Rita"]);
-
-  console.log(pagesVisited);
-
   return (
     <>
     <div class='document'>
     <ul>
       <li>
-      <Link to={enableBrienne ? "/'Brienne'" : "#"} class={enableBrienne ? 'main-link-b' : 'disabled-link'}>"Brienne"</Link>
+      <Link to={props.AmandaVisited===1 && props.MorganVisited===1 && props.RitaVisited===1 && props.SallyVisited===1 ? "/theAgent" : "#"} class={props.AmandaVisited===1 && props.MorganVisited===1 && props.RitaVisited===1 && props.SallyVisited===1 ? 'main-link-b' : 'disabled-link'}>Agent Paperback Writer</Link>
       </li>
       <li>
       <Link to={props.AmandaVisited===0 ? "/Amanda" : "#"} class={props.AmandaVisited===0 ? 'main-link-a' : 'disabled-link'}>{props.AmandaName}</Link>
@@ -33,6 +25,9 @@ const DocList = (props) => {
       </li>
       <li>
         <Link to="/misc">Misc</Link>
+      </li>
+      <li>
+      <Link to={"/theAgent"}>"Brienne Test"</Link>
       </li>
     </ul>
       <Outlet />
