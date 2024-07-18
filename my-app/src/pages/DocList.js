@@ -7,7 +7,7 @@ const DocList = (props) => {
   return (
     <>
     <div class='document'>
-    <ul>
+    {/* <ul>
       <li>
       <Link to={props.AmandaVisited===1 && props.MorganVisited===1 && props.RitaVisited===1 && props.SallyVisited===1 ? "/theAgent" : "#"} class={props.AmandaVisited===1 && props.MorganVisited===1 && props.RitaVisited===1 && props.SallyVisited===1 ? 'main-link-b' : 'disabled-link'}>Agent Paperback Writer</Link>
       </li>
@@ -29,7 +29,35 @@ const DocList = (props) => {
       <li>
       <Link to={"/theAgent"}>"Brienne Test"</Link>
       </li>
-    </ul>
+      </ul> */}
+      <div style={{margin: '100px 0px 0px -100px'}}>
+        <div class='folder'>
+          <div class='nametag'>
+            <Link to={props.AmandaVisited===1 && props.MorganVisited===1 && props.RitaVisited===1 && props.SallyVisited===1 ? "/theAgent" : "#"} class={props.AmandaVisited===1 && props.MorganVisited===1 && props.RitaVisited===1 && props.SallyVisited===1 ? 'main-link-b' : 'disabled-link'}>Agent Paperback Writer</Link>
+          </div>
+        </div>
+        <div class='folder' style={{margin: '50px'}}>
+          <div class='nametag'>
+          <Link to={props.AmandaVisited===0 ? "/Amanda" : "#"} class={props.AmandaVisited===0 ? 'main-link-a' : 'disabled-link'}>{props.AmandaName}</Link>
+          </div>
+        </div>
+        <div class='folder' style={{margin: '100px'}}>
+          <div class='nametag'>
+          <Link to={props.MorganVisited===0 ? "/Morgan" : "#"} class={props.MorganVisited===0 ? 'main-link-m' : 'disabled-link'}>{props.MorganName}</Link>
+          </div>
+        </div>
+        <div class='folder' style={{margin: '150px'}}>
+          <div class='nametag'>
+          <Link to={props.RitaVisited===0 ? "/Rita" : "#"} class={props.RitaVisited===0 ? 'main-link-r' : 'disabled-link'}>{props.RitaName}</Link>
+          </div>
+        </div>
+        <div class='folder' style={{margin: '200px'}}>
+          <div class='nametag'>
+          <Link to={props.SallyVisited===0 ? "/Sally" : "#"} class={props.SallyVisited===0 ? 'main-link-s' : 'disabled-link'}>{props.SallyName}</Link>
+          </div>
+        </div>
+      </div>
+      <div class='post-it'>Informer Company: Internal Team Documentation</div>
       <Outlet />
       </div>
     </>

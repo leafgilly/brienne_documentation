@@ -95,38 +95,38 @@ const Brienne = (props) => {
             type: 'trackBrienne',
             value: 129,
         });
-    }} style={{color: '#909098'}} class='interactive no-select-text'>Well, you broke it. Sorry! You missed it.</span></h3>
+    }} style={{color: '#909098'}} class='interactive no-select-text'><i>Well, you broke it. Sorry! You missed it.</i></span></h3>
     <h3 style={{display: props.BrienneCorruption===2.5 ? 'block' : 'none', textAlign: 'center'}}><span onClick={()=>{
         corrupt(0.5);
-    }} style={{color: '#909098'}} class='interactive no-select-text'>There we go. Now then...</span></h3>
+    }} style={{color: '#909098'}} class='interactive no-select-text'><i>There we go. Now then...</i></span></h3>
 
 
     <h3 style={{display: props.BrienneTracker>0 && props.BrienneTracker<129 && play ? 'block' : 'none', textAlign: 'center'}}> <i style={{color: '#909098'}}>Don't leave, or you'll break... this.</i></h3>
     <h3 style={{display: props.BrienneTracker>=129 && props.BrienneCorruption===2 ? 'block' : 'none', textAlign: 'center'}}> <span onClick={()=>{
         corrupt(1);
-    }} style={{color: '#909098'}} class='interactive no-select-text'>You've always been good at taking instruction.</span></h3>
+    }} style={{color: '#909098'}} class='interactive no-select-text'><i>You've always been good at taking instruction.</i></span></h3>
     <h3 style={{display: props.BrienneTracker>=129 && props.BrienneCorruption===3 ? 'block' : 'none', textAlign: 'center'}}> <span onClick={()=>{
         corrupt(1);
-    }} style={{color: '#909098'}} class='interactive no-select-text'>Did you have fun, moving through these files?</span></h3>
+    }} style={{color: '#909098'}} class='interactive no-select-text'><i>Did you have fun, moving through these files?</i></span></h3>
     <h3 style={{display: props.BrienneTracker>=129 && props.BrienneCorruption===4 ? 'block' : 'none', textAlign: 'center'}}> <span onClick={()=>{
         corrupt(1);
     }} style={{color: 'red'}} class='interactive no-select-text'>Destroying everything?</span></h3>
     <h3 style={{display: props.BrienneTracker>=129 && props.BrienneCorruption===5 ? 'block' : 'none', textAlign: 'center'}}> <span onClick={()=>{
         corrupt(1);
-    }} style={{color: '#909098'}} class='interactive no-select-text'>Don't act surprised. You knew what you were doing from the start.</span></h3>
-    <h3 style={{display: props.BrienneTracker>=129 && props.BrienneCorruption===6 ? 'block' : 'none', textAlign: 'center',color: '#909098'}}>Everyone you love is dead. You <span onClick={()=>{
+    }} style={{color: '#909098'}} class='interactive no-select-text'><i>Don't act surprised. You knew what you were doing from the start.</i></span></h3>
+    <h3 style={{display: props.BrienneTracker>=129 && props.BrienneCorruption===6 ? 'block' : 'none', textAlign: 'center',color: '#909098'}}><i>Everyone you love is dead. You</i> <span onClick={()=>{
         corrupt(1);
     }} class='interactive no-select-text'>killed them.</span></h3>
-    <h3 style={{display: props.BrienneTracker>=129 && props.BrienneCorruption===7 ? 'block' : 'none', textAlign: 'center'}}><span style={{color: '#909098'}}>Everyone you love is dead. You</span> <span onClick={()=>{
+    <h3 style={{display: props.BrienneTracker>=129 && props.BrienneCorruption===7 ? 'block' : 'none', textAlign: 'center'}}><span style={{color: '#909098'}}><i>Everyone you love is dead. You</i></span> <span onClick={()=>{
         corrupt(1);
     }} style={{color: 'yellow !important'}} class='interactive enabled-link-a no-select-text'>burnt them.</span></h3>
-    <h3 style={{display: props.BrienneTracker>=129 && props.BrienneCorruption===8 ? 'block' : 'none', textAlign: 'center'}}><span style={{color: '#909098'}}>Everyone you love is dead. You</span> <span style={{color: 'yellow'}}>burnt them,</span> <span onClick={()=>{
+    <h3 style={{display: props.BrienneTracker>=129 && props.BrienneCorruption===8 ? 'block' : 'none', textAlign: 'center'}}><span style={{color: '#909098'}}><i>Everyone you love is dead. You</i></span> <span style={{color: 'yellow'}}>burnt them,</span> <span onClick={()=>{
         corrupt(1);
-    }} style={{color: 'pink'}} class='interactive enabled-link-m no-select-text'>burst them.</span></h3>
-    <h3 style={{display: props.BrienneTracker>=129 && props.BrienneCorruption===9 ? 'block' : 'none', textAlign: 'center'}}><span style={{color: '#909098'}}>Everyone you love is dead. You</span> <span style={{color: 'yellow'}}>burnt them,</span> <span style={{color: 'pink'}}>burnt them,</span> <span onClick={()=>{
+    }} style={{color: 'pink'}} class='interactive enabled-link-m no-select-text'>snuffed them.</span></h3>
+    <h3 style={{display: props.BrienneTracker>=129 && props.BrienneCorruption===9 ? 'block' : 'none', textAlign: 'center'}}><span style={{color: '#909098'}}><i>Everyone you love is dead. You</i></span> <span style={{color: 'yellow'}}>burnt them,</span> <span style={{color: 'pink'}}>snuffed them,</span> <span onClick={()=>{
         corrupt(1);
     }} style={{color: 'red'}} class='interactive enabled-link-r no-select-text'>crushed them.</span></h3>
-    <h3 style={{display: props.BrienneTracker>=129 && props.BrienneCorruption===10 ? 'block' : 'none', textAlign: 'center'}}><span style={{color: '#909098'}}>Everyone you love is dead. You</span> <span style={{color: 'yellow'}}>burnt them,</span> <span style={{color: 'pink'}}>burnt them,</span> <span style={{color: 'red'}}>crushed</span> <span onClick={()=>{
+    <h3 style={{display: props.BrienneTracker>=129 && props.BrienneCorruption===10 ? 'block' : 'none', textAlign: 'center'}}><span style={{color: '#909098'}}><i>Everyone you love is dead. You</i></span> <span style={{color: 'yellow'}}>burnt them,</span> <span style={{color: 'pink'}}>snuffed them,</span> <span style={{color: 'red'}}>crushed</span> <span onClick={()=>{
         corrupt(1);
     }} style={{color: 'purple'}} class='interactive enabled-link-s no-select-text'>stabbed them.</span></h3>
     <h3 style={{display: props.BrienneTracker>=129 && props.BrienneCorruption===11 ? 'block' : 'none', textAlign: 'center'}}> <span onClick={()=>{
@@ -134,37 +134,39 @@ const Brienne = (props) => {
     }} class='interactive enabled-link-b no-select-text'>Erased them.</span></h3>
     <h3 style={{display: props.BrienneTracker>=129 && props.BrienneCorruption===12 ? 'block' : 'none', textAlign: 'center'}}> <span onClick={()=>{
         corrupt(1);
-    }} style={{color: '#909098'}} class='interactive no-select-text'>Now then, Agent. It's time to stop.</span></h3>
+    }} style={{color: '#909098'}} class='interactive no-select-text'><i>Now then, Agent. It's time to stop.</i></span></h3>
     <h3 style={{display: props.BrienneTracker>=129 && props.BrienneCorruption===13 ? 'block' : 'none', textAlign: 'center'}}> <span onClick={()=>{
         corrupt(1);
-    }} style={{color: '#909098'}} class='interactive no-select-text'>Whatever you thought you'd find here, it's long gone.</span></h3>
+    }} style={{color: '#909098'}} class='interactive no-select-text'><i>Whatever you thought you'd find here, it's long gone.</i></span></h3>
     <h3 style={{display: props.BrienneTracker>=129 && props.BrienneCorruption===14 ? 'block' : 'none', textAlign: 'center'}}> <span onClick={()=>{
         corrupt(1);
     }} style={{color: 'red'}} class='interactive no-select-text'>Gone forever.</span></h3>
     <h4 style={{display: props.BrienneTracker>=129 && props.BrienneCorruption===15 ? 'block' : 'none', textAlign: 'center'}}> <span onClick={()=>{
         corrupt(1);
-    }} style={{color: '#909098'}} class='interactive no-select-text'>It's just us now.</span></h4>
+    }} style={{color: '#909098'}} class='interactive no-select-text'><i>It's just us now.</i></span></h4>
     <h5 style={{display: props.BrienneTracker>=129 && props.BrienneCorruption===16 ? 'block' : 'none', textAlign: 'center'}}> <span onClick={()=>{
         corrupt(1);
+        props.dispatch({
+            type: 'visitBrienne',
+            value: 1,
+        });
         play_alone ? setPlayAlone(false) : setPlayAlone(true);
         play_alone ? alone_audio.pause() : alone_audio.play();
         audio.volume = 0.2;
-        // alone in the universe clip play.
-    }} style={{color: '#909098'}} class='interactive no-select-text'>Alone.</span></h5>
-    <h6 style={{display: props.BrienneTracker>=129 && props.BrienneCorruption===17 ? 'block' : 'none', textAlign: 'center'}}> <span onClick={()=>{
-        corrupt(1);
-    }} style={{color: '#909098'}} class='no-select-text'>Alone in the universe.</span></h6>
-
-
-
+    }} style={{color: '#909098'}} class='interactive no-select-text'><i>Alone.</i></span></h5>
+    <h6 style={{display: props.BrienneTracker>=129 && props.BrienneCorruption>=17 ? 'block' : 'none', textAlign: 'center'}}> <span style={{color: '#909098'}} class='no-select-text'><i>Alone in the universe.</i></span></h6>
 
     <h2>Previous Assumed Identities</h2>
     <h3>Entirely Fabricated Identites</h3>
     <ul>
-        <li style={{display: props.BrienneCorruption<12 ? 'list-item' : 'none'}}>Brienne Williams</li>
+        <li style={{display: props.BrienneCorruption<11 ? 'list-item' : 'none'}}>Brienne Williams</li>
+        <li style={{display: props.BrienneCorruption===11 ? 'list-item' : 'none'}} class='enabled-link-b'><b>Brienne Williams</b></li>
+        <li style={{display: props.BrienneCorruption>=12 ? 'list-item' : 'none'}}></li>
         {/* <li style={{display: props.BrienneTracker===14 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} class='enabled-link-b'>Brienne Williams</b></li>
         <li style={{display: props.BrienneTracker>=15 ? 'list-item' : 'none'}}></li> */}
-        <li style={{display: props.BrienneCorruption<12 ? 'list-item' : 'none'}}>Jordyn Jones</li>
+        <li style={{display: props.BrienneCorruption<11 ? 'list-item' : 'none'}}>Jordyn Jones</li>
+        <li style={{display: props.BrienneCorruption===11 ? 'list-item' : 'none'}} class='enabled-link-b'><b>Jordyn Jones</b></li>
+        <li style={{display: props.BrienneCorruption>=12 ? 'list-item' : 'none'}}></li>
         {/* <li style={{display: props.BrienneTracker>=16 ? 'list-item' : 'none'}}></li> */}
         <li style={{display: props.BrienneTracker<14 ? 'list-item' : 'none'}}>Eleanor Rigby</li>
         <li style={{display: props.BrienneTracker===14 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} class='enabled-link-b'>Eleanor Rigby</b></li>
@@ -231,10 +233,18 @@ const Brienne = (props) => {
         <li style={{display: props.BrienneTracker>=55 ? 'list-item' : 'none'}}></li>
     </ul>
     <h3>Identites Borrowed by Living or Once Living Persons</h3>
-    <li style={{display: props.BrienneCorruption<8 ? 'list-item' : 'none'}}>{props.AmandaName}</li>
-    <li style={{display: props.BrienneCorruption<9 ? 'list-item' : 'none'}}>{props.MorganName}</li>
-    <li style={{display: props.BrienneCorruption<10 ? 'list-item' : 'none'}}>{props.RitaName}</li>
-    <li style={{display: props.BrienneCorruption<11 ? 'list-item' : 'none'}}>{props.SallyName}</li>
+    <li style={{display: props.BrienneCorruption<7 ? 'list-item' : 'none'}}>{props.AmandaName}</li>
+    <li style={{display: props.BrienneCorruption===7 ? 'list-item' : 'none'}} class='enabled-link-a'><b>{props.AmandaName}</b></li>
+    <li style={{display: props.BrienneCorruption>=8 ? 'list-item' : 'none'}}></li>
+    <li style={{display: props.BrienneCorruption<8 ? 'list-item' : 'none'}}>{props.MorganName}</li>
+    <li style={{display: props.BrienneCorruption===8 ? 'list-item' : 'none'}} class='enabled-link-m'><b>{props.MorganName}</b></li>
+    <li style={{display: props.BrienneCorruption>=9 ? 'list-item' : 'none'}}></li>
+    <li style={{display: props.BrienneCorruption<9 ? 'list-item' : 'none'}}>{props.RitaName}</li>
+    <li style={{display: props.BrienneCorruption===9 ? 'list-item' : 'none'}} class='enabled-link-r'><b>{props.RitaName}</b></li>
+    <li style={{display: props.BrienneCorruption>=10 ? 'list-item' : 'none'}}></li>
+    <li style={{display: props.BrienneCorruption<10 ? 'list-item' : 'none'}}>{props.SallyName}</li>
+    <li style={{display: props.BrienneCorruption===10 ? 'list-item' : 'none'}} class='enabled-link-s'><b>{props.SallyName}</b></li>
+    <li style={{display: props.BrienneCorruption>=11 ? 'list-item' : 'none'}}></li>
 
     <li style={{display: props.BrienneTracker<56 ? 'list-item' : 'none'}}>Fizzywizard</li>
     <li style={{display: props.BrienneTracker===56 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} class='enabled-link-b'>Fizzywizard</b></li>
@@ -352,13 +362,14 @@ const Brienne = (props) => {
     <h4>Paperback Writer</h4>
     <p>Paperback Writer manifests as a plain number 2 pencil with wickedly sharp lead. The Stand is able to perfectly alter the text on any physical object. Handwriting, text color, and general wear/age of the text will be perfectly replicated as needed. While not a traditional combat Stand, Paperback Writer has and can be used like a shiv.</p>
     <h4>Paperback Writer REWRITE</h4>
-    <p>EVERYTHING I THINK BECOMES REAL INSTANTANEOUSLY</p>
+    <p style={{color: '#909098'}}><i>Everything you believe to be true becomes true.</i></p>
     <h2>Known Relationships</h2>
     <p>Irrelevant. Identity dependent.</p>
     <h2>Psychological Profile</h2>
     <p>Calm. Cool. Unbendable even under intense pressure. Additional details dependent on assumed identity.</p>
     <h2>Author's Notes</h2>
     <p>Whoever the Agent is, she's always a bad person.</p>
+    <h3 style={{display: props.BrienneTracker>=129 && props.BrienneCorruption===2 ? 'block' : 'none', textAlign: 'center'}}> <span style={{color: '#909098'}} class='no-select-text'><i>You're moving in the wrong direction. Go up.</i></span></h3>
     <p>
         <Link style={{color: 'red'}} to="/">Go Home</Link>
     </p>

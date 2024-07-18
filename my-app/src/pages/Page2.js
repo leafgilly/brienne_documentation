@@ -5,7 +5,7 @@ const Page2 = () => {
     return (
      <><>
      <div class='document'>
-     <h1>Informer Company Internal Team Documentation</h1>
+     {/* <h1>Informer Company Internal Team Documentation</h1> */}
         </div>
         </><DocList />
         </>
