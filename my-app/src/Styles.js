@@ -34,7 +34,7 @@ const btnDefault = css`
 const btnPrimary = btn('#4f93ce', '#285f8f')
 
 export default styled.div`
-  font-family: sans-serif;
+  // font-family: sans-serif;
 
   h1 {
     // text-align: center;

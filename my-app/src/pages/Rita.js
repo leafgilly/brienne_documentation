@@ -279,7 +279,7 @@ const Rita = (props) => {
         {props.RitaName[0]}
         {props.RitaName[0]}
         <br /></b>
-        <p style={{color: '#909098', textAlign: 'right'}}><b>LOOK WHAT YOU DID THIS TIME</b></p>
+        <p style={{textAlign: 'right'}} class='enabled-link-pbw'><b>LOOK WHAT YOU DID THIS TIME</b></p>
         <h1 style={{textAlign: 'center'}}>{props.RitaName[0]} {props.RitaName[2]} Documentation</h1>
     <h1 style={{textAlign: 'center', }}>Threat Level: <b class='enabled-link-b'>E (?????)</b></h1>
     <h2 >Previous Names and Aliases</h2> 
@@ -322,7 +322,7 @@ const Rita = (props) => {
         {props.RitaName[0]}
         {props.RitaName[0]}
         {props.RitaName[0]}</b></p>
-        <p style={{color: '#909098', textAlign: 'right'}}><b>So much data. Corrupted beyond repair.</b></p>
+        <p style={{textAlign: 'right'}} class='enabled-link-pbw'><b>So much data. Corrupted beyond repair.</b></p>
         <p>{props.RitaName[0]}
         {props.RitaName[0]}
         {props.RitaName[0]}</p>
@@ -334,7 +334,7 @@ const Rita = (props) => {
         <b class='enabled-link-b'>{props.RitaName[0]}</b><br />
         <b class='enabled-link-b'>{props.RitaName[0]}</b><br />
         <b class='enabled-link-b'>{props.RitaName[0]}</b><br /></p>
-        <p><i style={{color: 'crimson'}}>For this mission to come, can I trust you? That you haven’t kept anything from me this time, and that you’re gonna act in the best interests of the team?</i></p>
+        <p><i style={{color: 'crimson'}}>"For this mission to come, can I trust you? That you haven’t kept anything from me this time, and that you’re gonna act in the best interests of the team?"</i></p>
     <b class='enabled-link-b'>?{props.RitaName[0]}</b><br />
     {/* <p>
         <Link style={{color: 'red'}} to="/">Go Home</Link>

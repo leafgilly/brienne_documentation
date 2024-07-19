@@ -40,7 +40,7 @@ const Sally = (props) => {
     <>
     <div>
     <div class='openFolder' style={{backgroundColor: play ? palette[counter] : '#D2BB89'}}>
-        <div class="openNametag"><p>
+        <div class="openNametag" style={{backgroundColor: play ? palette[counter] : '#D2BB89'}}><p>
         <Link style={{color: 'red'}} to="/">Go Back</Link>
     </p></div>
     <div class='document' style={{backgroundColor: 'black !important'}}>
@@ -377,7 +377,7 @@ const Sally = (props) => {
     </div>
 
     <div style={{display: props.SallyCorruption===11 && play ? 'block' : 'none'}}>
-    <h2 style={{display: counter===0 ? 'block' : 'none'}}><span onClick={()=>{
+    <h2 style={{display: counter===2 ? 'block' : 'none'}}><span onClick={()=>{
         corrupt(1);
         // play ? setPlay(false) : setPlay(true);
         // play ? audio.pause() : audio.play();
@@ -387,7 +387,7 @@ const Sally = (props) => {
             value: 1,
         });
     }} class='interactive enabled-link-s no-select-text'>Author's Notes</span></h2>
-    <h2 style={{display: counter >=1 ? 'block' : 'none'}}>Author's Notes</h2>
+    <h2 style={{display: counter !==2 ? 'block' : 'none'}}>Author's Notes</h2>
     <p>Reed is unerringly logical, even in interpersonal relationships, which is something I’ve valued deeply throughout our time working 
         together. While I was resentful of her during our initial meeting—Amanda returned with her and not the Stand arrow—I quickly grew 
         to value her academic background and leader’s demeanor. She is my most reliable employee, my mind, my protégé.</p>

@@ -67,7 +67,7 @@ const Amanda = (props) => {
     </p></div>
     <div class='document'>
     <h1 style={{textAlign: 'center'}}>{props.AmandaName} Documentation</h1>
-    <h2 style={{textAlign: 'center'}}> Threat Level: C (previously A)</h2>
+    <h1 style={{textAlign: 'center'}}> Threat Level: C (previously A)</h1>
     <h2>Previous Names and Aliases</h2>
     <ul>
     <li style={{display: props.AmandaCorruption===0 ? 'list-item' : 'none'}}> Amanda Valentina - as of 1989, upon arriving in New York, documentee had her name changed to <span 
@@ -96,8 +96,8 @@ const Amanda = (props) => {
             </p>
         </div>
         <div style={{display: props.AmandaCorruption===2 ? 'block' : 'none'}} class='disturbia'>
-            <h3 style={{color: 'black'}}>Disturbia</h3>
-            <p style={{color: 'black'}}>Disturbia is a humanoid made of geometric glass shards. She is able to transform both itself and its user into <span onClick={()=>{
+            <h3>Disturbia</h3>
+            <p>Disturbia is a humanoid made of geometric glass shards. She is able to transform both itself and its user into <span onClick={()=>{
                 corrupt(1);
             }} class='interactive enabled-link-a no-select-text'>
                 people/things</span> that the user used to be afraid of. In the case of animals and objects, only Disturbia transforms. In the case of people (and Stand users), 
@@ -106,8 +106,8 @@ const Amanda = (props) => {
             </p>
         </div>
         <div style={{display: props.AmandaCorruption===3 ? 'block' : 'none'}} class='disturbia'>
-            <h3 style={{color: 'black'}}>Disturbia</h3>
-            <p style={{color: 'black'}}> Disturbia is a humanoid made of geometric glass shards. She is able to transform both itself and its user into <b class='enabled-link-b'>monsters like you</b> that 
+            <h3>Disturbia</h3>
+            <p> Disturbia is a humanoid made of geometric glass shards. She is able to transform both itself and its user into <b class='enabled-link-b'>monsters like you</b> that 
                 the user used to be <span onClick={()=>{
                 corrupt(1);
             }} class='interactive enabled-link-a no-select-text'>afraid of</span>. In the case of animals and objects, only Disturbia transforms. In the case of people (and Stand users), 
@@ -116,8 +116,8 @@ const Amanda = (props) => {
             </p>
         </div>
         <div style={{display: props.AmandaCorruption===4 ? 'block' : 'none'}} class='disturbia'>
-            <h3 style={{color: 'black'}}>Disturbia</h3>
-            <p style={{color: 'black'}}>Disturbia is a humanoid made of geometric glass shards. She is able to transform both itself and its user into <b class='enabled-link-b'>monsters like you</b> that 
+            <h3>Disturbia</h3>
+            <p>Disturbia is a humanoid made of geometric glass shards. She is able to transform both itself and its user into <b class='enabled-link-b'>monsters like you</b> that 
                 the user used to be <b class='enabled-link-b'>you seriously think she wouldn't be afraid of you, after what you did to her?</b> In the case of animals and objects, only Disturbia transforms. In the case of people (and Stand users), 
                 the user becomes the person, and Disturbia becomes the Stand. When transformed into a Stand user, Disturbia can use the transformed 
                 Stand's abilities, but cannot sustain the <span onClick={()=>{
@@ -126,7 +126,7 @@ const Amanda = (props) => {
             </p>
         </div>
         <div style={{display: props.AmandaCorruption>=5 ? 'block' : 'none'}} class='disturbia'>
-            <h3 style={{color: 'black'}}>Disturbia</h3>
+            <h3>Disturbia</h3>
             <p> <b class='enabled-link-b'>MURDERER {newGlitch} MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER {newGlitch} MURDERER MURDERER
             MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER {newGlitch} MURDERER
             MURDERER MURDERER MURDERER {newGlitch} MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER
@@ -406,17 +406,17 @@ const Amanda = (props) => {
     my confidant, my sword, my first real friend.</p>
     <p style={{display: props.AmandaCorruption>=34 ? 'block' : 'none'}}><b class='enabled-link-b'>N/A</b></p>
     <p style={{display: props.AmandaHover===1 && counter <=3 ? 'block' : 'none', color: 'rgb(51, 125, 255)', textAlign: 'right'}}><b>Wait!</b></p>
-    <p style={{display: props.AmandaHover===1 && counter >3 && counter <= 5 ? 'block' : 'none', color: '#909098', textAlign: 'right'}}><b>Go on, do it.</b></p>
-    <p style={{display: props.AmandaHover===1 && counter > 5 && counter <= 8 ? 'block' : 'none', color: '#909098', textAlign: 'right'}}><b>You've already altered the rest of the document.</b></p>
-    <p style={{display: props.AmandaHover===1 && counter > 8 && counter <= 11 ? 'block' : 'none', color: '#909098', textAlign: 'right'}}><b>Why is this any different?</b></p>
+    <p style={{display: props.AmandaHover===1 && counter >3 && counter <= 5 ? 'block' : 'none', textAlign: 'right'}} class='enabled-link-pbw'><b>Go on, do it.</b></p>
+    <p style={{display: props.AmandaHover===1 && counter > 5 && counter <= 8 ? 'block' : 'none', textAlign: 'right'}} class='enabled-link-pbw'><b>You've already altered the rest of the document.</b></p>
+    <p style={{display: props.AmandaHover===1 && counter > 8 && counter <= 11 ? 'block' : 'none', textAlign: 'right'}} class='enabled-link-pbw'><b>Why is this any different?</b></p>
     <p style={{display: props.AmandaHover===1 && counter > 11 && counter <= 14 ? 'block' : 'none', color: 'rgb(51, 125, 255)', textAlign: 'right'}}><b>This... this is permanent.</b></p>
     <p style={{display: props.AmandaHover===1 && counter > 14 && counter <= 17 ? 'block' : 'none', color: 'rgb(51, 125, 255)', textAlign: 'right'}}><b>The file's almost completely corrupted. If I do this...</b></p>
     <p style={{display: props.AmandaHover===1 && counter > 17 && counter <= 22 ? 'block' : 'none', color: 'red', textAlign: 'right'}}><b>She'll be gone.</b></p>
-    <p style={{display: props.AmandaHover===1 && counter > 22 && counter <= 26 ? 'block' : 'none', color: '#909098', textAlign: 'right'}}><b>And what is that, if not a reflection of the truth?</b></p>
-    <p style={{display: props.AmandaHover===1 && counter > 26 && counter <= 29 ? 'block' : 'none', color: '#909098', textAlign: 'right'}}><b>That's all you've ever done.</b></p>
-    <p style={{display: props.AmandaHover===1 && counter > 29 && counter <= 33 ? 'block' : 'none', color: '#909098', textAlign: 'right'}}><b>You sit at your desk editing your documents. Making sure they reflect reality.</b></p>
-    <p style={{display: props.AmandaHover===1 && counter > 33 && counter <= 36 ? 'block' : 'none', color: '#909098', textAlign: 'right'}}><b>Come on now, Agent.</b></p>
-    <p style={{display: props.AmandaHover===1 && counter > 36 && counter <= 1000 ? 'block' : 'none', color: '#909098', textAlign: 'right'}}><b>Do your duty.</b></p>
+    <p style={{display: props.AmandaHover===1 && counter > 22 && counter <= 26 ? 'block' : 'none', textAlign: 'right'}} class='enabled-link-pbw'><b>And what is that, if not a reflection of the truth?</b></p>
+    <p style={{display: props.AmandaHover===1 && counter > 26 && counter <= 29 ? 'block' : 'none', textAlign: 'right'}} class='enabled-link-pbw'><b>That's all you've ever done.</b></p>
+    <p style={{display: props.AmandaHover===1 && counter > 29 && counter <= 33 ? 'block' : 'none', textAlign: 'right'}} class='enabled-link-pbw'><b>You sit at your desk editing your documents. Making sure they reflect reality.</b></p>
+    <p style={{display: props.AmandaHover===1 && counter > 33 && counter <= 36 ? 'block' : 'none', textAlign: 'right'}} class='enabled-link-pbw'><b>Come on now, Agent.</b></p>
+    <p style={{display: props.AmandaHover===1 && counter > 36 && counter <= 1000 ? 'block' : 'none', textAlign: 'right'}} class='enabled-link-pbw'><b>Do your duty.</b></p>
     {/* <p>
         <Link style={{color: 'red'}} to="/">Go Home</Link>
     </p> */}

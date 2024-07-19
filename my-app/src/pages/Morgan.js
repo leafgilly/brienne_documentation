@@ -152,7 +152,7 @@ const Morgan = (props) => {
             longer the exposure to the user's skin, <b class='enabled-link-b'>it's <b style={{color: 'red'}}>CRUELTY</b>, in a way. In death, she escaped her Stand.</b></p>
         
         <h3>Neon Trees Act 2: Favorite Daze</h3>
-        <div style={{display: props.MorganCorruption<21 ? 'block' : 'none', backgroundColor: 'rgba(' + props.MorganLight*3 + ',' + props.MorganLight*3 + ',' + props.MorganLight*3 + ')'}}>
+        <div style={{display: props.MorganCorruption<21 ? 'block' : 'none', backgroundColor: 'rgba(' + props.MorganLight*3 + ',' + props.MorganLight*3 + ',' + props.MorganLight*3 + ',' + props.MorganLight*.011 + ')'}}>
         <p>Neon Trees' light spreads through root-like veins along the user's body, creating sparks as it travels.
             Excluding the circuitry--the physical form of her Stand--Morgan's body becomes&nbsp;
             <span id='flicker' class='enabled-link-m no-select-text' style={{display: props.MorganCorruption===2 ? 'inline' : 'none'}}>blindingly bright.</span>

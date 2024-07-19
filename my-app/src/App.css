@@ -1,12 +1,18 @@
 /* NEW CSS WE MADE */
 
+@font-face {
+  font-family: 'Itim';
+  src: url(./fonts/Itim-Regular.ttf);
+}
+
 body, html {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   background-color: #1568AC;
-  background-image: url(./images/blueprint.jpg);
-  /* text-align: center; */
+  background-image: url(./images/graphy.png);
+  /* background-image: url(./images/blueprint.jpg); */
   color: white;
+  font-family: 'Itim';
 }
 
 a {
@@ -19,6 +25,7 @@ a {
   width: 1500px;
   margin: auto;
   padding-left: 50px;
+  background-image: url(./images/rice-paper-3.png);
 }
 
 .openNametag {
@@ -37,6 +44,7 @@ a {
   height: 200px;
   /* text-orientation: sideways-left; */
   writing-mode: vertical-lr;
+  background-image: url(./images/rice-paper-3.png);
 }
 
 .birb {
@@ -51,6 +59,7 @@ a {
     width: 1500px;
     margin: 50px;
     padding-left: 50px;
+    background-image: url(./images/rice-paper-3.png);
   }
 
   .birb {
@@ -59,10 +68,9 @@ a {
 }
 
 .mainPage {
-    margin: auto !important;
     width: 50%;
     background-color: #131516;
-    margin: -200px 0px 0px 0px;
+    margin: 100px 0px 0px 18%;
 }
 
 .document {
@@ -70,6 +78,7 @@ a {
   padding: 10px;
   width: 50%;
   background-color: #131516;
+  background-image: url(./images/lined-paper-2.png);
 }
 
 /* folders and main page css */
@@ -84,6 +93,8 @@ a {
   width: 1000px;
   box-shadow: -2px -2px 10px #131516;
   position: absolute;
+  /* background-image: url(./images/asfalt-light.png); */
+  background-image: url(./images/groovepaper.png);
 }
 
 .nametag {
@@ -98,6 +109,7 @@ a {
   text-align: center;
   text-shadow: 2px 2px 5px #131516;
   box-shadow: -5px -5px 6px -3px #131516;
+  background-image: url(./images/groovepaper.png);
 }
 
 .post-it {
@@ -106,18 +118,17 @@ a {
   position:absolute;
   background:#ffa;
   overflow:hidden;
-  margin:325px 0px 0px 200px;
+  margin:325px 0px 0px 300px;
   padding:20px;
   border-radius:0 0 0 30px/45px;
   box-shadow:
-    inset 0 -10px 10px rgba(0,0,0,0.2),
-    inset 0 10px 10px rgba(0,0,0,0.2),
-    0 5px 6px 5px rgba(0,0,0,0.2);
-  font-family: 'Lucida Console', monospace;
-  font-size:15px;
-  -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
-  mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+  inset 0 -1px 1px rgba(0,0,0,0.2), inset 0 1px 10px rgba(0,0,0,0.2), 0 5px 6px 5px rgba(0,0,0,0.2);
+  /* font-family: 'Lucida Console', monospace; */
+  font-size:23px;
+  /* -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC); */
+  /* mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC); */
   color:#130d6b;
+  background-image: url('./images/rice-paper-2.png');
 }
 
 .post-it:before {
@@ -138,11 +149,9 @@ a {
 
 
 .disturbia {
-    background-image: url('https://t3.ftcdn.net/jpg/03/50/33/58/360_F_350335810_tVlcjj68ZlShA2rbNhcHDwJudoEEZQQJ.jpg');
+    background-image: url(./images/glass.jpg);
     background-repeat: no-repeat;
-    background-attachment: fixed;
     background-size: cover;
-    color: #FFFFFF;
 }
 
 #flicker {
@@ -223,6 +232,12 @@ a {
 
 .enabled-link-b {
   color:rgb(51, 125, 255) !important;
+}
+
+.enabled-link-pbw {
+  color: rgb(144,144,152);
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
 }
 
 /* The appearance of enabled and disabled links on the DocList page */
