@@ -4,58 +4,11 @@ import { Link } from "react-router-dom";
 
 import {connect} from 'react-redux';
 
-import pencil_sound from '../audio/pencil_sound.mp3';
-import pencil_sound2 from '../audio/pencil_sound_2.mp3';
-
 const Morgan = (props) => {
 
     //TEMPORARY AUDIO SOLUTION. CONSIDER MAKING THIS MORE GLOBAL, EITHER PUTTING IT IN APP.JS OR SOMEHOW INTO STORE.JS (SEE SYNTAXBLITZ SUGGESTIONS)
 
     const [counter, setCounter] = React.useState(0);
-
-    // let pencilSound = new Audio(pencil_sound);
-    // let pencilSound2 = new Audio(pencil_sound2);
-
-    // const [audioError, setAudioError] = React.useState();
-    // const [audio, setAudio1] = React.useState();
-    // const [audio2, setAudio2] = React.useState();
-  
-    // // 1. load the audio in a user interaction
-    // const loadAudio = () => {
-    //   const _audio = pencilSound;
-    //   const __audio = pencilSound2;
-    //   _audio.load();
-    //   __audio.load();
-    //   _audio.addEventListener('canplaythrough', () => {
-    //     console.log('loaded audio');
-    //     setAudio1(_audio);
-    //   });
-    //   __audio.addEventListener('canplaythrough', () => {
-    //     console.log('loaded audio');
-    //     setAudio2(__audio);
-    //   });
-    // };
-
-    // const [swap, changeAudio] = React.useState(0);
-  
-    // // 2. now you can play the audio on all subsequent events
-    // const playAudio = async () => {
-    //     if (swap === 0) {
-    //         changeAudio(1);
-    //         setAudioError(undefined);
-    //         await new Promise((r) => setTimeout(r, 100));
-    //         audio && audio.play().catch((e) => {
-    //             setAudioError(e);
-    //         });
-    //     } else if (swap === 1) {
-    //         changeAudio(0);
-    //         setAudioError(undefined);
-    //         await new Promise((r) => setTimeout(r, 100));
-    //         audio2 && audio2.play().catch((e) => {
-    //             setAudioError(e);
-    //         });
-    //     }
-    // };
 
     const names = [
         'TRAITOR', 'TRAITOR', 'M̷U̴R̷D̶E̴R̶E̸R̷', 'M̴̼̈́Ư̴̤R̴͖̚D̷̢̀Ḛ̸̒R̷͍͗È̸̩R̷̟̔', 'TRAITOR', "Y̴̹̓e̸̛̙s̵͙̒,̵͓̀ ̴͚͝y̷̟͂o̸̡̾u̸̥̽ ̷̨͠d̵̜͆į̷̍ḑ̵͋.̶͕͂"
@@ -116,6 +69,10 @@ const Morgan = (props) => {
 
     return (
     <>
+    <div class='openFolder'>
+        <div class="openNametag"><p>
+        <Link style={{color: 'red'}} to="/">Go Back</Link>
+    </p></div>
     <div class='document' style={{backgroundColor: props.MorganCorruption>=14 ? 'rgba(' + props.MorganLight + ',' + props.MorganLight + ',' + props.MorganLight + ')' : 'black', color: 'white'}}>
 
         {/* BRIENNE'S INTERACTIONS */}
@@ -228,6 +185,7 @@ const Morgan = (props) => {
             It also has the ability to impart positive feelings among those who are affected by the light.</p>
         </div>
         <h2>Known Relationships</h2>
+        <ul>
         <li style={{display: props.MorganCorruption<22 ? 'list-item' : 'none'}}>Henri Becquerel: father. Amicable public relationship, unspoken distance in private. Wishes he would make a greater effort to understand her.</li>
         <li style={{display: props.MorganCorruption===22 ? 'list-item' : 'none'}}>Henri Becquerel: father. Amicable public relationship, unspoken distance in private. <span onClick={()=>{
         corrupt(1);
@@ -261,7 +219,7 @@ const Morgan = (props) => {
         corrupt(1);
     }} class='interactive enabled-link-m no-select-text'>more observation needed.</span></li>
         <li style={{display: props.MorganCorruption>=27 ? 'list-item' : 'none'}}>Patagonia: Close friend. Met on work assignment, now do weekly outings. Trusts her enough to introduce her to her parents and take her to company dinners. Might be romantically interested, <b style={{color: 'red'}}>maybe she can kill you...</b></li>
-
+        </ul>
         <h2>Psychological Profile</h2>
         <p style={{display: props.MorganCorruption<27 ? 'block' : 'none'}}>Morgan’s childhood upbringing shaped her into a person who is desperate for social interaction and overjoyed by new experiences. Her desire 
         to seek out people has made her highly emotionally intelligent, and she possesses great skills in understanding both her own and others’ emotional states. 
@@ -292,18 +250,19 @@ const Morgan = (props) => {
             greatest supporter, my heart, my conscience.</p>
         <p style={{display: props.MorganCorruption>=29 ? 'block' : 'none', color: 'black'}}><b>{newGlitch}</b></p>
         </div>
-        <p style={{display: props.MorganVisited===0 ? 'block' : 'none'}}>
+        {/* <p style={{display: props.MorganVisited===0 ? 'block' : 'none'}}>
             <Link style={{color: 'red'}} to="/">Go Home</Link>
-        </p>
-        <div class='enabled-link-b no-select-text' style={{display: counter >= 85 && counter < 153 ? 'block' : 'none'}}>
+        </p> */}
+        <div class='enabled-link-b no-select-text' style={{display: props.MorganLight >= 85 && props.MorganLight < 153 ? 'block' : 'none'}}>
             <p><b>Is this... Neon Trees?</b></p>
         </div>
-        <div class='enabled-link-b no-select-text' style={{display: counter >= 153 && counter < 255 ? 'block' : 'none'}}>
+        <div class='enabled-link-b no-select-text' style={{display: props.MorganLight >= 153 && props.MorganLight < 255 ? 'block' : 'none'}}>
             <p><b>Maybe this is what I get for taking her light from her.</b></p>
         </div>
         <div class='interactive enabled-link-b no-select-text' style={{display: props.MorganVisited>=1 && props.MorganLight>=255 ? 'block' : 'none'}}>
-            <Link style={{color: 'blue'}} to="/">It's too bright to see...</Link>
+            <Link style={{color: 'rgb(51, 125, 255)'}} to="/">It's too bright to see...</Link>
         </div>
+    </div>
     </div>
     
     </>

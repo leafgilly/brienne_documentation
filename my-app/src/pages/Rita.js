@@ -32,8 +32,12 @@ const Rita = (props) => {
 
     return (
     <>
-    <img src={robin}></img>
-    <div class='document'>
+    <img class='birb' src={robin} alt="Rockin' Robin's main body, extending upwards from its long legs. He stares into you. Somehow, he knows what you've done. What you're going to do."></img>
+    <div class='openFolder'>
+        <div class="openNametag"><p>
+        <Link style={{color: 'red'}} to="/">Go Back</Link>
+    </p></div>
+    <div class='document' style={{margin: '-200px 0px 10px 450px'}}>
     <div style={{display: props.RitaCorruption<50 ? 'block' : 'none', margin: 'auto', width: '50' - props.RitaCorruption + '%'}}>
     <h1 style={{textAlign: 'center'}}>Margarita Zeppeli Documentation</h1>
     <h1 style={{textAlign: 'center', display: props.RitaCorruption===0 ? 'block' : 'none'}}>Threat Level: <span onClick={()=>{
@@ -332,12 +336,13 @@ const Rita = (props) => {
         <b class='enabled-link-b'>{props.RitaName[0]}</b><br /></p>
         <p><i style={{color: 'crimson'}}>For this mission to come, can I trust you? That you haven’t kept anything from me this time, and that you’re gonna act in the best interests of the team?</i></p>
     <b class='enabled-link-b'>?{props.RitaName[0]}</b><br />
-    <p>
+    {/* <p>
         <Link style={{color: 'red'}} to="/">Go Home</Link>
-    </p>
+    </p> */}
     </div>
     </div>
-    <img src={LEGS}></img>
+    <img style={{marginLeft: '-230px', marginTop: '-10px'}} src={LEGS} alt="Rockin' Robin's legs, extending into oblivion..."></img>
+    </div>
     </>
     );
     

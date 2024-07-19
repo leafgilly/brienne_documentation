@@ -6,7 +6,7 @@ const DocList = (props) => {
 
   return (
     <>
-    <div class='document'>
+    <div class='mainPage'>
     {/* <ul>
       <li>
       <Link to={props.AmandaVisited===1 && props.MorganVisited===1 && props.RitaVisited===1 && props.SallyVisited===1 ? "/theAgent" : "#"} class={props.AmandaVisited===1 && props.MorganVisited===1 && props.RitaVisited===1 && props.SallyVisited===1 ? 'main-link-b' : 'disabled-link'}>Agent Paperback Writer</Link>
@@ -26,10 +26,11 @@ const DocList = (props) => {
       <li>
         <Link to="/misc">Misc</Link>
       </li>
-      <li>
-      <Link to={"/theAgent"}>"Brienne Test"</Link>
-      </li>
+
       </ul> */}
+            {/* <li>
+      <Link to={"/theAgent"}>"Brienne Test"</Link>
+      </li> */}
       <div style={{margin: '100px 0px 0px -100px'}}>
         <div class='folder'>
           <div class='nametag'>

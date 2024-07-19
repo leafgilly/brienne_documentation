@@ -61,6 +61,10 @@ const Amanda = (props) => {
         }} class='interactive enabled-link-b no-select-text' style={{display: props.AmandaCorruption===0 ? 'block' : 'none'}}>
             <p>There's... nothing here?</p>
     </div> */}
+    <div class='openFolder'>
+        <div class="openNametag"><p>
+        <Link style={{color: 'red'}} to="/">Go Back</Link>
+    </p></div>
     <div class='document'>
     <h1 style={{textAlign: 'center'}}>{props.AmandaName} Documentation</h1>
     <h2 style={{textAlign: 'center'}}> Threat Level: C (previously A)</h2>
@@ -413,9 +417,10 @@ const Amanda = (props) => {
     <p style={{display: props.AmandaHover===1 && counter > 29 && counter <= 33 ? 'block' : 'none', color: '#909098', textAlign: 'right'}}><b>You sit at your desk editing your documents. Making sure they reflect reality.</b></p>
     <p style={{display: props.AmandaHover===1 && counter > 33 && counter <= 36 ? 'block' : 'none', color: '#909098', textAlign: 'right'}}><b>Come on now, Agent.</b></p>
     <p style={{display: props.AmandaHover===1 && counter > 36 && counter <= 1000 ? 'block' : 'none', color: '#909098', textAlign: 'right'}}><b>Do your duty.</b></p>
-    <p>
+    {/* <p>
         <Link style={{color: 'red'}} to="/">Go Home</Link>
-    </p>
+    </p> */}
+    </div>
     </div></>
     );
     

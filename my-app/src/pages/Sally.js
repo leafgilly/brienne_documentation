@@ -38,7 +38,11 @@ const Sally = (props) => {
 
     return (
     <>
-    <div style={{backgroundColor: play ? palette[counter] : 'black'}}>
+    <div>
+    <div class='openFolder' style={{backgroundColor: play ? palette[counter] : '#D2BB89'}}>
+        <div class="openNametag"><p>
+        <Link style={{color: 'red'}} to="/">Go Back</Link>
+    </p></div>
     <div class='document' style={{backgroundColor: 'black !important'}}>
      <audio id="audio_tag" src={music} loop />
     <h1 style={{textAlign: 'center', display: props.SallyCorruption===0 ? 'block' : 'none'}}><span onClick={()=>{
@@ -362,7 +366,8 @@ const Sally = (props) => {
         who often encourages or instigates harmless pranks.</p>
     </div>
     <div style={{display: props.SallyCorruption>=11 ? 'block' : 'none'}}><h2><b class='enabled-link-b'>Survivor's Guilt</b></h2>
-    <p><i style={{color: 'slateblue'}}>“The only thing we can do to help each other is get out of here. Together.”</i></p>
+    <p><i style={{color: 'slateblue'}}>“I absolutely cannot and will not live with the knowledge that I voted for nonlethal force, and that led to one of you getting killed. I don’t like it, and I don’t agree with it, but I will trade that discomfort in exchange for your lives and the lives of the whole city any day.”</i></p>
+    </div>
     
     <div style={{display: props.SallyCorruption<11 ? 'block' : 'none'}}>
     <h2>Author's Notes</h2>
@@ -400,13 +405,13 @@ const Sally = (props) => {
     <p>She <b class='enabled-link-b'>was</b> my most reliable employee, my mind, my protégé. <b class='enabled-link-b'>She had an uncanny ability
         to survive the worst, often at the cost of others.</b></p>
     </div>
+    <p style={{display: props.SallyCorruption===12 ? 'block' : 'none'}}><b style={{color: 'red'}}>And yet you survived even her.</b></p>
     </div>
 
-    <p style={{display: props.SallyCorruption===12 ? 'block' : 'none'}}><b style={{color: 'red'}}>And yet you survived even her.</b></p>
 
-    <p>
+    {/* <p>
         <Link style={{color: 'red'}} to="/">Go Home</Link>
-    </p>
+    </p> */}
     </div>
     </div>
     </>

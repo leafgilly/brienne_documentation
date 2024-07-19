@@ -1,9 +1,7 @@
 import './App.css';
 // import { Form, Field } from 'react-final-form'
 
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import DocList from "./pages/DocList";
-import Page1 from "./pages/Page1";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Amanda from "./pages/Amanda";
 import Sally from "./pages/Sally";
 import Morgan from "./pages/Morgan";
@@ -14,8 +12,6 @@ import Misc from "./pages/Misc";
 import Styles from './Styles'
 
 function App() {
-
-  document.cookie = JSON.stringify({});
 
   return (
     <Styles>

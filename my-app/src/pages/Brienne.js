@@ -50,20 +50,19 @@ const Brienne = (props) => {
             value: amt,
         });
     }
-    function rename (amt, amt2) {
-        props.dispatch({
-            type: 'renameBrienne',
-            value: [amt, amt2]
-        });
-    }
+    // function rename (amt, amt2) {
+    //     props.dispatch({
+    //         type: 'renameBrienne',
+    //         value: [amt, amt2]
+    //     });
+    // }
 
     return (
     <>
-    <p style={{display: audio ? 'none' : 'block'}}>AUDIO ISNT LOADED</p>
-    <p>{props.BrienneCorruption}</p>
-    <p>{counter}</p>
-    <p>TRACKER{props.BrienneTracker}</p>
-    <p>Play: {play.toString()}</p>
+    <div class='openFolder'>
+        <div class="openNametag"><p>
+        <Link style={{color: 'red'}} to="/">Go Back</Link>
+    </p></div>
     <div class="document">
     <audio id="audio_tag" src={music} />
     <audio id="alone_audio" src={billwurtz} />
@@ -233,6 +232,7 @@ const Brienne = (props) => {
         <li style={{display: props.BrienneTracker>=55 ? 'list-item' : 'none'}}></li>
     </ul>
     <h3>Identites Borrowed by Living or Once Living Persons</h3>
+    <ul>
     <li style={{display: props.BrienneCorruption<7 ? 'list-item' : 'none'}}>{props.AmandaName}</li>
     <li style={{display: props.BrienneCorruption===7 ? 'list-item' : 'none'}} class='enabled-link-a'><b>{props.AmandaName}</b></li>
     <li style={{display: props.BrienneCorruption>=8 ? 'list-item' : 'none'}}></li>
@@ -357,6 +357,7 @@ const Brienne = (props) => {
     <li style={{display: props.BrienneTracker<128 ? 'list-item' : 'none'}}>Pigserpent</li>
     <li style={{display: props.BrienneTracker===128 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} class='enabled-link-b'>Pigserpent</b></li>
     <li style={{display: props.BrienneTracker>=129 ? 'list-item' : 'none'}}></li>
+    </ul>
 
     <h2>Stand and Supernatural Abilities</h2>
     <h4>Paperback Writer</h4>
@@ -368,11 +369,12 @@ const Brienne = (props) => {
     <h2>Psychological Profile</h2>
     <p>Calm. Cool. Unbendable even under intense pressure. Additional details dependent on assumed identity.</p>
     <h2>Author's Notes</h2>
-    <p>Whoever the Agent is, she's always a bad person.</p>
+    <p><i class='enabled-link-b'>I would like to close this report with one final statement. I do not believe in ‘good’ and ‘bad’ people. If I did, I’d surely consider myself to be in the latter category. Rather, I believe in good and bad actions.</i></p>
     <h3 style={{display: props.BrienneTracker>=129 && props.BrienneCorruption===2 ? 'block' : 'none', textAlign: 'center'}}> <span style={{color: '#909098'}} class='no-select-text'><i>You're moving in the wrong direction. Go up.</i></span></h3>
-    <p>
+    {/* <p>
         <Link style={{color: 'red'}} to="/">Go Home</Link>
-    </p>
+    </p> */}
+    </div>
     </div>
     </>
     );

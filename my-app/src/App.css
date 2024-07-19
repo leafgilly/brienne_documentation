@@ -1,10 +1,10 @@
-  
 /* NEW CSS WE MADE */
 
 body, html {
   width: 100%;
   height: 100%;
-  background-color: #131516;
+  background-color: #1568AC;
+  background-image: url(./images/blueprint.jpg);
   /* text-align: center; */
   color: white;
 }
@@ -13,11 +13,129 @@ a {
   color: white;
 }
 
+.openFolder {
+  background-color: #D2BB89;
+  height: 1000px;
+  width: 1500px;
+  margin: auto;
+  padding-left: 50px;
+}
+
+.openNametag {
+  background-color: #D2BB89;
+  /* background-color: red; */
+  position: relative;
+  top: 100px;
+  left: -100px;
+  width: 35px;
+  padding: 10px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  text-align: center;
+  text-shadow: 2px 2px 5px #131516;
+  box-shadow: -6px 7px 5px -3px #131516;
+  height: 200px;
+  /* text-orientation: sideways-left; */
+  writing-mode: vertical-lr;
+}
+
+.birb {
+  margin-bottom: -4px;
+}
+
+@media screen and (max-width: 540px) {
+
+  .openFolder {
+    background-color: #D2BB89 !important;
+    height: 1000px;
+    width: 1500px;
+    margin: 50px;
+    padding-left: 50px;
+  }
+
+  .birb {
+    margin-bottom: -54px;
+  }
+}
+
+.mainPage {
+    margin: auto !important;
+    width: 50%;
+    background-color: #131516;
+    margin: -200px 0px 0px 0px;
+}
+
 .document {
-  margin: auto !important;
+  margin: -200px 0px 10px 0px;
+  padding: 10px;
   width: 50%;
   background-color: #131516;
 }
+
+/* folders and main page css */
+
+.folder {
+  background-color: #D2BB89;
+  padding: 5px 0px 5px 5px;
+  margin: 5px 5px 5px 5px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  height: 500px;
+  width: 1000px;
+  box-shadow: -2px -2px 10px #131516;
+  position: absolute;
+}
+
+.nametag {
+  background-color: #D2BB89;
+  position: relative;
+  top: -40px;
+  left: 5px;
+  width: 200px;
+  padding: 10px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  text-align: center;
+  text-shadow: 2px 2px 5px #131516;
+  box-shadow: -5px -5px 6px -3px #131516;
+}
+
+.post-it {
+ 	width:150px;
+  height:140px;
+  position:absolute;
+  background:#ffa;
+  overflow:hidden;
+  margin:325px 0px 0px 200px;
+  padding:20px;
+  border-radius:0 0 0 30px/45px;
+  box-shadow:
+    inset 0 -10px 10px rgba(0,0,0,0.2),
+    inset 0 10px 10px rgba(0,0,0,0.2),
+    0 5px 6px 5px rgba(0,0,0,0.2);
+  font-family: 'Lucida Console', monospace;
+  font-size:15px;
+  -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+
+  color:#130d6b;
+}
+
+.post-it:before {
+ 	content:"";
+  display:block;
+  position:absolute;
+  width:20px;
+  height:25px;
+  background:#ffa;
+  box-shadow:
+    3px -2px 10px rgba(0,0,0,0.2),
+    inset 15px -15px 15px rgba(0,0,0,0.3);
+  left:0;
+  bottom:0;
+  z-index:2;
+  transform:skewX(25deg);
+}
+
 
 .disturbia {
     background-image: url('https://t3.ftcdn.net/jpg/03/50/33/58/360_F_350335810_tVlcjj68ZlShA2rbNhcHDwJudoEEZQQJ.jpg');
@@ -145,70 +263,6 @@ a {
   cursor: pointer;
   color: blue !important;
   text-decoration: underline;
-}
-
-/* folders and main page css */
-
-.folder {
-  background-color: #D2BB89;
-  padding: 5px 0px 5px 5px;
-  margin: 5px 5px 5px 5px;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  height: 500px;
-  width: 1000px;
-  box-shadow: -2px -2px 10px #131516;
-  position: absolute;
-}
-
-.nametag {
-  background-color: #D2BB89;
-  position: relative;
-  top: -40px;
-  left: 5px;
-  width: 200px;
-  padding: 10px;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  text-align: center;
-  text-shadow: 2px 2px 5px #131516;
-  box-shadow: -5px -5px 6px -3px #131516;
-}
-
-.post-it {
- 	width:150px;
-  height:140px;
-  position:absolute;
-  background:#ffa;
-  overflow:hidden;
-  margin:325px 0px 0px 200px;
-  padding:20px;
-  border-radius:0 0 0 30px/45px;
-  box-shadow:
-    inset 0 -10px 10px rgba(0,0,0,0.2),
-    inset 0 10px 10px rgba(0,0,0,0.2),
-    0 5px 6px 5px rgba(0,0,0,0.2);
-  font-family: 'Lucida Console', monospace;
-  font-size:15px;
-  -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
-
-  color:#130d6b;
-}
-
-.post-it:before {
- 	content:"";
-  display:block;
-  position:absolute;
-  width:20px;
-  height:25px;
-  background:#ffa;
-  box-shadow:
-    3px -2px 10px rgba(0,0,0,0.2),
-    inset 15px -15px 15px rgba(0,0,0,0.3);
-  left:0;
-  bottom:0;
-  z-index:2;
-  transform:skewX(25deg);
 }
 
 
