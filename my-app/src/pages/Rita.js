@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import {connect} from 'react-redux';
 import robin from '../images/RockinRobin.png';
 import LEGS from '../images/LEGS.png';
+import ritaImage from '../images/rita.png';
+import ritaImage2 from '../images/rita_scratch.png';
 
 const Rita = (props) => {
 
@@ -36,11 +38,17 @@ const Rita = (props) => {
     <div className='openFolder'>
         <div className="openNametag">
             <p>
-        <Link class='back-button' to="/">Go Back</Link></p>
+        <Link className='back-button' to="/">Go Back</Link></p>
         </div>
-    <div className='document' style={{margin: '-200px 0px 10px 450px'}}>
+    <div style={{display: props.RitaVisited===0 ? 'block' : 'none', left: '40px'}} className="picture-frame">
+        <img className='picture' src={ritaImage} alt="Rita Zeppeli"></img>
+    </div>
+    <div style={{display: props.RitaVisited>=1 ? 'block' : 'none'}} className="picture-frame">
+        <img className='picture' src={ritaImage2} alt="Someone you've never met, inverted with the eyes scratched out."></img>
+    </div>
+    <div className='document' style={{margin: '-570px 0px 10px 450px'}}>
     <div style={{display: props.RitaCorruption<50 ? 'block' : 'none', margin: 'auto', width: '50' - props.RitaCorruption + '%'}}>
-    <h1 style={{textAlign: 'center'}}>Margarita Zeppeli Documentation</h1>
+    <h1 style={{textAlign: 'center'}}>{props.RitaName[0]} {props.RitaName[2]} Documentation</h1>
     <h1 style={{textAlign: 'center', display: props.RitaCorruption===0 ? 'block' : 'none'}}>Threat Level: <span onClick={()=>{
         corrupt(2);
     }} className='interactive enabled-link-r no-select-text'>E</span></h1>

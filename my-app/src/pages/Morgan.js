@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 
 import {connect} from 'react-redux';
 
+import morganImage from '../images/morgan.png';
+import morganImage2 from '../images/morgan_scratch.png';
+
 const Morgan = (props) => {
 
     const [counter, setCounter] = React.useState(0);
@@ -75,8 +78,14 @@ const Morgan = (props) => {
     <>
     <div className='openFolder'>
         <div className="openNametag"><p>
-        <Link class='back-button' to="/">Go Back</Link>
+        <Link className='back-button' to="/">Go Back</Link>
     </p></div>
+    <div style={{display: props.MorganVisited===0 ? 'block' : 'none'}} className="picture-frame">
+        <img className='picture' src={morganImage} alt="Morgan Becquerel"></img>
+    </div>
+    <div style={{display: props.MorganVisited>=1 ? 'block' : 'none'}} className="picture-frame">
+        <img className='picture' src={morganImage2} alt="A kind-looking stranger, inverted with her eyes scratched out."></img>
+    </div>
     <div className='document' style={{backgroundColor: props.MorganCorruption>=14 ? 'rgba(' + props.MorganLight + ',' + props.MorganLight + ',' + props.MorganLight + ')' : 'black', color: 'white'}}>
 
         {/* BRIENNE'S INTERACTIONS */}
@@ -107,7 +116,7 @@ const Morgan = (props) => {
         </div>
 
         <div style={{color: 'rgba(255, 255, 255,' + props.MorganOpacity}}>
-        <h1>Morgan Becquerel Documentation</h1>
+        <h1>{props.MorganName[0]} {props.MorganName[2]} Documentation</h1>
         <h1 style={{display: props.MorganCorruption<14 ? 'block' : 'none'}}>Threat Level: E</h1>
         <h1 style={{display: props.MorganCorruption===14 ? 'block' : 'none'}}>Threat Level: <span onClick={()=>{
         corrupt(1);
@@ -115,11 +124,11 @@ const Morgan = (props) => {
         <h1 style={{display: props.MorganCorruption>=15 ? 'block' : 'none'}}>Threat Level: <b className='enabled-link-b'>Wouldn't hurt a fly</b></h1>
         <h2>Previous Names and Aliases</h2>
         <ul>
-            <li style={{display: props.MorganCorruption<15 ? 'list-item' : 'none'}}>Stella Becquerel - as of 1990, Becquerel chose to go by her middle name 'Morgan'</li>
-            <li style={{display: props.MorganCorruption===15 ? 'list-item' : 'none'}}>Stella Becquerel - as of 1990, Becquerel chose to go by her middle name <span onClick={()=>{
+            <li style={{display: props.MorganCorruption<15 ? 'list-item' : 'none'}}>Stella {props.MorganName[2]} - as of 1990, Becquerel chose to go by her middle name 'Morgan'</li>
+            <li style={{display: props.MorganCorruption===15 ? 'list-item' : 'none'}}>Stella {props.MorganName[2]} - as of 1990, Becquerel chose to go by her middle name <span onClick={()=>{
         corrupt(1);
     }} className='interactive enabled-link-m no-select-text'>'Morgan'</span></li>
-            <li style={{display: props.MorganCorruption>=16 ? 'list-item' : 'none'}}>Stella Becquerel - as of 1990, Becquerel chose to go by her middle name <b className='enabled-link-b'>
+            <li style={{display: props.MorganCorruption>=16 ? 'list-item' : 'none'}}>Stella {props.MorganName[2]} - as of 1990, Becquerel chose to go by her middle name <b className='enabled-link-b'>
                 because she hated her light and wanted to get away from it in every way she could.</b></li>
         </ul>
         <h2>Stand and Supernatural Abilities</h2>
@@ -159,7 +168,7 @@ const Morgan = (props) => {
         <h3>Neon Trees Act 2: Favorite Daze</h3>
         <div style={{display: props.MorganCorruption<21 ? 'block' : 'none', backgroundColor: 'rgba(' + props.MorganLight*3 + ',' + props.MorganLight*3 + ',' + props.MorganLight*3 + ',' + props.MorganLight*.011 + ')'}}>
         <p>Neon Trees' light spreads through root-like veins along the user's body, creating sparks as it travels.
-            Excluding the circuitry--the physical form of her Stand--Morgan's body becomes&nbsp;
+            Excluding the circuitry--the physical form of her Stand--{props.MorganName[2]}'s body becomes&nbsp;
             <span id='flicker' className='enabled-link-m no-select-text' style={{display: props.MorganCorruption===2 ? 'inline' : 'none'}}>blindingly bright.</span>
             <span className='interactive enabled-link-m no-select-text' style={{display: props.MorganCorruption>=3 && props.MorganCorruption<13 ? 'inline' : 'none'}}
             onClick={()=>{
@@ -178,14 +187,14 @@ const Morgan = (props) => {
             Excluding the <span onClick={()=>{
         corrupt(1);
         console.log("Getting hard to read some of this text, huh...");
-    }} className='interactive enabled-link-m no-select-text'>circuitry</span>--the physical form of her Stand--Morgan's body becomes blindingly bright.
+    }} className='interactive enabled-link-m no-select-text'>circuitry</span>--the physical form of her Stand--{props.MorganName[2]}'s body becomes blindingly bright.
             Those who are close enough to Morgan will benefit from slow healing properties. 
             Physical ailements of any kind save for death can be fixed from remaining in this Stand's rays for long enough.
             It also has the ability to impart positive feelings among those who are affected by the light.</p>
         </div>
         <div style={{display: props.MorganCorruption>=22 ? 'block' : 'none', backgroundColor: 'rgba(' + props.MorganLight*3 + ',' + props.MorganLight*3 + ',' + props.MorganLight*3 + ')'}}>
         <p>Neon Trees' light spreads through root-like veins along the user's body, creating sparks as it travels.
-            Excluding the <b className='enabled-link-b'>the circuits were all you could see of her; she shone like sunlight</b>--the physical form of her Stand--Morgan's body becomes blindingly bright.
+            Excluding the <b className='enabled-link-b'>the circuits were all you could see of her; she shone like sunlight</b>--the physical form of her Stand--{props.MorganName[2]}'s body becomes blindingly bright.
             Those who are close enough to Morgan will benefit from slow healing properties. 
             Physical ailements of any kind save for death can be fixed from remaining in this Stand's rays for long enough.
             It also has the ability to impart positive feelings among those who are affected by the light.</p>
@@ -229,13 +238,13 @@ const Morgan = (props) => {
         <li style={{display: props.MorganCorruption>=27 ? 'list-item' : 'none'}}>Patagonia: Close friend. Met on work assignment, now do weekly outings. Trusts her enough to introduce her to her parents and take her to company dinners. Might be romantically interested, <b style={{color: 'red'}}>maybe she can kill you...</b></li>
         </ul>
         <h2>Psychological Profile</h2>
-        <p style={{display: props.MorganCorruption<27 ? 'block' : 'none'}}>Morgan’s childhood upbringing shaped her into a person who is desperate for social interaction and overjoyed by new experiences. Her desire 
+        <p style={{display: props.MorganCorruption<27 ? 'block' : 'none'}}>{props.MorganName[2]}'s childhood upbringing shaped her into a person who is desperate for social interaction and overjoyed by new experiences. Her desire 
         to seek out people has made her highly emotionally intelligent, and she possesses great skills in understanding both her own and others’ emotional states. 
         Her unrelenting positivity is one of her greatest strengths, but she also harbors some guilt and resentment towards herself and her Stand. She is also 
         highly dependent on her few, close relationships. The loss of a close friend will affect her especially greatly.</p>
         <p style={{display: props.MorganCorruption===27 ? 'block' : 'none'}}> <span onClick={()=>{
         corrupt(1);
-    }} className='interactive enabled-link-m no-select-text'>Morgan’s childhood upbringing shaped her into a person who is desperate for social interaction and overjoyed by new experiences. Her desire 
+    }} className='interactive enabled-link-m no-select-text'>{props.MorganName[2]}'s childhood upbringing shaped her into a person who is desperate for social interaction and overjoyed by new experiences. Her desire 
         to seek out people has made her highly emotionally intelligent, and she possesses great skills in understanding both her own and others’ emotional states. 
         Her unrelenting positivity is one of her greatest strengths, but she also harbors some guilt and resentment towards herself and her Stand. She is also 
         highly dependent on her few, close relationships. The loss of a close friend will affect her especially greatly.</span></p>

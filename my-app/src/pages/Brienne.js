@@ -4,6 +4,10 @@ import {connect} from 'react-redux';
 
 import music from '../audio/paperback_rigby.wav'
 import billwurtz from '../audio/aloneintheuniverse.mp3'
+
+import brienneImage from '../images/brienne.png';
+import brienneImage2 from '../images/brienne_scratch.png';
+
 const Brienne = (props) => {
     // function handleSubmit(e) {
     //     // Prevent the browser from reloading the page
@@ -62,8 +66,14 @@ const Brienne = (props) => {
     <>
     <div className='openFolder'>
         <div className="openNametag"><p>
-        <Link class='back-button' to="/">Go Back</Link>
+        <Link className='back-button' to="/">Go Back</Link>
     </p></div>
+    <div style={{display: props.BrienneVisited===0 ? 'block' : 'none'}} className="picture-frame">
+        <img className='picture' src={brienneImage} alt="You. Agent Paperback Writer."></img>
+    </div>
+    <div style={{display: props.BrienneVisited>=1 ? 'block' : 'none'}} className="picture-frame">
+        <img className='picture' src={brienneImage2} alt="It's still you."></img>
+    </div>
     <div className="document">
     <audio id="audio_tag" src={music} />
     <audio id="alone_audio" src={billwurtz} />
@@ -101,7 +111,7 @@ const Brienne = (props) => {
     }} className='interactive enabled-link-pbw no-select-text'><i>There we go. Now then...</i></span></h3>
 
 
-    <h3 style={{display: props.BrienneTracker>0 && props.BrienneTracker<129 && play ? 'block' : 'none', textAlign: 'center'}}> <i style={{color: '#909098'}}>Don't leave, or you'll break... this.</i></h3>
+    <h3 style={{display: props.BrienneTracker>0 && props.BrienneTracker<129 && play ? 'block' : 'none', textAlign: 'center'}}> <i style={{color: '#909098', fontFamily: 'Arial, Helvetica, sans-serif'}}>Don't leave, or you'll break... this.</i></h3>
     <h3 style={{display: props.BrienneTracker>=129 && props.BrienneCorruption===2 ? 'block' : 'none', textAlign: 'center'}}> <span onClick={()=>{
         corrupt(1);
     }} className='interactive enabled-link-pbw no-select-text'><i>You've always been good at taking instruction.</i></span></h3>
@@ -159,77 +169,77 @@ const Brienne = (props) => {
     <h2>Previous Assumed Identities</h2>
     <h3>Entirely Fabricated Identites</h3>
     <ul>
-        <li style={{display: props.BrienneCorruption<11 ? 'list-item' : 'none'}}>Brienne Williams</li>
-        <li style={{display: props.BrienneCorruption===11 ? 'list-item' : 'none'}} className='enabled-link-b'><b>Brienne Williams</b></li>
+        <li style={{display: props.BrienneCorruption<11 ? 'list-item' : 'none'}}>Brienne Williams - current alias</li>
+        <li style={{display: props.BrienneCorruption===11 ? 'list-item' : 'none'}} className='enabled-link-b'><b>Brienne Williams</b> - current alias</li>
         <li style={{display: props.BrienneCorruption>=12 ? 'list-item' : 'none'}}></li>
         {/* <li style={{display: props.BrienneTracker===14 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Brienne Williams</b></li>
         <li style={{display: props.BrienneTracker>=15 ? 'list-item' : 'none'}}></li> */}
-        <li style={{display: props.BrienneCorruption<11 ? 'list-item' : 'none'}}>Jordyn Jones</li>
-        <li style={{display: props.BrienneCorruption===11 ? 'list-item' : 'none'}} className='enabled-link-b'><b>Jordyn Jones</b></li>
+        <li style={{display: props.BrienneCorruption<11 ? 'list-item' : 'none'}}>Jordyn Jones - Speedwagon Foundation alias</li>
+        <li style={{display: props.BrienneCorruption===11 ? 'list-item' : 'none'}} className='enabled-link-b'><b>Jordyn Jones</b> - Speedwagon Foundation alias</li>
         <li style={{display: props.BrienneCorruption>=12 ? 'list-item' : 'none'}}></li>
         {/* <li style={{display: props.BrienneTracker>=16 ? 'list-item' : 'none'}}></li> */}
-        <li style={{display: props.BrienneTracker<14 ? 'list-item' : 'none'}}>Eleanor Rigby</li>
-        <li style={{display: props.BrienneTracker===14 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Eleanor Rigby</b></li>
+        <li style={{display: props.BrienneTracker<14 ? 'list-item' : 'none'}}>Eleanor Rigby - original alias</li>
+        <li style={{display: props.BrienneTracker===14 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Eleanor Rigby</b> - original alias</li>
         <li style={{display: props.BrienneTracker>=15 ? 'list-item' : 'none'}}></li>
-        <li style={{display: props.BrienneTracker<16 ? 'list-item' : 'none'}}>Benjamin Williams</li>
-        <li style={{display: props.BrienneTracker===16 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Benjamin Williams</b></li>
+        <li style={{display: props.BrienneTracker<16 ? 'list-item' : 'none'}}>Benjamin Williams - male identity for submitting paper inquiries</li>
+        <li style={{display: props.BrienneTracker===16 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Benjamin Williams</b> - male identity for submitting paper inquiries</li>
         <li style={{display: props.BrienneTracker>=17 ? 'list-item' : 'none'}}></li>
-        <li style={{display: props.BrienneTracker<18 ? 'list-item' : 'none'}}>Taylor McDaniels</li>
-        <li style={{display: props.BrienneTracker===18 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Taylor McDaniels</b></li>
+        <li style={{display: props.BrienneTracker<18 ? 'list-item' : 'none'}}>Taylor McDaniels - hospital clerk and NYC resident</li>
+        <li style={{display: props.BrienneTracker===18 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Taylor McDaniels</b> - hospital clerk and NYC resident</li>
         <li style={{display: props.BrienneTracker>=19 ? 'list-item' : 'none'}}></li>
-        <li style={{display: props.BrienneTracker<20 ? 'list-item' : 'none'}}>Emma Smith</li>
-        <li style={{display: props.BrienneTracker===20 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Emma Smith</b></li>
+        <li style={{display: props.BrienneTracker<20 ? 'list-item' : 'none'}}>Emma Smith - undergraduate business student</li>
+        <li style={{display: props.BrienneTracker===20 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Emma Smith</b> - undergraduate business student</li>
         <li style={{display: props.BrienneTracker>=21 ? 'list-item' : 'none'}}></li>
-        <li style={{display: props.BrienneTracker<22 ? 'list-item' : 'none'}}>Olivia Thompson</li>
-        <li style={{display: props.BrienneTracker===22 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Olivia Thompson</b></li>
+        <li style={{display: props.BrienneTracker<22 ? 'list-item' : 'none'}}>Olivia Thompson - divorced mother of one</li>
+        <li style={{display: props.BrienneTracker===22 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Olivia Thompson</b> - divorced mother of one</li>
         <li style={{display: props.BrienneTracker>=23 ? 'list-item' : 'none'}}></li>
-        <li style={{display: props.BrienneTracker<24 ? 'list-item' : 'none'}}>Isabella 'Izzy' Steward</li>
-        <li style={{display: props.BrienneTracker===24 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Isabella 'Izzy' Steward</b></li>
+        <li style={{display: props.BrienneTracker<24 ? 'list-item' : 'none'}}>Isabella 'Izzy' Steward - upscale bowling alley waitress</li>
+        <li style={{display: props.BrienneTracker===24 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Isabella 'Izzy' Steward</b> - upscale bowling alley waitress</li>
         <li style={{display: props.BrienneTracker>=25 ? 'list-item' : 'none'}}></li>
-        <li style={{display: props.BrienneTracker<26 ? 'list-item' : 'none'}}>Ava Marie Thompson</li>
-        <li style={{display: props.BrienneTracker===26 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Ava Marie Thompson</b></li>
+        <li style={{display: props.BrienneTracker<26 ? 'list-item' : 'none'}}>Ava Marie Thompson - classical musician</li>
+        <li style={{display: props.BrienneTracker===26 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Ava Marie Thompson</b> - classical musician</li>
         <li style={{display: props.BrienneTracker>=27 ? 'list-item' : 'none'}}></li>
-        <li style={{display: props.BrienneTracker<28 ? 'list-item' : 'none'}}>Sophia Brown</li>
-        <li style={{display: props.BrienneTracker===28 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Sophia Brown</b></li>
+        <li style={{display: props.BrienneTracker<28 ? 'list-item' : 'none'}}>Sophia Brown - highschool tutor in the Bronks</li>
+        <li style={{display: props.BrienneTracker===28 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Sophia Brown</b> - highschool tutor in the Bronks</li>
         <li style={{display: props.BrienneTracker>=29 ? 'list-item' : 'none'}}></li>
-        <li style={{display: props.BrienneTracker<30 ? 'list-item' : 'none'}}>Emily Robertson</li>
-        <li style={{display: props.BrienneTracker===30 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Emily Robertson</b></li>
+        <li style={{display: props.BrienneTracker<30 ? 'list-item' : 'none'}}>Emily Robertson - authorial penname/ghost writer</li>
+        <li style={{display: props.BrienneTracker===30 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Emily Robertson</b> - authorial penname/ghost writer</li>
         <li style={{display: props.BrienneTracker>=31 ? 'list-item' : 'none'}}></li>
-        <li style={{display: props.BrienneTracker<32 ? 'list-item' : 'none'}}>Adrian Marshall</li>
-        <li style={{display: props.BrienneTracker===32 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Adrian Marshall</b></li>
+        <li style={{display: props.BrienneTracker<32 ? 'list-item' : 'none'}}>Adrian Marshall - audio-recorded documentation alias</li>
+        <li style={{display: props.BrienneTracker===32 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Adrian Marshall</b> - audio-recorded documentation alias</li>
         <li style={{display: props.BrienneTracker>=33 ? 'list-item' : 'none'}}></li>
-        <li style={{display: props.BrienneTracker<34 ? 'list-item' : 'none'}}>Madison Scott</li>
-        <li style={{display: props.BrienneTracker===34 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Madison Scott</b></li>
+        <li style={{display: props.BrienneTracker<34 ? 'list-item' : 'none'}}>Madison Scott - third cousin of the acting mayor of New York City</li>
+        <li style={{display: props.BrienneTracker===34 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Madison Scott</b> - third cousin of the acting mayor of New York City</li>
         <li style={{display: props.BrienneTracker>=35 ? 'list-item' : 'none'}}></li>
-        <li style={{display: props.BrienneTracker<36 ? 'list-item' : 'none'}}>Mia Anderson</li>
-        <li style={{display: props.BrienneTracker===36 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Mia Anderson</b></li>
+        <li style={{display: props.BrienneTracker<36 ? 'list-item' : 'none'}}>Mia Anderson - court stenographer</li>
+        <li style={{display: props.BrienneTracker===36 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Mia Anderson</b> - court stenographer</li>
         <li style={{display: props.BrienneTracker>=37 ? 'list-item' : 'none'}}></li>
-        <li style={{display: props.BrienneTracker<38 ? 'list-item' : 'none'}}>Hannah Reid</li>
-        <li style={{display: props.BrienneTracker===38 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Hannah Reid</b></li>
+        <li style={{display: props.BrienneTracker<38 ? 'list-item' : 'none'}}>Hannah Reid - bank teller</li>
+        <li style={{display: props.BrienneTracker===38 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Hannah Reid</b> - bank teller</li>
         <li style={{display: props.BrienneTracker>=39 ? 'list-item' : 'none'}}></li>
-        <li style={{display: props.BrienneTracker<40 ? 'list-item' : 'none'}}>Abigail Murray</li>
-        <li style={{display: props.BrienneTracker===40 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Abigail Murray</b></li>
+        <li style={{display: props.BrienneTracker<40 ? 'list-item' : 'none'}}>Abigail Murray - bridal consultant</li>
+        <li style={{display: props.BrienneTracker===40 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Abigail Murray</b> - bridal consultant</li>
         <li style={{display: props.BrienneTracker>=41 ? 'list-item' : 'none'}}></li>
-        <li style={{display: props.BrienneTracker<42 ? 'list-item' : 'none'}}>Lily Young</li>
-        <li style={{display: props.BrienneTracker===42 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Lily Young</b></li>
+        <li style={{display: props.BrienneTracker<42 ? 'list-item' : 'none'}}>Lily Young - mail courier</li>
+        <li style={{display: props.BrienneTracker===42 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Lily Young</b> - mail courier</li>
         <li style={{display: props.BrienneTracker>=43 ? 'list-item' : 'none'}}></li>
-        <li style={{display: props.BrienneTracker<44 ? 'list-item' : 'none'}}>Noah Anderson</li>
-        <li style={{display: props.BrienneTracker===44 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Noah Anderson</b></li>
+        <li style={{display: props.BrienneTracker<44 ? 'list-item' : 'none'}}>Noah Anderson - museum docent</li>
+        <li style={{display: props.BrienneTracker===44 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Noah Anderson</b> - museum docent</li>
         <li style={{display: props.BrienneTracker>=45 ? 'list-item' : 'none'}}></li>
-        <li style={{display: props.BrienneTracker<46 ? 'list-item' : 'none'}}>Ethan White</li>
-        <li style={{display: props.BrienneTracker===46 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Ethan White</b></li>
+        <li style={{display: props.BrienneTracker<46 ? 'list-item' : 'none'}}>Ethan White - phone operator</li>
+        <li style={{display: props.BrienneTracker===46 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Ethan White</b> - phone operator</li>
         <li style={{display: props.BrienneTracker>=47 ? 'list-item' : 'none'}}></li>
-        <li style={{display: props.BrienneTracker<48 ? 'list-item' : 'none'}}>Jacob Macdonald</li>
-        <li style={{display: props.BrienneTracker===48 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Jacob Macdonald</b></li>
+        <li style={{display: props.BrienneTracker<48 ? 'list-item' : 'none'}}>Jacob Macdonald - Soviet double agent</li>
+        <li style={{display: props.BrienneTracker===48 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Jacob Macdonald</b> - Soviet double agent</li>
         <li style={{display: props.BrienneTracker>=49 ? 'list-item' : 'none'}}></li>
-        <li style={{display: props.BrienneTracker<50 ? 'list-item' : 'none'}}>Liam Clark</li>
-        <li style={{display: props.BrienneTracker===50 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Liam Clark</b></li>
+        <li style={{display: props.BrienneTracker<50 ? 'list-item' : 'none'}}>Liam Clark - stockbroker</li>
+        <li style={{display: props.BrienneTracker===50 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Liam Clark</b> - stockbroker</li>
         <li style={{display: props.BrienneTracker>=51 ? 'list-item' : 'none'}}></li>
-        <li style={{display: props.BrienneTracker<52 ? 'list-item' : 'none'}}>Logan Campbell</li>
-        <li style={{display: props.BrienneTracker===52 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Logan Campbell</b></li>
+        <li style={{display: props.BrienneTracker<52 ? 'list-item' : 'none'}}>Logan Campbell - professional chef</li>
+        <li style={{display: props.BrienneTracker===52 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Logan Campbell</b> - professional chef</li>
         <li style={{display: props.BrienneTracker>=53 ? 'list-item' : 'none'}}></li>
-        <li style={{display: props.BrienneTracker<54 ? 'list-item' : 'none'}}>Jane Doe</li>
-        <li style={{display: props.BrienneTracker===54 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Jane Doe</b></li>
+        <li style={{display: props.BrienneTracker<54 ? 'list-item' : 'none'}}>Jane Doe - coroner's alias</li>
+        <li style={{display: props.BrienneTracker===54 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Jane Doe</b> - coroner's alias</li>
         <li style={{display: props.BrienneTracker>=55 ? 'list-item' : 'none'}}></li>
     </ul>
     <h3>Identites Borrowed by Living or Once Living Persons</h3>
@@ -247,116 +257,116 @@ const Brienne = (props) => {
     <li style={{display: props.BrienneCorruption===10 ? 'list-item' : 'none'}} className='enabled-link-s'><b>{props.SallyName}</b></li>
     <li style={{display: props.BrienneCorruption>=11 ? 'list-item' : 'none'}}></li>
 
-    <li style={{display: props.BrienneTracker<56 ? 'list-item' : 'none'}}>Fizzywizard</li>
-    <li style={{display: props.BrienneTracker===56 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Fizzywizard</b></li>
+    <li style={{display: props.BrienneTracker<56 ? 'list-item' : 'none'}}>Fizzywizard - resident speed reading demon</li>
+    <li style={{display: props.BrienneTracker===56 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Fizzywizard</b> - resident speed reading demon</li>
     <li style={{display: props.BrienneTracker>=57 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<58 ? 'list-item' : 'none'}}>Arc</li>
-    <li style={{display: props.BrienneTracker===58 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Arc</b></li>
+    <li style={{display: props.BrienneTracker<58 ? 'list-item' : 'none'}}>Arc - based Nekrogoblikon enjoyer</li>
+    <li style={{display: props.BrienneTracker===58 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Arc</b> - based Nekrogoblikon enjoyer</li>
     <li style={{display: props.BrienneTracker>=59 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<60 ? 'list-item' : 'none'}}>CG the Bird</li>
-    <li style={{display: props.BrienneTracker===60 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>CG the Bird</b></li>
+    <li style={{display: props.BrienneTracker<60 ? 'list-item' : 'none'}}>CG the Bird - birdwatcher (pigeon)</li>
+    <li style={{display: props.BrienneTracker===60 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>CG the Bird</b> - birdwatcher (pigeon)</li>
     <li style={{display: props.BrienneTracker>=61 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<62 ? 'list-item' : 'none'}}>Cream</li>
-    <li style={{display: props.BrienneTracker===62 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Cream</b></li>
+    <li style={{display: props.BrienneTracker<62 ? 'list-item' : 'none'}}>Cream - 4 year anniversary award winner</li>
+    <li style={{display: props.BrienneTracker===62 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Cream</b> - 4 year anniversary award winner</li>
     <li style={{display: props.BrienneTracker>=63 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<64 ? 'list-item' : 'none'}}>Artemisia</li>
-    <li style={{display: props.BrienneTracker===64 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Artemisia</b></li>
+    <li style={{display: props.BrienneTracker<64 ? 'list-item' : 'none'}}>Artemisia - crystals are a girl's best friend</li>
+    <li style={{display: props.BrienneTracker===64 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Artemisia</b> - crystals are a girl's best friend</li>
     <li style={{display: props.BrienneTracker>=65 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<66 ? 'list-item' : 'none'}}>Dip</li>
-    <li style={{display: props.BrienneTracker===66 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Dip</b></li>
+    <li style={{display: props.BrienneTracker<66 ? 'list-item' : 'none'}}>Extradipperton - THE original Fanworks fan</li>
+    <li style={{display: props.BrienneTracker===66 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Extradipperton</b> - THE original Fanworks fan</li>
     <li style={{display: props.BrienneTracker>=67 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<68 ? 'list-item' : 'none'}}>Jadedsabre</li>
-    <li style={{display: props.BrienneTracker===68 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Jadedsabre</b></li>
+    <li style={{display: props.BrienneTracker<68 ? 'list-item' : 'none'}}>Jadedsabre - Woman Supporter</li>
+    <li style={{display: props.BrienneTracker===68 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Jadedsabre</b> - Woman Supporter</li>
     <li style={{display: props.BrienneTracker>=69 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<70 ? 'list-item' : 'none'}}>lsdfmoe</li>
-    <li style={{display: props.BrienneTracker===70 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>lsdfmoe</b></li>
+    <li style={{display: props.BrienneTracker<70 ? 'list-item' : 'none'}}>lsdfmoe - official visual documentarian</li>
+    <li style={{display: props.BrienneTracker===70 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>lsdfmoe</b> - official visual documentarian</li>
     <li style={{display: props.BrienneTracker>=71 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<72 ? 'list-item' : 'none'}}>Mylesss</li>
-    <li style={{display: props.BrienneTracker===72 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Mylesss</b></li>
+    <li style={{display: props.BrienneTracker<72 ? 'list-item' : 'none'}}>Mylesss - strongest stronger soldier</li>
+    <li style={{display: props.BrienneTracker===72 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Mylesss</b> - strongest stronger soldier</li>
     <li style={{display: props.BrienneTracker>=73 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<74 ? 'list-item' : 'none'}}>NewbietoKnights</li>
-    <li style={{display: props.BrienneTracker===74 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>NewbietoKnights</b></li>
+    <li style={{display: props.BrienneTracker<74 ? 'list-item' : 'none'}}>NewbietoKnights - most perceptive reader</li>
+    <li style={{display: props.BrienneTracker===74 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>NewbietoKnights</b> - most perceptive reader</li>
     <li style={{display: props.BrienneTracker>=75 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<76 ? 'list-item' : 'none'}}>NotDaedalus</li>
-    <li style={{display: props.BrienneTracker===76 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>NotDaedalus</b></li>
+    <li style={{display: props.BrienneTracker<76 ? 'list-item' : 'none'}}>NotDaedalus - the secret 5th author (diversity hire (male))</li>
+    <li style={{display: props.BrienneTracker===76 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>NotDaedalus</b> - the secret 5th author (diversity hire (male))</li>
     <li style={{display: props.BrienneTracker>=77 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<78 ? 'list-item' : 'none'}}>Gote</li>
-    <li style={{display: props.BrienneTracker===78 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Gote</b></li>
+    <li style={{display: props.BrienneTracker<78 ? 'list-item' : 'none'}}>Gote - will go down with the ship</li>
+    <li style={{display: props.BrienneTracker===78 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Gote</b> - will go down with the ship</li>
     <li style={{display: props.BrienneTracker>=79 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<80 ? 'list-item' : 'none'}}>Poutinerie</li>
-    <li style={{display: props.BrienneTracker===80 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Poutinerie</b></li>
+    <li style={{display: props.BrienneTracker<80 ? 'list-item' : 'none'}}>Poutinerie - 👇nerd</li>
+    <li style={{display: props.BrienneTracker===80 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Poutinerie</b> - 👇nerd</li>
     <li style={{display: props.BrienneTracker>=81 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<82 ? 'list-item' : 'none'}}>RabbitKamen</li>
-    <li style={{display: props.BrienneTracker===82 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>RabbitKamen</b></li>
+    <li style={{display: props.BrienneTracker<82 ? 'list-item' : 'none'}}>RabbitKamen - most active reader</li>
+    <li style={{display: props.BrienneTracker===82 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>RabbitKamen</b> - most active reader</li>
     <li style={{display: props.BrienneTracker>=83 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<84 ? 'list-item' : 'none'}}>Sah/Diamond</li>
-    <li style={{display: props.BrienneTracker===84 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Sah/Diamond</b></li>
+    <li style={{display: props.BrienneTracker<84 ? 'list-item' : 'none'}}>Verdlo - theory crafter</li>
+    <li style={{display: props.BrienneTracker===84 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Verdlo</b> - theory crafter</li>
     <li style={{display: props.BrienneTracker>=85 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<86 ? 'list-item' : 'none'}}>Darkdoombob</li>
-    <li style={{display: props.BrienneTracker===86 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Darkdoombob</b></li>
+    <li style={{display: props.BrienneTracker<86 ? 'list-item' : 'none'}}>Darkdoombob - inspired, versatile creative</li>
+    <li style={{display: props.BrienneTracker===86 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Darkdoombob</b> - inspired, versatile creative</li>
     <li style={{display: props.BrienneTracker>=87 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<88 ? 'list-item' : 'none'}}>Residentvamp</li>
-    <li style={{display: props.BrienneTracker===88 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Residentvamp</b></li>
+    <li style={{display: props.BrienneTracker<88 ? 'list-item' : 'none'}}>Residentvamp - THE live reader</li>
+    <li style={{display: props.BrienneTracker===88 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Residentvamp</b> - THE live reader</li>
     <li style={{display: props.BrienneTracker>=89 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<90 ? 'list-item' : 'none'}}>Stupisms</li>
-    <li style={{display: props.BrienneTracker===90 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Stupisms</b></li>
+    <li style={{display: props.BrienneTracker<90 ? 'list-item' : 'none'}}>Stupisms - character design pioneer/Jojo-ifier</li>
+    <li style={{display: props.BrienneTracker===90 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Stupisms</b> - character design pioneer/Jojo-ifier</li>
     <li style={{display: props.BrienneTracker>=91 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<92 ? 'list-item' : 'none'}}>Torch</li>
-    <li style={{display: props.BrienneTracker===92 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Torch</b></li>
+    <li style={{display: props.BrienneTracker<92 ? 'list-item' : 'none'}}>Torch - but really really fast</li>
+    <li style={{display: props.BrienneTracker===92 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Torch</b> - but really really fast</li>
     <li style={{display: props.BrienneTracker>=93 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<94 ? 'list-item' : 'none'}}>Weaponx06</li>
-    <li style={{display: props.BrienneTracker===94 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Weaponx06</b></li>
+    <li style={{display: props.BrienneTracker<94 ? 'list-item' : 'none'}}>Weaponx06 - music distributor</li>
+    <li style={{display: props.BrienneTracker===94 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Weaponx06</b> - music distributor</li>
     <li style={{display: props.BrienneTracker>=95 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<96 ? 'list-item' : 'none'}}>TheWinterComet</li>
-    <li style={{display: props.BrienneTracker===96 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>TheWinterComet</b></li>
+    <li style={{display: props.BrienneTracker<96 ? 'list-item' : 'none'}}>TheWinterComet - beloved commenter</li>
+    <li style={{display: props.BrienneTracker===96 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>TheWinterComet</b> - beloved commenter</li>
     <li style={{display: props.BrienneTracker>=97 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<98 ? 'list-item' : 'none'}}>Wise</li>
-    <li style={{display: props.BrienneTracker===98 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Wise</b></li>
+    <li style={{display: props.BrienneTracker<98 ? 'list-item' : 'none'}}>Wise - atomic bomb defuser</li>
+    <li style={{display: props.BrienneTracker===98 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Wise</b> - atomic bomb defuser</li>
     <li style={{display: props.BrienneTracker>=99 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<100 ? 'list-item' : 'none'}}>EggheadGandu</li>
-    <li style={{display: props.BrienneTracker===100 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>EggheadGandu</b></li>
+    <li style={{display: props.BrienneTracker<100 ? 'list-item' : 'none'}}>EggheadGandu - original tvtropes fan</li>
+    <li style={{display: props.BrienneTracker===100 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>EggheadGandu</b> - original tvtropes fan</li>
     <li style={{display: props.BrienneTracker>=101 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<102 ? 'list-item' : 'none'}}>Maxtot</li>
-    <li style={{display: props.BrienneTracker===102 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Maxtot</b></li>
+    <li style={{display: props.BrienneTracker<102 ? 'list-item' : 'none'}}>Maxtot - gone but not forgotten</li>
+    <li style={{display: props.BrienneTracker===102 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Maxtot</b> - gone but not forgotten</li>
     <li style={{display: props.BrienneTracker>=103 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<104 ? 'list-item' : 'none'}}>Wilbur D Rake</li>
-    <li style={{display: props.BrienneTracker===104 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Wilbur D Rake</b></li>
+    <li style={{display: props.BrienneTracker<104 ? 'list-item' : 'none'}}>Wilbur D Rake - all caught up (but not in roles)</li>
+    <li style={{display: props.BrienneTracker===104 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Wilbur D Rake</b> - all caught up (but not in roles)</li>
     <li style={{display: props.BrienneTracker>=105 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<106 ? 'list-item' : 'none'}}>Fauxmantis</li>
-    <li style={{display: props.BrienneTracker===106 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Fauxmantis</b></li>
+    <li style={{display: props.BrienneTracker<106 ? 'list-item' : 'none'}}>Fauxmantis - kudos just before the end</li>
+    <li style={{display: props.BrienneTracker===106 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Fauxmantis</b> - kudos just before the end</li>
     <li style={{display: props.BrienneTracker>=107 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<108 ? 'list-item' : 'none'}}>Qrowscant</li>
-    <li style={{display: props.BrienneTracker===108 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Qrowscant</b></li>
+    <li style={{display: props.BrienneTracker<108 ? 'list-item' : 'none'}}>Qrowscant - interactive fiction enjoyer <i>(you are seen)</i></li>
+    <li style={{display: props.BrienneTracker===108 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Qrowscant</b> - interactive fiction enjoyer <i>(you are seen)</i></li>
     <li style={{display: props.BrienneTracker>=109 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<110 ? 'list-item' : 'none'}}>Governor_Explosion</li>
-    <li style={{display: props.BrienneTracker===110 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Governor_Explosion</b></li>
+    <li style={{display: props.BrienneTracker<110 ? 'list-item' : 'none'}}>Governor_Explosion - wields the original banner</li>
+    <li style={{display: props.BrienneTracker===110 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Governor_Explosion</b> - wields the original banner</li>
     <li style={{display: props.BrienneTracker>=111 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<112 ? 'list-item' : 'none'}}>Armesstein</li>
-    <li style={{display: props.BrienneTracker===112 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Armesstein</b></li>
+    <li style={{display: props.BrienneTracker<112 ? 'list-item' : 'none'}}>Armesstein - punk ass artist</li>
+    <li style={{display: props.BrienneTracker===112 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Armesstein</b> - punk ass artist</li>
     <li style={{display: props.BrienneTracker>=113 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<114 ? 'list-item' : 'none'}}>MildlyAnxious</li>
-    <li style={{display: props.BrienneTracker===114 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>MildlyAnxious</b></li>
+    <li style={{display: props.BrienneTracker<114 ? 'list-item' : 'none'}}>MildlyAnxious - on track to read this in 2025</li>
+    <li style={{display: props.BrienneTracker===114 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>MildlyAnxious</b> - on track to read this in 2025</li>
     <li style={{display: props.BrienneTracker>=115 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<116 ? 'list-item' : 'none'}}>Kal</li>
-    <li style={{display: props.BrienneTracker===116 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Kal</b></li>
+    <li style={{display: props.BrienneTracker<116 ? 'list-item' : 'none'}}>Kal - carries the legacy to new narratives</li>
+    <li style={{display: props.BrienneTracker===116 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Kal</b> - carries the legacy to new narratives</li>
     <li style={{display: props.BrienneTracker>=117 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<118 ? 'list-item' : 'none'}}>Garplatinum</li>
-    <li style={{display: props.BrienneTracker===118 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Garplatinum</b></li>
+    <li style={{display: props.BrienneTracker<118 ? 'list-item' : 'none'}}>Garplatinum - Gar from Streetlight</li>
+    <li style={{display: props.BrienneTracker===118 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Garplatinum</b> - Gar from Streetlight</li>
     <li style={{display: props.BrienneTracker>=119 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<120 ? 'list-item' : 'none'}}>Cozmic</li>
-    <li style={{display: props.BrienneTracker===120 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Cozmic</b></li>
+    <li style={{display: props.BrienneTracker<120 ? 'list-item' : 'none'}}>Cozmic - most wholesome artist</li>
+    <li style={{display: props.BrienneTracker===120 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Cozmic</b> - most wholesome artist</li>
     <li style={{display: props.BrienneTracker>=121 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<122 ? 'list-item' : 'none'}}>Koalahobbit</li>
-    <li style={{display: props.BrienneTracker===122 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Koalahobbit</b></li>
+    <li style={{display: props.BrienneTracker<122 ? 'list-item' : 'none'}}>Koalahobbit - been here since the real beginning</li>
+    <li style={{display: props.BrienneTracker===122 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Koalahobbit</b> - been here since the real beginning</li>
     <li style={{display: props.BrienneTracker>=123 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<124 ? 'list-item' : 'none'}}>TheGoodSamaritan</li>
-    <li style={{display: props.BrienneTracker===124 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>TheGoodSamaritan</b></li>
+    <li style={{display: props.BrienneTracker<124 ? 'list-item' : 'none'}}>TheGoodSamaritan - tvtropes contributer</li>
+    <li style={{display: props.BrienneTracker===124 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>TheGoodSamaritan</b> - tvtropes contributer</li>
     <li style={{display: props.BrienneTracker>=125 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<126 ? 'list-item' : 'none'}}>Bonvoyage_noona</li>
-    <li style={{display: props.BrienneTracker===126 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Bonvoyage_noona</b></li>
+    <li style={{display: props.BrienneTracker<126 ? 'list-item' : 'none'}}>0plus2equals1 - latecoming commenter</li>
+    <li style={{display: props.BrienneTracker===126 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>0plus2equals1</b> - latecoming commenter</li>
     <li style={{display: props.BrienneTracker>=127 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<128 ? 'list-item' : 'none'}}>Pigserpent</li>
-    <li style={{display: props.BrienneTracker===128 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Pigserpent</b></li>
+    <li style={{display: props.BrienneTracker<128 ? 'list-item' : 'none'}}>Pigserpent - Paperback Rigby composer</li>
+    <li style={{display: props.BrienneTracker===128 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Pigserpent</b> - Paperback Rigby composer</li>
     <li style={{display: props.BrienneTracker>=129 ? 'list-item' : 'none'}}></li>
     </ul>
 

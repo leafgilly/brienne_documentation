@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import React, {useState, useCallback, useEffect } from 'react';
 import {connect} from 'react-redux';
+import amandaImage from '../images/amanda.png';
+import amandaImage2 from '../images/amanda_scratch.png';
 
 const Amanda = (props) => {
 
@@ -63,10 +65,16 @@ const Amanda = (props) => {
     </div> */}
     <div className='openFolder'>
         <div className="openNametag"><p>
-        <Link class='back-button' to="/">Go Back</Link>
+        <Link className='back-button' to="/">Go Back</Link>
     </p></div>
+    <div style={{display: props.AmandaVisited===0 ? 'block' : 'none'}} className="picture-frame">
+        <img className='picture' src={amandaImage} alt="Amanda Valentine"></img>
+    </div>
+    <div style={{display: props.AmandaVisited>=1 ? 'block' : 'none'}} className="picture-frame">
+        <img className='picture' src={amandaImage2} alt="A stranger, inverted with a scratch covering her eyes"></img>
+    </div>
     <div className='document'>
-    <h1 style={{textAlign: 'center'}}>{props.AmandaName} Documentation</h1>
+    <h1 style={{textAlign: 'center'}}>{props.AmandaName[0]} {props.AmandaName[2]} Documentation</h1>
     <h1 style={{textAlign: 'center'}}> Threat Level: C (previously A)</h1>
     <h2>Previous Names and Aliases</h2>
     <ul>

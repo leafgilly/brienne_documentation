@@ -4,6 +4,9 @@ import {connect} from 'react-redux';
 
 import music from '../audio/SweetDreams.mp3'
 
+import sallyImage from '../images/sally.png';
+import sallyImage2 from '../images/sally_scratch.png';
+
 const Sally = (props) => {
 
     const audio = document.getElementById('audio_tag');
@@ -38,8 +41,14 @@ const Sally = (props) => {
     <div>
     <div className='openFolder' style={{backgroundColor: play ? palette[counter] : '#D2BB89'}}>
         <div className="openNametag" style={{backgroundColor: play ? palette[counter] : '#D2BB89'}}><p>
-        <Link class='back-button' to="/">Go Back</Link>
+        <Link className='back-button' to="/">Go Back</Link>
     </p></div>
+    <div style={{display: props.SallyVisited===0 ? 'block' : 'none'}} className="picture-frame">
+        <img className='picture' src={sallyImage} alt="Sally Reed"></img>
+    </div>
+    <div style={{display: props.SallyVisited>=1 ? 'block' : 'none'}} className="picture-frame">
+        <img className='picture' src={sallyImage2} alt="A punk girl, inverted with scratched out eyes."></img>
+    </div>
     <div className='document' style={{backgroundColor: 'black !important'}}>
      <audio id="audio_tag" src={music} loop />
     <h1 style={{textAlign: 'center', display: props.SallyCorruption===0 ? 'block' : 'none'}}><span onClick={()=>{

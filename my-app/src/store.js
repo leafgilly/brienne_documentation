@@ -8,6 +8,7 @@ const initialState = {
     AmandaVisited: 0,
     RitaVisited: 0,
     SallyVisited: 0,
+    BrienneVisited: 0,
     //MORGAN VALUES
     MorganName: ['Morgan', ' ', 'Becquerel'],
     MorganCorruption: 0,
