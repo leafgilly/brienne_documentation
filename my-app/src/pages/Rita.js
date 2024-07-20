@@ -51,6 +51,7 @@ const Rita = (props) => {
     <h1 style={{textAlign: 'center'}}>{props.RitaName[0]} {props.RitaName[2]} Documentation</h1>
     <h1 style={{textAlign: 'center', display: props.RitaCorruption===0 ? 'block' : 'none'}}>Threat Level: <span onClick={()=>{
         corrupt(2);
+        console.log("He can still see you even if you can't see him.");
     }} className='interactive enabled-link-r no-select-text'>E</span></h1>
     <h1 style={{textAlign: 'center', display: props.RitaCorruption>=1 ? 'block' : 'none'}}>Threat Level: <b className='enabled-link-b'>E (Zeppeli Privilege)</b></h1>
     <h2 style={{display: props.RitaCorruption<2 ? 'block' : 'none'}}>Previous Names and Aliases</h2>
@@ -70,6 +71,7 @@ const Rita = (props) => {
     <li style={{display: props.RitaCorruption===8 ? 'list-item' : 'none'}}>Margarita Zeppeli - Zeppeli <b className='enabled-link-b'>Zeppeli</b> <b className='enabled-link-b'>Zeppeli </b>
     <span onClick={()=>{
         corrupt(2);
+        console.log("Death by chandelier... what a cruel way to go.");
     }} className='interactive enabled-link-r no-select-text'>shorthand of her first name ‘Rita’</span></li>
     <li style={{display: props.RitaCorruption===10 ? 'list-item' : 'none'}}>Margarita Zeppeli - Zeppeli <b className='enabled-link-b'>Zeppeli</b> <b className='enabled-link-b'>Zeppeli </b> <b className='enabled-link-b'>death by <span onClick={()=>{
         corrupt(2);
@@ -80,6 +82,7 @@ const Rita = (props) => {
     <h3 style={{display: props.RitaCorruption<12 ? 'block' : 'none'}}>Rockin' Robin</h3>
     <h3 style={{display: props.RitaCorruption===12 ? 'block' : 'none'}} onClick={()=>{
         corrupt(2);
+        console.log('Tweet!');
         window.scrollTo(0, 0);
     }} className='interactive enabled-link-r no-select-text'>Rockin' Robin</h3>
     <h3 style={{display: props.RitaCorruption>=14 ? 'block' : 'none'}} onClick={()=>{
@@ -146,6 +149,7 @@ const Rita = (props) => {
         power boost while using her Stand.</p>
     <p style={{display: props.RitaCorruption===27 ? 'block' : 'none'}}>Zeppeli possesses her family’s genetic predisposition <b className='enabled-link-b'>Hamon... wait.</b> She understands the basics of the breathing techniques, 
         although her lack of an experienced teacher has prevented her from <span onClick={()=>{
+        console.log("Strange how Hamon still works in here...");
         corrupt(4);
     }} className='interactive enabled-link-r no-select-text'>learning advanced skills.</span> These abilities are most useful 
         in conjunction with her Stand, which is also able to channel Hamon (and better than her), and provides her with a speed and 
@@ -180,6 +184,7 @@ const Rita = (props) => {
     <h2 style={{display: props.RitaCorruption<41 ? 'block' : 'none'}}>Psychological Profile</h2>
     <h2 style={{display: props.RitaCorruption===41 ? 'block' : 'none'}}><span onClick={()=>{
         corrupt(5);
+        console.log("Stop, stop! She's already dead!");
     }} className='interactive enabled-link-r no-select-text'>Psychological Profile</span></h2>
     <h2 style={{display: props.RitaCorruption>=46 ? 'block' : 'none'}}><b className='enabled-link-b'>Pick a word. Remember.</b></h2>
     
@@ -198,24 +203,29 @@ const Rita = (props) => {
     <div style={{display: props.RitaCorruption===46 ? 'block' : 'none'}}>
     <p>Rita is <span onClick={()=>{
         corrupt(4);
+        console.log("Desecrating a corpse? How very like you. Don't forget how many names you've stolen from the dead already.");
         lockout('Passionate');
     }} className='interactive enabled-link-r no-select-text'>passionate</span> and&nbsp;
     <span onClick={()=>{
         corrupt(4);
+        console.log("Desecrating a corpse? How very like you. Don't forget how many names you've stolen from the dead already.");
         lockout('Headstrong');
     }} className='interactive enabled-link-r no-select-text'>headstrong</span>. Raised from a young age to live life true to herself, she is&nbsp;
     <span onClick={()=>{
         corrupt(4);
+        console.log("Desecrating a corpse? How very like you. Don't forget how many names you've stolen from the dead already.");
         lockout('Unrelenting');
     }} className='interactive enabled-link-r no-select-text'>unrelenting</span> when she discovers perceived 
         injustice in the world. This can also make her&nbsp;
     <span onClick={()=>{
         corrupt(4);
+        console.log("Desecrating a corpse? How very like you. Don't forget how many names you've stolen from the dead already.");
         lockout('Brash');
     }} className='interactive enabled-link-r no-select-text'>brash</span> and tunnel-visioned, unable to unfocus herself from a task until it causes her 
         physical harm. Her mind moves fast, and at times, she struggles to properly articulate herself. Her Stand’s recent&nbsp;
         <span onClick={()=>{
         corrupt(4);
+        console.log("Desecrating a corpse? How very like you. Don't forget how many names you've stolen from the dead already.");
         lockout('Maturation');
     }} className='interactive enabled-link-r no-select-text'>maturation</span> and 
         ability to speak in lieu of Rita might be emblematic of this.</p>
@@ -223,41 +233,50 @@ const Rita = (props) => {
     <p>When I first met Rita, she was&nbsp;
     <span onClick={()=>{
         corrupt(4);
+        console.log("Desecrating a corpse? How very like you. Don't forget how many names you've stolen from the dead already.");
         lockout('Immature');
     }} className='interactive enabled-link-r no-select-text'>immature</span>,&nbsp;
     <span onClick={()=>{
         corrupt(4);
+        console.log("Desecrating a corpse? How very like you. Don't forget how many names you've stolen from the dead already.");
         lockout('Shortsighted');
     }} className='interactive enabled-link-r no-select-text'>shortsighted</span>, and&nbsp;
     <span onClick={()=>{
         corrupt(4);
+        console.log("Desecrating a corpse? How very like you. Don't forget how many names you've stolen from the dead already.");
         lockout('Irrational');
     }} className='interactive enabled-link-r no-select-text'>irrational</span>. I had intended to bring her up so she would survive the curse of her 
         family line, but she proved herself to be&nbsp;
         <span onClick={()=>{
         corrupt(4);
+        console.log("Desecrating a corpse? How very like you. Don't forget how many names you've stolen from the dead already.");
         lockout('Unbendable');
     }} className='interactive enabled-link-r no-select-text'>unbendable</span>. We did not get along as a result, such was more of&nbsp;
     <span onClick={()=>{
         corrupt(4);
+        console.log("Desecrating a corpse? How very like you. Don't forget how many names you've stolen from the dead already.");
         lockout('My Failure');
     }} className='interactive enabled-link-r no-select-text'>my failure</span> than hers; she needed 
         gentle guidance, something I was incapable of offering. But she has&nbsp;
         <span onClick={()=>{
         corrupt(4);
+        console.log("Desecrating a corpse? How very like you. Don't forget how many names you've stolen from the dead already.");
         lockout('Grown');
     }} className='interactive enabled-link-r no-select-text'>grown</span>, grown so much I hardly recognize her sometimes. And even though 
         I know I have no right to, I can’t help but feel proud. She is&nbsp; <br /> <br />
         <span onClick={()=>{
         corrupt(4);
+        console.log("Desecrating a corpse? How very like you. Don't forget how many names you've stolen from the dead already.");
         lockout('My Greatest Failure');
     }} className='interactive enabled-link-r no-select-text'>my greatest failure</span>,&nbsp; <br /> <br />
     <span onClick={()=>{
         corrupt(4);
+        console.log("Desecrating a corpse? How very like you. Don't forget how many names you've stolen from the dead already.");
         lockout('My Voice of Dissent');
     }} className='interactive enabled-link-r no-select-text'>my voice of dissent</span>,&nbsp; <br /> <br />
     <span onClick={()=>{
         corrupt(4);
+        console.log("Desecrating a corpse? How very like you. Don't forget how many names you've stolen from the dead already.");
         lockout('My Greatest Success');
     }} className='interactive enabled-link-r no-select-text'>my greatest success</span>.
     </p>
