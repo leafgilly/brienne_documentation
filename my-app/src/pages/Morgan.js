@@ -6,8 +6,6 @@ import {connect} from 'react-redux';
 
 const Morgan = (props) => {
 
-    //TEMPORARY AUDIO SOLUTION. CONSIDER MAKING THIS MORE GLOBAL, EITHER PUTTING IT IN APP.JS OR SOMEHOW INTO STORE.JS (SEE SYNTAXBLITZ SUGGESTIONS)
-
     const [counter, setCounter] = React.useState(0);
 
     const names = [
@@ -18,8 +16,8 @@ const Morgan = (props) => {
 
     const shuffle = useCallback(() => {
         const index = Math.floor(Math.random() * names.length);
-        // console.log(index);
         setnewGlitch(names[index]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     useEffect(() => {
@@ -37,11 +35,16 @@ const Morgan = (props) => {
     }
 
     React.useEffect(() => {
-        if (props.MorganCorruption>=14) { //CAN IMPROVE ON THIS SO IT GETS BRIGHTER FASTER ONCE IT REACHES A VISIBILITY THRESHOLD
+        if (props.MorganCorruption>=14 && counter<150) { //CAN IMPROVE ON THIS SO IT GETS BRIGHTER FASTER ONCE IT REACHES A VISIBILITY THRESHOLD
             const timer = counter < 255 && setInterval(() => setCounter(counter + 1), 500);
             brighten(1);
             return () => clearInterval(timer);
+        } else if (props.MorganCorruption>=14 && counter>=150) {
+            const timer = counter < 255 && setInterval(() => setCounter(counter + 1), 500);
+            brighten(2);
+            return () => clearInterval(timer);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [counter, props.MorganCorruption]);
 
     function corrupt (amt) {
@@ -65,39 +68,41 @@ const Morgan = (props) => {
                 value: 1,
             });
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [props.MorganCorruption, counter]);
 
     return (
     <>
-    <div class='openFolder'>
-        <div class="openNametag"><p>
-        <Link style={{color: 'red'}} to="/">Go Back</Link>
+    <div className='openFolder'>
+        <div className="openNametag"><p>
+        <Link class='back-button' to="/">Go Back</Link>
     </p></div>
-    <div class='document' style={{backgroundColor: props.MorganCorruption>=14 ? 'rgba(' + props.MorganLight + ',' + props.MorganLight + ',' + props.MorganLight + ')' : 'black', color: 'white'}}>
+    <div className='document' style={{backgroundColor: props.MorganCorruption>=14 ? 'rgba(' + props.MorganLight + ',' + props.MorganLight + ',' + props.MorganLight + ')' : 'black', color: 'white'}}>
 
         {/* BRIENNE'S INTERACTIONS */}
         <div onClick={()=>{
-            // loadAudio();
             corrupt(1);
-        }} class='interactive enabled-link-b no-select-text' style={{display: props.MorganCorruption===0 ? 'block' : 'none'}}>
+            console.log("Absolutely nothing to be found. Nothing at all.");
+        }} className='interactive enabled-link-b no-select-text' style={{display: props.MorganCorruption===0 ? 'block' : 'none'}}>
             <p>There's... nothing here?</p>
         </div>
 
         <div onClick={()=>{
-            // playAudio();
             corrupt(1);
-        }} class='interactive enabled-link-b no-select-text' style={{display: props.MorganCorruption===1 ? 'block' : 'none'}}>
+            console.log("Oh wow, a css animation. Admire it, because it's the only one in the whole site.");
+        }} className='interactive enabled-link-b no-select-text' style={{display: props.MorganCorruption===1 ? 'block' : 'none'}}>
             <p>But this can't just be it! There has to be something.</p>
         </div>
 
         <div onClick={()=>{
             corrupt(1);
-        }} class='interactive enabled-link-b no-select-text' style={{display: props.MorganCorruption===2 ? 'block' : 'none'}}>
+        }} className='interactive enabled-link-b no-select-text' style={{display: props.MorganCorruption===2 ? 'block' : 'none'}}>
             <p>Wait. What is that?</p>
         </div>
         <div onClick={()=>{
             corrupt(1);
-        }} class='interactive enabled-link-b no-select-text' style={{display: props.MorganCorruption===13 ? 'block' : 'none'}}>
+            console.log("Clock's ticking...");
+        }} className='interactive enabled-link-b no-select-text' style={{display: props.MorganCorruption===13 ? 'block' : 'none'}}>
             <p>There's got to be something here, somewhere. I just have to find it.</p>
         </div>
 
@@ -106,15 +111,15 @@ const Morgan = (props) => {
         <h1 style={{display: props.MorganCorruption<14 ? 'block' : 'none'}}>Threat Level: E</h1>
         <h1 style={{display: props.MorganCorruption===14 ? 'block' : 'none'}}>Threat Level: <span onClick={()=>{
         corrupt(1);
-    }} class='interactive enabled-link-m no-select-text'>E</span></h1>
-        <h1 style={{display: props.MorganCorruption>=15 ? 'block' : 'none'}}>Threat Level: <b class='enabled-link-b'>Wouldn't hurt a fly</b></h1>
+    }} className='interactive enabled-link-m no-select-text'>E</span></h1>
+        <h1 style={{display: props.MorganCorruption>=15 ? 'block' : 'none'}}>Threat Level: <b className='enabled-link-b'>Wouldn't hurt a fly</b></h1>
         <h2>Previous Names and Aliases</h2>
         <ul>
             <li style={{display: props.MorganCorruption<15 ? 'list-item' : 'none'}}>Stella Becquerel - as of 1990, Becquerel chose to go by her middle name 'Morgan'</li>
             <li style={{display: props.MorganCorruption===15 ? 'list-item' : 'none'}}>Stella Becquerel - as of 1990, Becquerel chose to go by her middle name <span onClick={()=>{
         corrupt(1);
-    }} class='interactive enabled-link-m no-select-text'>'Morgan'</span></li>
-            <li style={{display: props.MorganCorruption>=16 ? 'list-item' : 'none'}}>Stella Becquerel - as of 1990, Becquerel chose to go by her middle name <b class='enabled-link-b'>
+    }} className='interactive enabled-link-m no-select-text'>'Morgan'</span></li>
+            <li style={{display: props.MorganCorruption>=16 ? 'list-item' : 'none'}}>Stella Becquerel - as of 1990, Becquerel chose to go by her middle name <b className='enabled-link-b'>
                 because she hated her light and wanted to get away from it in every way she could.</b></li>
         </ul>
         <h2>Stand and Supernatural Abilities</h2>
@@ -124,39 +129,39 @@ const Morgan = (props) => {
             The longer the exposure to the user's skin, the brighter the object gets.</p>
         <p style={{display: props.MorganCorruption===16 ? 'block' : 'none'}}>Neon Trees <span onClick={()=>{
         corrupt(1);
-    }} class='interactive enabled-link-m no-select-text'>manifests</span> as a glove and sunglasses but is always active--the ability cannot be turned off. 
+    }} className='interactive enabled-link-m no-select-text'>manifests</span> as a glove and sunglasses but is always active--the ability cannot be turned off. 
             This Stand makes anything that comes into contact with the user's skin become bright. 
             The longer the exposure to the user's skin, the brighter the object gets.</p>
-        <p style={{display: props.MorganCorruption===17 ? 'block' : 'none'}}>Neon Trees manifest<b class='enabled-link-b'>ed</b> as a glove and sunglasses but is always active--<span onClick={()=>{
+        <p style={{display: props.MorganCorruption===17 ? 'block' : 'none'}}>Neon Trees manifest<b className='enabled-link-b'>ed</b> as a glove and sunglasses but is always active--<span onClick={()=>{
         corrupt(1);
-    }} class='interactive enabled-link-m no-select-text'>the ability cannot be turned off.</span> This Stand makes anything 
+    }} className='interactive enabled-link-m no-select-text'>the ability cannot be turned off.</span> This Stand makes anything 
             that comes into contact with the user's skin become bright. The longer the exposure to the user's skin, the brighter the object gets.</p>
-            <p style={{display: props.MorganCorruption===18 ? 'block' : 'none'}}>Neon Trees manifest<b class='enabled-link-b'>ed</b> as a glove and sunglasses but is always active--
-            <b class='enabled-link-b'>because she cannot live without it.</b>
+            <p style={{display: props.MorganCorruption===18 ? 'block' : 'none'}}>Neon Trees manifest<b className='enabled-link-b'>ed</b> as a glove and sunglasses but is always active--
+            <b className='enabled-link-b'>because she cannot live without it.</b>
             This Stand makes anything that comes into contact with the user's skin <span onClick={()=>{
         corrupt(1);
-    }} class='interactive enabled-link-m no-select-text'>become bright.</span> The 
+    }} className='interactive enabled-link-m no-select-text'>become bright.</span> The 
             longer the exposure to the user's skin, the brighter the object gets.</p>
-            <p style={{display: props.MorganCorruption===19 ? 'block' : 'none'}}>Neon Trees manifest<b class='enabled-link-b'>ed</b> as a glove and sunglasses but is always active--
-            <b class='enabled-link-b'>taking her light from her will kill her.</b> This Stand makes anything that comes into contact with the user's skin <b class='enabled-link-b'>absorb into you, ripping all life from the host body.</b> The 
+            <p style={{display: props.MorganCorruption===19 ? 'block' : 'none'}}>Neon Trees manifest<b className='enabled-link-b'>ed</b> as a glove and sunglasses but is always active--
+            <b className='enabled-link-b'>taking her light from her will kill her.</b> This Stand makes anything that comes into contact with the user's skin <b className='enabled-link-b'>absorb into you, ripping all life from the host body.</b> The 
             longer the exposure to the user's skin, <span onClick={()=>{
         corrupt(1);
-    }} class='interactive enabled-link-m no-select-text'>the brighter the object gets.</span></p>
-            <p style={{display: props.MorganCorruption===20 ? 'block' : 'none'}}>Neon Trees manifest<b class='enabled-link-b'>ed</b> as a glove and sunglasses but is always active--
-            <b class='enabled-link-b'>taking her light from her will kill her.</b> This Stand makes anything that comes into contact with the user's skin <b class='enabled-link-b'>absorb into you, ripping all life from the host body.</b> The 
-            longer the exposure to the user's skin, <b class='enabled-link-b'>it's <b onClick={()=>{
+    }} className='interactive enabled-link-m no-select-text'>the brighter the object gets.</span></p>
+            <p style={{display: props.MorganCorruption===20 ? 'block' : 'none'}}>Neon Trees manifest<b className='enabled-link-b'>ed</b> as a glove and sunglasses but is always active--
+            <b className='enabled-link-b'>taking her light from her will kill her.</b> This Stand makes anything that comes into contact with the user's skin <b className='enabled-link-b'>absorb into you, ripping all life from the host body.</b> The 
+            longer the exposure to the user's skin, <b className='enabled-link-b'>it's <b onClick={()=>{
         corrupt(1);
-    }} class='interactive enabled-link-m no-select-text'>poetic</b>, in a way. In death, she escaped her Stand.</b></p>
-            <p style={{display: props.MorganCorruption>=21 ? 'block' : 'none'}}>Neon Trees manifest<b class='enabled-link-b'>ed</b> as a glove and sunglasses but is always active--
-            <b class='enabled-link-b'>taking her light from her will kill her.</b> This Stand makes anything that comes into contact with the user's skin <b class='enabled-link-b'>absorb into you, ripping all life from the host body.</b> The 
-            longer the exposure to the user's skin, <b class='enabled-link-b'>it's <b style={{color: 'red'}}>CRUELTY</b>, in a way. In death, she escaped her Stand.</b></p>
+    }} className='interactive enabled-link-m no-select-text'>poetic</b>, in a way. In death, she escaped her Stand.</b></p>
+            <p style={{display: props.MorganCorruption>=21 ? 'block' : 'none'}}>Neon Trees manifest<b className='enabled-link-b'>ed</b> as a glove and sunglasses but is always active--
+            <b className='enabled-link-b'>taking her light from her will kill her.</b> This Stand makes anything that comes into contact with the user's skin <b className='enabled-link-b'>absorb into you, ripping all life from the host body.</b> The 
+            longer the exposure to the user's skin, <b className='enabled-link-b'>it's <b style={{color: 'red'}}>CRUELTY</b>, in a way. In death, she escaped her Stand.</b></p>
         
         <h3>Neon Trees Act 2: Favorite Daze</h3>
         <div style={{display: props.MorganCorruption<21 ? 'block' : 'none', backgroundColor: 'rgba(' + props.MorganLight*3 + ',' + props.MorganLight*3 + ',' + props.MorganLight*3 + ',' + props.MorganLight*.011 + ')'}}>
         <p>Neon Trees' light spreads through root-like veins along the user's body, creating sparks as it travels.
             Excluding the circuitry--the physical form of her Stand--Morgan's body becomes&nbsp;
-            <span id='flicker' class='enabled-link-m no-select-text' style={{display: props.MorganCorruption===2 ? 'inline' : 'none'}}>blindingly bright.</span>
-            <span class='interactive enabled-link-m no-select-text' style={{display: props.MorganCorruption>=3 && props.MorganCorruption<13 ? 'inline' : 'none'}}
+            <span id='flicker' className='enabled-link-m no-select-text' style={{display: props.MorganCorruption===2 ? 'inline' : 'none'}}>blindingly bright.</span>
+            <span className='interactive enabled-link-m no-select-text' style={{display: props.MorganCorruption>=3 && props.MorganCorruption<13 ? 'inline' : 'none'}}
             onClick={()=>{
                 corrupt(2);
                 changeOpacity(.2);
@@ -172,14 +177,15 @@ const Morgan = (props) => {
         <p>Neon Trees' light spreads through root-like veins along the user's body, creating sparks as it travels.
             Excluding the <span onClick={()=>{
         corrupt(1);
-    }} class='interactive enabled-link-m no-select-text'>circuitry</span>--the physical form of her Stand--Morgan's body becomes blindingly bright.
+        console.log("Getting hard to read some of this text, huh...");
+    }} className='interactive enabled-link-m no-select-text'>circuitry</span>--the physical form of her Stand--Morgan's body becomes blindingly bright.
             Those who are close enough to Morgan will benefit from slow healing properties. 
             Physical ailements of any kind save for death can be fixed from remaining in this Stand's rays for long enough.
             It also has the ability to impart positive feelings among those who are affected by the light.</p>
         </div>
         <div style={{display: props.MorganCorruption>=22 ? 'block' : 'none', backgroundColor: 'rgba(' + props.MorganLight*3 + ',' + props.MorganLight*3 + ',' + props.MorganLight*3 + ')'}}>
         <p>Neon Trees' light spreads through root-like veins along the user's body, creating sparks as it travels.
-            Excluding the <b class='enabled-link-b'>the circuits were all you could see of her; she shone like sunlight</b>--the physical form of her Stand--Morgan's body becomes blindingly bright.
+            Excluding the <b className='enabled-link-b'>the circuits were all you could see of her; she shone like sunlight</b>--the physical form of her Stand--Morgan's body becomes blindingly bright.
             Those who are close enough to Morgan will benefit from slow healing properties. 
             Physical ailements of any kind save for death can be fixed from remaining in this Stand's rays for long enough.
             It also has the ability to impart positive feelings among those who are affected by the light.</p>
@@ -189,23 +195,24 @@ const Morgan = (props) => {
         <li style={{display: props.MorganCorruption<22 ? 'list-item' : 'none'}}>Henri Becquerel: father. Amicable public relationship, unspoken distance in private. Wishes he would make a greater effort to understand her.</li>
         <li style={{display: props.MorganCorruption===22 ? 'list-item' : 'none'}}>Henri Becquerel: father. Amicable public relationship, unspoken distance in private. <span onClick={()=>{
         corrupt(1);
-    }} class='interactive enabled-link-m no-select-text'>Wishes he would make a greater effort to understand her.</span></li>
-        <li style={{display: props.MorganCorruption>=23 ? 'list-item' : 'none'}}>Henri Becquerel: father. Amicable public relationship, unspoken distance in private. <b class="enabled-link-b">He would sue you for what you did.</b></li>
+    }} className='interactive enabled-link-m no-select-text'>Wishes he would make a greater effort to understand her.</span></li>
+        <li style={{display: props.MorganCorruption>=23 ? 'list-item' : 'none'}}>Henri Becquerel: father. Amicable public relationship, unspoken distance in private. <b className="enabled-link-b">He would sue you for what you did.</b></li>
         
         <li style={{display: props.MorganCorruption<23 ? 'list-item' : 'none'}}>Flora Becquerel: mother. Superficial love. Feels her attempts at connection are hollow.</li>
         <li style={{display: props.MorganCorruption===23 ? 'list-item' : 'none'}}>Flora Becquerel: mother. Superficial love. <span onClick={()=>{
         corrupt(1);
-    }} class='interactive enabled-link-m no-select-text'>Feels her attempts at connection are hollow.</span></li>
-        <li style={{display: props.MorganCorruption>=24 ? 'list-item' : 'none'}}>Flora Becquerel: mother. Superficial love. <b class="enabled-link-b">She might've called it mercy.</b></li>
+    }} className='interactive enabled-link-m no-select-text'>Feels her attempts at connection are hollow.</span></li>
+        <li style={{display: props.MorganCorruption>=24 ? 'list-item' : 'none'}}>Flora Becquerel: mother. Superficial love. <b className="enabled-link-b">She might've called it mercy.</b></li>
         
         <li style={{display: props.MorganCorruption<24 ? 'list-item' : 'none'}}>Jeeves [deceased]: bodyguard and father figure. They were inseparable. Losing him nearly broke her, but she seems to have made some peace with it.</li>
         <li style={{display: props.MorganCorruption===24 ? 'list-item' : 'none'}}>Jeeves [deceased]: bodyguard and father figure. They were inseparable. <span onClick={()=>{
         corrupt(1);
-    }} class='interactive enabled-link-m no-select-text'>Losing him nearly broke her, but she seems to have made some peace with it.</span></li>
+    }} className='interactive enabled-link-m no-select-text'>Losing him nearly broke her, but she seems to have made some peace with it.</span></li>
         <li style={{display: props.MorganCorruption===25 ? 'list-item' : 'none'}}>Jeeves [<span onClick={()=>{
         corrupt(1);
-    }} class='interactive enabled-link-m no-select-text'>deceased</span>]: bodyguard and father figure. They were inseparable. <b class="enabled-link-b">He'd have already killed you.</b></li>
-        <li style={{display: props.MorganCorruption>=26 ? 'list-item' : 'none'}}>Jeeves [<b style={{color: 'red'}}>RETIRED</b>]: bodyguard and father figure. They were inseparable. <b class="enabled-link-b">He'd have already killed you.</b></li>
+        console.log("Do you think she's with him now?");
+    }} className='interactive enabled-link-m no-select-text'>deceased</span>]: bodyguard and father figure. They were inseparable. <b className="enabled-link-b">He'd have already killed you.</b></li>
+        <li style={{display: props.MorganCorruption>=26 ? 'list-item' : 'none'}}>Jeeves [<b style={{color: 'red'}}>RETIRED</b>]: bodyguard and father figure. They were inseparable. <b className="enabled-link-b">He'd have already killed you.</b></li>
         <li style={{display: props.MorganCorruption<=25 ? 'list-item' : 'none'}}>Jordyn Jones: Speedwagon Foundation field agent. Feels indebted and intensely grateful.</li>
         <li style={{display: props.MorganCorruption>=26 ? 'list-item' : 'none'}}>Jordyn Jones [<b style={{color: 'red'}}>RETIRED</b>]: Speedwagon Foundation field agent. Feels indebted and intensely grateful.</li>
         <li style={{display: props.MorganCorruption<=25 ? 'list-item' : 'none'}}>{props.AmandaName}: Coworker, close friend. Always liked her, even if their friendship developed slowly. Their time cohabitating led to a mutual respect and trust.</li>
@@ -217,7 +224,8 @@ const Morgan = (props) => {
         <li style={{display: props.MorganCorruption<26 ? 'list-item' : 'none'}}>Patagonia: Close friend. Met on work assignment, now do weekly outings. Trusts her enough to introduce her to her parents and take her to company dinners. Might be romantically interested, more observation needed. </li>
         <li style={{display: props.MorganCorruption===26 ? 'list-item' : 'none'}}>Patagonia: Close friend. Met on work assignment, now do weekly outings. Trusts her enough to introduce her to her parents and take her to company dinners. Might be romantically interested, <span onClick={()=>{
         corrupt(1);
-    }} class='interactive enabled-link-m no-select-text'>more observation needed.</span></li>
+        console.log("If she was alive, what you're about to do would be the equivalent of lobotomizing her. And yet you're clicking through unawares. Most of the time, at least. Do you feel bad this time?");
+    }} className='interactive enabled-link-m no-select-text'>more observation needed.</span></li>
         <li style={{display: props.MorganCorruption>=27 ? 'list-item' : 'none'}}>Patagonia: Close friend. Met on work assignment, now do weekly outings. Trusts her enough to introduce her to her parents and take her to company dinners. Might be romantically interested, <b style={{color: 'red'}}>maybe she can kill you...</b></li>
         </ul>
         <h2>Psychological Profile</h2>
@@ -227,7 +235,7 @@ const Morgan = (props) => {
         highly dependent on her few, close relationships. The loss of a close friend will affect her especially greatly.</p>
         <p style={{display: props.MorganCorruption===27 ? 'block' : 'none'}}> <span onClick={()=>{
         corrupt(1);
-    }} class='interactive enabled-link-m no-select-text'>Morgan’s childhood upbringing shaped her into a person who is desperate for social interaction and overjoyed by new experiences. Her desire 
+    }} className='interactive enabled-link-m no-select-text'>Morgan’s childhood upbringing shaped her into a person who is desperate for social interaction and overjoyed by new experiences. Her desire 
         to seek out people has made her highly emotionally intelligent, and she possesses great skills in understanding both her own and others’ emotional states. 
         Her unrelenting positivity is one of her greatest strengths, but she also harbors some guilt and resentment towards herself and her Stand. She is also 
         highly dependent on her few, close relationships. The loss of a close friend will affect her especially greatly.</span></p>
@@ -242,7 +250,7 @@ const Morgan = (props) => {
             type: 'visitMorgan',
             value: 1,
         });
-    }} class='interactive enabled-link-m no-select-text'>Author's Notes</span></h2>
+    }} className='interactive enabled-link-m no-select-text'>Author's Notes</span></h2>
         <h2 style={{display: props.MorganCorruption>=29 ? 'block' : 'none', color: 'black'}}>Yes.</h2>
 
         <p style={{display: props.MorganCorruption<28 ? 'block' : 'none'}}>Becquerel is a kind, gentle person who loves freely and greatly. I remember when I first met her: she would bounce on her heels with her hands 
@@ -253,13 +261,13 @@ const Morgan = (props) => {
         {/* <p style={{display: props.MorganVisited===0 ? 'block' : 'none'}}>
             <Link style={{color: 'red'}} to="/">Go Home</Link>
         </p> */}
-        <div class='enabled-link-b no-select-text' style={{display: props.MorganLight >= 85 && props.MorganLight < 153 ? 'block' : 'none'}}>
+        <div className='enabled-link-b no-select-text' style={{display: props.MorganLight >= 85 && props.MorganLight < 153 ? 'block' : 'none'}}>
             <p><b>Is this... Neon Trees?</b></p>
         </div>
-        <div class='enabled-link-b no-select-text' style={{display: props.MorganLight >= 153 && props.MorganLight < 255 ? 'block' : 'none'}}>
+        <div className='enabled-link-b no-select-text' style={{display: props.MorganLight >= 153 && props.MorganLight < 255 ? 'block' : 'none'}}>
             <p><b>Maybe this is what I get for taking her light from her.</b></p>
         </div>
-        <div class='interactive enabled-link-b no-select-text' style={{display: props.MorganVisited>=1 && props.MorganLight>=255 ? 'block' : 'none'}}>
+        <div className='interactive enabled-link-b no-select-text' style={{display: props.MorganVisited>=1 && props.MorganLight>=255 ? 'block' : 'none'}}>
             <Link style={{color: 'rgb(51, 125, 255)'}} to="/">It's too bright to see...</Link>
         </div>
     </div>

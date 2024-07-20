@@ -1,5 +1,9 @@
 /* NEW CSS WE MADE */
 
+* {
+  cursor:url(./images/pencil_cursor.png), auto;
+}
+
 @font-face {
   font-family: 'Itim';
   src: url(./fonts/Itim-Regular.ttf);
@@ -206,10 +210,22 @@ a {
 
 /* The appearance of enabled and disabled links on THE INDIVIDUAL GIRLS' pages */
 
+.back-button {
+  color: red;
+}
+
+.back-button:hover {
+  text-shadow: 1px 1px 2px rgb(51, 255, 0);
+}
+
 .interactive {
   text-decoration: underline;
-  cursor: pointer;
+  /* cursor: pointer; */
   font-weight: bold;
+}
+
+.interactive:hover {
+  text-shadow: 1px 1px 2px rgb(51, 255, 0);
 }
 
 .enabled-link-a {
@@ -262,6 +278,26 @@ a {
 .main-link-b {
   color:blue !important;
   cursor: not-allowed;
+}
+
+.main-link-a:hover {
+  text-shadow: 1px 1px 2px rgb(51, 255, 0);
+}
+
+.main-link-s:hover {
+  text-shadow: 1px 1px 2px rgb(51, 255, 0);
+}
+
+.main-link-m:hover {
+  text-shadow: 1px 1px 2px rgb(51, 255, 0);
+}
+
+.main-link-r:hover {
+  text-shadow: 1px 1px 2px rgb(51, 255, 0);
+}
+
+.main-link-b:hover {
+  text-shadow: 1px 1px 2px rgb(51, 255, 0);
 }
 
 .disabled-link {

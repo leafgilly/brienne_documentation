@@ -14,8 +14,8 @@ const Amanda = (props) => {
 
     const shuffle = useCallback(() => {
         const index = Math.floor(Math.random() * names.length);
-        // console.log(index);
         setnewGlitch(names[index]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     useEffect(() => {
@@ -58,14 +58,14 @@ const Amanda = (props) => {
     {/* BRIENNE ONCLICK SAVED FOR LATER */}
     {/* <div onClick={()=>{
         corrupt(1);
-        }} class='interactive enabled-link-b no-select-text' style={{display: props.AmandaCorruption===0 ? 'block' : 'none'}}>
+        }} className='interactive enabled-link-b no-select-text' style={{display: props.AmandaCorruption===0 ? 'block' : 'none'}}>
             <p>There's... nothing here?</p>
     </div> */}
-    <div class='openFolder'>
-        <div class="openNametag"><p>
-        <Link style={{color: 'red'}} to="/">Go Back</Link>
+    <div className='openFolder'>
+        <div className="openNametag"><p>
+        <Link class='back-button' to="/">Go Back</Link>
     </p></div>
-    <div class='document'>
+    <div className='document'>
     <h1 style={{textAlign: 'center'}}>{props.AmandaName} Documentation</h1>
     <h1 style={{textAlign: 'center'}}> Threat Level: C (previously A)</h1>
     <h2>Previous Names and Aliases</h2>
@@ -73,8 +73,10 @@ const Amanda = (props) => {
     <li style={{display: props.AmandaCorruption===0 ? 'list-item' : 'none'}}> Amanda Valentina - as of 1989, upon arriving in New York, documentee had her name changed to <span 
     onClick={()=>{
         corrupt(1);
-    }} class='interactive enabled-link-a no-select-text'>‘Valentine’</span> (used hereafter)</li>
-    <li style={{display: props.AmandaCorruption>=1 ? 'list-item' : 'none'}}> Amand<b class='enabled-link-b'>e</b> Valentin<b class='enabled-link-b'>e</b> - a<b class='enabled-link-b'>e</b> o<b class='enabled-link-b'>e</b> 198<b class='enabled-link-b'>e</b>, upo<b class='enabled-link-b'>e</b> arrivin<b class='enabled-link-b'>e</b> i<b class='enabled-link-b'>e</b> Ne<b class='enabled-link-b'>e</b> Yor<b class='enabled-link-b'>e</b>, documente<b class='enabled-link-b'>e</b> ha<b class='enabled-link-b'>e</b> he<b class='enabled-link-b'>e</b> nam<b class='enabled-link-b'>e</b> change<b class='enabled-link-b'>e</b> t<b class='enabled-link-b'>e</b> ‘Valentin<b class='enabled-link-b'>e</b>’ (use<b class='enabled-link-b'>e</b> hereafte<b class='enabled-link-b'>e</b>)</li>
+        console.log("You did always feel guilty about that. One letter, Brienne, really? It's a miracle she wasn't found sooner.");
+        console.log("You care now. You wouldn't be here if you didn't. But god. You really didn't care then.");
+    }} className='interactive enabled-link-a no-select-text'>‘Valentine’</span> (used hereafter)</li>
+    <li style={{display: props.AmandaCorruption>=1 ? 'list-item' : 'none'}}> Amand<b className='enabled-link-b'>e</b> Valentin<b className='enabled-link-b'>e</b> - a<b className='enabled-link-b'>e</b> o<b className='enabled-link-b'>e</b> 198<b className='enabled-link-b'>e</b>, upo<b className='enabled-link-b'>e</b> arrivin<b className='enabled-link-b'>e</b> i<b className='enabled-link-b'>e</b> Ne<b className='enabled-link-b'>e</b> Yor<b className='enabled-link-b'>e</b>, documente<b className='enabled-link-b'>e</b> ha<b className='enabled-link-b'>e</b> he<b className='enabled-link-b'>e</b> nam<b className='enabled-link-b'>e</b> change<b className='enabled-link-b'>e</b> t<b className='enabled-link-b'>e</b> ‘Valentin<b className='enabled-link-b'>e</b>’ (use<b className='enabled-link-b'>e</b> hereafte<b className='enabled-link-b'>e</b>)</li>
     </ul>
     <h2>Stand and Supernatural Abilities</h2>
         <div style={{display: props.AmandaCorruption<=0 ? 'inline' : 'none'}}>
@@ -89,45 +91,46 @@ const Amanda = (props) => {
             <h3>Disturbia</h3>
             <p>Disturbia is a humanoid made of <span onClick={()=>{
                 corrupt(1);
-            }} class='interactive enabled-link-a no-select-text'>geometric glass shards</span>. She is able to transform both itself and its user into people/things that 
+            }} className='interactive enabled-link-a no-select-text'>geometric glass shards</span>. She is able to transform both itself and its user into people/things that 
                 the user used to be afraid of. In the case of animals and objects, only Disturbia transforms. In the case of people (and Stand users), 
                 the user becomes the person, and Disturbia becomes the Stand. When transformed into a Stand user, Disturbia can use the transformed 
                 Stand's abilities, but cannot sustain the transformation for long.
             </p>
         </div>
-        <div style={{display: props.AmandaCorruption===2 ? 'block' : 'none'}} class='disturbia'>
+        <div style={{display: props.AmandaCorruption===2 ? 'block' : 'none'}} className='disturbia'>
             <h3>Disturbia</h3>
             <p>Disturbia is a humanoid made of geometric glass shards. She is able to transform both itself and its user into <span onClick={()=>{
                 corrupt(1);
-            }} class='interactive enabled-link-a no-select-text'>
+            }} className='interactive enabled-link-a no-select-text'>
                 people/things</span> that the user used to be afraid of. In the case of animals and objects, only Disturbia transforms. In the case of people (and Stand users), 
                 the user becomes the person, and Disturbia becomes the Stand. When transformed into a Stand user, Disturbia can use the transformed 
                 Stand's abilities, but cannot sustain the transformation for long.
             </p>
         </div>
-        <div style={{display: props.AmandaCorruption===3 ? 'block' : 'none'}} class='disturbia'>
+        <div style={{display: props.AmandaCorruption===3 ? 'block' : 'none'}} className='disturbia'>
             <h3>Disturbia</h3>
-            <p> Disturbia is a humanoid made of geometric glass shards. She is able to transform both itself and its user into <b class='enabled-link-b'>monsters like you</b> that 
+            <p> Disturbia is a humanoid made of geometric glass shards. She is able to transform both itself and its user into <b className='enabled-link-b'>monsters like you</b> that 
                 the user used to be <span onClick={()=>{
                 corrupt(1);
-            }} class='interactive enabled-link-a no-select-text'>afraid of</span>. In the case of animals and objects, only Disturbia transforms. In the case of people (and Stand users), 
+            }} className='interactive enabled-link-a no-select-text'>afraid of</span>. In the case of animals and objects, only Disturbia transforms. In the case of people (and Stand users), 
                 the user becomes the person, and Disturbia becomes the Stand. When transformed into a Stand user, Disturbia can use the transformed 
                 Stand's abilities, but cannot sustain the transformation for long.
             </p>
         </div>
-        <div style={{display: props.AmandaCorruption===4 ? 'block' : 'none'}} class='disturbia'>
+        <div style={{display: props.AmandaCorruption===4 ? 'block' : 'none'}} className='disturbia'>
             <h3>Disturbia</h3>
-            <p>Disturbia is a humanoid made of geometric glass shards. She is able to transform both itself and its user into <b class='enabled-link-b'>monsters like you</b> that 
-                the user used to be <b class='enabled-link-b'>you seriously think she wouldn't be afraid of you, after what you did to her?</b> In the case of animals and objects, only Disturbia transforms. In the case of people (and Stand users), 
+            <p>Disturbia is a humanoid made of geometric glass shards. She is able to transform both itself and its user into <b className='enabled-link-b'>monsters like you</b> that 
+                the user used to be <b className='enabled-link-b'>you seriously think she wouldn't be afraid of you, after what you did to her?</b> In the case of animals and objects, only Disturbia transforms. In the case of people (and Stand users), 
                 the user becomes the person, and Disturbia becomes the Stand. When transformed into a Stand user, Disturbia can use the transformed 
                 Stand's abilities, but cannot sustain the <span onClick={()=>{
                 corrupt(1);
-            }} class='interactive enabled-link-a no-select-text'>transformation</span> for long.
+                console.log("MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER");
+            }} className='interactive enabled-link-a no-select-text'>transformation</span> for long.
             </p>
         </div>
-        <div style={{display: props.AmandaCorruption>=5 ? 'block' : 'none'}} class='disturbia'>
+        <div style={{display: props.AmandaCorruption>=5 ? 'block' : 'none'}} className='disturbia'>
             <h3>Disturbia</h3>
-            <p> <b class='enabled-link-b'>MURDERER {newGlitch} MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER {newGlitch} MURDERER MURDERER
+            <p> <b className='enabled-link-b'>MURDERER {newGlitch} MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER {newGlitch} MURDERER MURDERER
             MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER {newGlitch} MURDERER
             MURDERER MURDERER MURDERER {newGlitch} MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER MURDERER
             MURDERER</b>
@@ -138,9 +141,9 @@ const Amanda = (props) => {
         <p style={{display: props.AmandaCorruption<5 ? 'block' : 'none'}}>During an encounter with Crab Louie Zeppeli’s Stand ‘Rock Lobster’, Disturbia’s physical appearance changed.</p>
         <p style={{display: props.AmandaCorruption===5 ? 'block' : 'none'}}>During an encounter with Crab Louie Zeppeli’s Stand ‘Rock Lobster’, <span onClick={()=>{
                 corrupt(1);
-            }} class='interactive enabled-link-a no-select-text'>Disturbia’s physical appearance changed</span>.</p>
+            }} className='interactive enabled-link-a no-select-text'>Disturbia’s physical appearance changed</span>.</p>
         <p style={{display: props.AmandaCorruption>=6 ? 'block' : 'none'}}>During an encounter with Crab Louie Zeppeli’s Stand ‘Rock Lobster’, 
-            <b class='enabled-link-b'> it scared you to see her grow.</b></p>
+            <b className='enabled-link-b'> it scared you to see her grow.</b></p>
             <ul>
                 <li style={{display: props.AmandaCorruption<6 ? 'list-item' : 'none'}}>
                     Appearance: The glass shards are now lined with gold.
@@ -148,15 +151,15 @@ const Amanda = (props) => {
                 <li style={{display: props.AmandaCorruption===6 ? 'list-item' : 'none'}}>
                 <span onClick={()=>{
                 corrupt(1);
-            }} class='interactive enabled-link-a no-select-text'>Appearance:</span> The glass shards are now lined with gold.
+            }} className='interactive enabled-link-a no-select-text'>Appearance:</span> The glass shards are now lined with gold.
                 </li>
                 <li style={{display: props.AmandaCorruption===7 ? 'list-item' : 'none'}}>
-                    <b class='enabled-link-b'>A brave face, smiling when her back</b> <span onClick={()=>{
+                    <b className='enabled-link-b'>A brave face, smiling when her back</b> <span onClick={()=>{
                 corrupt(1);
-            }} class='interactive enabled-link-a no-select-text'>is</span> <b class='enabled-link-b'>turned to hide the coward underneath.</b>
+            }} className='interactive enabled-link-a no-select-text'>is</span> <b className='enabled-link-b'>turned to hide the coward underneath.</b>
                 </li>
                 <li style={{display: props.AmandaCorruption>=8 ? 'list-item' : 'none'}}>
-                    <b class='enabled-link-b'>A brave face, smiling when her back</b> <b style={{color: 'red'}}>"""WAS""" (important distinction)</b> <b class='enabled-link-b'>turned to hide the coward underneath.</b>
+                    <b className='enabled-link-b'>A brave face, smiling when her back</b> <b style={{color: 'red'}}>"""WAS""" (important distinction)</b> <b className='enabled-link-b'>turned to hide the coward underneath.</b>
                 </li>
                 <li style={{display: props.AmandaCorruption<8 ? 'list-item' : 'none'}}>
                 Ability: A general range and duration increase. Additionally, the previous text about whether Valentine or Disturbia would turn into 
@@ -165,11 +168,12 @@ const Amanda = (props) => {
                 <li style={{display: props.AmandaCorruption===8 ? 'list-item' : 'none'}}>
                 <span onClick={()=>{
                 corrupt(1);
-            }} class='interactive enabled-link-a no-select-text'>Ability:</span> A general range and duration increase. Additionally, the previous text about whether Valentine or Disturbia would turn into 
+                console.log("Ah, breaking out the direct quotes. You never did get over that argument.");
+            }} className='interactive enabled-link-a no-select-text'>Ability:</span> A general range and duration increase. Additionally, the previous text about whether Valentine or Disturbia would turn into 
                 the transformation is no longer true. Now, either Valentine or Disturbia can transform unless in the case of a Stand user.
                 </li>
                 <li style={{display: props.AmandaCorruption>=9 ? 'list-item' : 'none'}}>
-                <b class='enabled-link-b'>You become someone new, too. Who are you?</b> <i style={{color: 'lightyellow'}}>"Who is the user of Paperback Writer, if not a person who has built and rebuilt their entire being around a veil of untruth?"</i>
+                <b className='enabled-link-b'>You become someone new, too. Who are you?</b> <i style={{color: 'lightyellow'}}>"Who is the user of Paperback Writer, if not a person who has built and rebuilt their entire being around a veil of untruth?"</i>
                 </li>
             </ul>
         <h4>Known Transformations</h4>
@@ -178,7 +182,7 @@ const Amanda = (props) => {
         <li style={{display: props.AmandaCorruption<9 ? 'list-item' : 'none'}}>A Glock 19 firearm</li>
         <li style={{display: props.AmandaCorruption===9 ? 'list-item' : 'none'}}onClick={()=>{
                 corrupt(1);
-            }} class='interactive enabled-link-a no-select-text'>A Glock 19 firearm</li>
+            }} className='interactive enabled-link-a no-select-text'>A Glock 19 firearm</li>
         <li style={{display: props.AmandaCorruption>=10 ? 'list-item' : 'none'}}> <i style={{color: 'lightyellow'}}>"How</i></li>
         </ul>
         <h5>Animals</h5>
@@ -186,25 +190,25 @@ const Amanda = (props) => {
         <li style={{display: props.AmandaCorruption<10 ? 'list-item' : 'none'}}>A feral black cat</li>
         <li style={{display: props.AmandaCorruption===10 ? 'list-item' : 'none'}}onClick={()=>{
                 corrupt(1);
-            }} class='interactive enabled-link-a no-select-text'>A feral black cat</li>
+            }} className='interactive enabled-link-a no-select-text'>A feral black cat</li>
         <li style={{display: props.AmandaCorruption>=11 ? 'list-item' : 'none'}}> <i style={{color: 'lightyellow'}}>does</i></li>
         
         <li style={{display: props.AmandaCorruption<11 ? 'list-item' : 'none'}}>A cockroach</li>
         <li style={{display: props.AmandaCorruption===11 ? 'list-item' : 'none'}}onClick={()=>{
                 corrupt(1);
-            }} class='interactive enabled-link-a no-select-text'>A cockroach</li>
+            }} className='interactive enabled-link-a no-select-text'>A cockroach</li>
         <li style={{display: props.AmandaCorruption>=12 ? 'list-item' : 'none'}}> <i style={{color: 'lightyellow'}}>it</i></li>
 
         <li style={{display: props.AmandaCorruption<12 ? 'list-item' : 'none'}}>A red-eyed raven</li>
         <li style={{display: props.AmandaCorruption===12 ? 'list-item' : 'none'}}onClick={()=>{
                 corrupt(1);
-            }} class='interactive enabled-link-a no-select-text'>A red-eyed raven</li>
+            }} className='interactive enabled-link-a no-select-text'>A red-eyed raven</li>
         <li style={{display: props.AmandaCorruption>=13 ? 'list-item' : 'none'}}> <i style={{color: 'lightyellow'}}>feel</i></li>
 
         <li style={{display: props.AmandaCorruption<13 ? 'list-item' : 'none'}}>moose</li>
         <li style={{display: props.AmandaCorruption===13 ? 'list-item' : 'none'}}onClick={()=>{
                 corrupt(1);
-            }} class='interactive enabled-link-a no-select-text'>moose</li>
+            }} className='interactive enabled-link-a no-select-text'>moose</li>
         <li style={{display: props.AmandaCorruption>=14 ? 'list-item' : 'none'}}> <i style={{color: 'lightyellow'}}>to</i></li>
         </ul>
         <h5>Standless Humans</h5>
@@ -212,19 +216,19 @@ const Amanda = (props) => {
         <li style={{display: props.AmandaCorruption<14 ? 'list-item' : 'none'}}>Ricardo Leyva Muñoz Ramírez aka The Nightstalker</li>
         <li style={{display: props.AmandaCorruption===14 ? 'list-item' : 'none'}}onClick={()=>{
                 corrupt(1);
-            }} class='interactive enabled-link-a no-select-text'>Ricardo Leyva Muñoz Ramírez aka The Nightstalker</li>
+            }} className='interactive enabled-link-a no-select-text'>Ricardo Leyva Muñoz Ramírez aka The Nightstalker</li>
         <li style={{display: props.AmandaCorruption>=15 ? 'list-item' : 'none'}}> <i style={{color: 'lightyellow'}}>know</i></li>
 
         <li style={{display: props.AmandaCorruption<15 ? 'list-item' : 'none'}}>Anna Valentina</li>
         <li style={{display: props.AmandaCorruption===15 ? 'list-item' : 'none'}}onClick={()=>{
                 corrupt(1);
-            }} class='interactive enabled-link-a no-select-text'>Anna Valentina</li>
+            }} className='interactive enabled-link-a no-select-text'>Anna Valentina</li>
         <li style={{display: props.AmandaCorruption>=16 ? 'list-item' : 'none'}}> <i style={{color: 'lightyellow'}}>that,</i></li>
 
         <li style={{display: props.AmandaCorruption<16 ? 'list-item' : 'none'}}>Tommy Hilfinger</li>
         <li style={{display: props.AmandaCorruption===16 ? 'list-item' : 'none'}}onClick={()=>{
                 corrupt(1);
-            }} class='interactive enabled-link-a no-select-text'>Tommy Hilfinger</li>
+            }} className='interactive enabled-link-a no-select-text'>Tommy Hilfinger</li>
         <li style={{display: props.AmandaCorruption>=17 ? 'list-item' : 'none'}}> <i style={{color: 'lightyellow'}}>in</i></li>
         </ul>
         <h5>Phenomena</h5>
@@ -232,19 +236,19 @@ const Amanda = (props) => {
         <li style={{display: props.AmandaCorruption<17 ? 'list-item' : 'none'}}>Deep water/waves</li>
         <li style={{display: props.AmandaCorruption===17 ? 'list-item' : 'none'}}onClick={()=>{
                 corrupt(1);
-            }} class='interactive enabled-link-a no-select-text'>Deep water/waves</li>
+            }} className='interactive enabled-link-a no-select-text'>Deep water/waves</li>
         <li style={{display: props.AmandaCorruption>=18 ? 'list-item' : 'none'}}> <i style={{color: 'lightyellow'}}>Disturbia's</i></li>
 
         <li style={{display: props.AmandaCorruption<18 ? 'list-item' : 'none'}}>Quicksand</li>
         <li style={{display: props.AmandaCorruption===18 ? 'list-item' : 'none'}}onClick={()=>{
                 corrupt(1);
-            }} class='interactive enabled-link-a no-select-text'>Quicksand</li>
+            }} className='interactive enabled-link-a no-select-text'>Quicksand</li>
         <li style={{display: props.AmandaCorruption>=19 ? 'list-item' : 'none'}}> <i style={{color: 'lightyellow'}}>eyes,</i></li>
 
         <li style={{display: props.AmandaCorruption<19 ? 'list-item' : 'none'}}>San Fernando earthquake (6.6 mag)</li>
         <li style={{display: props.AmandaCorruption===19 ? 'list-item' : 'none'}}onClick={()=>{
                 corrupt(1);
-            }} class='interactive enabled-link-a no-select-text'>San Fernando earthquake (6.6 mag)</li>
+            }} className='interactive enabled-link-a no-select-text'>San Fernando earthquake (6.6 mag)</li>
         <li style={{display: props.AmandaCorruption>=20 ? 'list-item' : 'none'}}> <i style={{color: 'lightyellow'}}>you're</i></li>
         </ul>
         <h5>Fictional Characters/Items</h5>
@@ -252,19 +256,19 @@ const Amanda = (props) => {
         <li style={{display: props.AmandaCorruption<20 ? 'list-item' : 'none'}}>Kaa from Disney’s The Jungle Book</li>
         <li style={{display: props.AmandaCorruption===20 ? 'list-item' : 'none'}}onClick={()=>{
                 corrupt(1);
-            }} class='interactive enabled-link-a no-select-text'>Kaa from Disney’s The Jungle Book</li>
+            }} className='interactive enabled-link-a no-select-text'>Kaa from Disney’s The Jungle Book</li>
         <li style={{display: props.AmandaCorruption>=21 ? 'list-item' : 'none'}}> <i style={{color: 'lightyellow'}}>no</i></li>
 
         <li style={{display: props.AmandaCorruption<21 ? 'list-item' : 'none'}}>Jason’s machete from Friday the 13th</li>
         <li style={{display: props.AmandaCorruption===21 ? 'list-item' : 'none'}}onClick={()=>{
                 corrupt(1);
-            }} class='interactive enabled-link-a no-select-text'>Jason’s machete from Friday the 13th</li>
+            }} className='interactive enabled-link-a no-select-text'>Jason’s machete from Friday the 13th</li>
         <li style={{display: props.AmandaCorruption>=22 ? 'list-item' : 'none'}}> <i style={{color: 'lightyellow'}}>different</i></li>
 
         <li style={{display: props.AmandaCorruption<22 ? 'list-item' : 'none'}}>The Xenomorph from Alien</li>
         <li style={{display: props.AmandaCorruption===22 ? 'list-item' : 'none'}}onClick={()=>{
                 corrupt(1);
-            }} class='interactive enabled-link-a no-select-text'>The Xenomorph from Alien</li>
+            }} className='interactive enabled-link-a no-select-text'>The Xenomorph from Alien</li>
         <li style={{display: props.AmandaCorruption>=23 ? 'list-item' : 'none'}}> <i style={{color: 'lightyellow'}}>than</i></li>
         </ul>
         <h5>Stand Users</h5>
@@ -272,7 +276,7 @@ const Amanda = (props) => {
         <li style={{display: props.AmandaCorruption<23 ? 'list-item' : 'none'}}>DIO and The World (conditional)</li>
         <li style={{display: props.AmandaCorruption===23 ? 'list-item' : 'none'}}>DIO and The World <span onClick={()=>{
                 corrupt(1);
-            }} class='interactive enabled-link-a no-select-text'>(conditional)</span></li>
+            }} className='interactive enabled-link-a no-select-text'>(conditional)</span></li>
         <li style={{display: props.AmandaCorruption>=24 ? 'list-item' : 'none', color: 'black'}}><b style={{color: 'lightyellow'}}>DIO?"</b> and The World</li>
 
         <li style={{display: props.AmandaCorruption<24 ? 'list-item' : 'none'}}>Patagonia and Hellbent</li>
@@ -293,46 +297,46 @@ const Amanda = (props) => {
             including laser eyes, flesh buds and all variant mind control, reanimation, and freezing powers.</p>
         <p style={{display: props.AmandaCorruption===24 ? 'block' : 'none'}}>Valentine was afflicted with vampirism in 1986 by <span onClick={()=>{
                 corrupt(1);
-            }} class='interactive enabled-link-a no-select-text'>DIO Brando</span>. Her 
+            }} className='interactive enabled-link-a no-select-text'>DIO Brando</span>. Her 
         affliction was the result of a combination of exsanguination and blood ingestion, not the vampire mask. This process leads to 
         Valentine being a “second generation” vampire, one who retains the abilities of blood drinking, extreme healing, super 
         strength, enhanced senses, and aura but to a lesser degree than her sire. She also lacks other reported mask vampire abilities, 
         including laser eyes, flesh buds and all variant mind control, reanimation, and freezing powers.</p>
-        <p style={{display: props.AmandaCorruption===25 ? 'block' : 'none'}}>Valentine was afflicted with vampirism in 1986 by <b class='enabled-link-b'>You read the report of his death a dozen times. Memorized it.</b> Her 
+        <p style={{display: props.AmandaCorruption===25 ? 'block' : 'none'}}>Valentine was afflicted with vampirism in 1986 by <b className='enabled-link-b'>You read the report of his death a dozen times. Memorized it.</b> Her 
         affliction was the result of a combination of exsanguination and blood ingestion, not the vampire mask. This process leads to 
         Valentine being a “second generation” vampire, one who retains the abilities of blood drinking, <span onClick={()=>{
                 corrupt(1);
-            }} class='interactive enabled-link-a no-select-text'>extreme healing,</span> super 
+            }} className='interactive enabled-link-a no-select-text'>extreme healing,</span> super 
         strength, enhanced senses, and aura but to a lesser degree than her sire. She also lacks other reported mask vampire abilities, 
         including laser eyes, flesh buds and all variant mind control, reanimation, and freezing powers.</p>
-        <p style={{display: props.AmandaCorruption===26 ? 'block' : 'none'}}>Valentine was afflicted with vampirism in 1986 by <b class='enabled-link-b'>You read the report of his death a dozen times. Memorized it.</b> Her 
+        <p style={{display: props.AmandaCorruption===26 ? 'block' : 'none'}}>Valentine was afflicted with vampirism in 1986 by <b className='enabled-link-b'>You read the report of his death a dozen times. Memorized it.</b> Her 
         affliction was the result of a combination of exsanguination and blood ingestion, not the vampire mask. This process leads to 
-        Valentine being a “second generation” vampire, one who retains the abilities of blood drinking, <b class='enabled-link-b'>You used that knowledge to break her. Snapped her in half with such force her skin caught flame.</b> super 
+        Valentine being a “second generation” vampire, one who retains the abilities of blood drinking, <b className='enabled-link-b'>You used that knowledge to break her. Snapped her in half with such force her skin caught flame.</b> super 
         strength, enhanced senses, and aura but to a lesser degree than her sire. She also lacks other reported mask vampire abilities, including <span onClick={()=>{
                 corrupt(1);
-            }} class='interactive enabled-link-a no-select-text'>laser eyes,</span> flesh buds and all variant mind control, 
+            }} className='interactive enabled-link-a no-select-text'>laser eyes,</span> flesh buds and all variant mind control, 
             reanimation, and freezing powers.</p>
 
-        <p style={{display: props.AmandaCorruption===27 ? 'block' : 'none'}}>Valentine was afflicted with vampirism in 1986 by <b class='enabled-link-b'>You read the report of his death a dozen times. Memorized it.</b> Her 
+        <p style={{display: props.AmandaCorruption===27 ? 'block' : 'none'}}>Valentine was afflicted with vampirism in 1986 by <b className='enabled-link-b'>You read the report of his death a dozen times. Memorized it.</b> Her 
         affliction was the result of a combination of exsanguination and blood ingestion, not the vampire mask. This process leads to 
-        Valentine being a “second generation” vampire, one who retains the abilities of blood drinking, <b class='enabled-link-b'>You used that knowledge to break her. Snapped her in half with such force her skin caught flame.</b> super 
-        strength, enhanced senses, and aura but to a lesser degree than her sire. She also lacks other reported mask vampire abilities, including <b class='enabled-link-b'>She stood by you.</b> <span onClick={()=>{
+        Valentine being a “second generation” vampire, one who retains the abilities of blood drinking, <b className='enabled-link-b'>You used that knowledge to break her. Snapped her in half with such force her skin caught flame.</b> super 
+        strength, enhanced senses, and aura but to a lesser degree than her sire. She also lacks other reported mask vampire abilities, including <b className='enabled-link-b'>She stood by you.</b> <span onClick={()=>{
                 corrupt(1);
-            }} class='interactive enabled-link-a no-select-text'>flesh buds and all variant mind control,</span> reanimation, and freezing powers.</p>
+            }} className='interactive enabled-link-a no-select-text'>flesh buds and all variant mind control,</span> reanimation, and freezing powers.</p>
         
-        <p style={{display: props.AmandaCorruption===28 ? 'block' : 'none'}}>Valentine was afflicted with vampirism in 1986 by <b class='enabled-link-b'>You read the report of his death a dozen times. Memorized it.</b> Her 
+        <p style={{display: props.AmandaCorruption===28 ? 'block' : 'none'}}>Valentine was afflicted with vampirism in 1986 by <b className='enabled-link-b'>You read the report of his death a dozen times. Memorized it.</b> Her 
         affliction was the result of a combination of exsanguination and blood ingestion, not the vampire mask. This process leads to 
-        Valentine being a “second generation” vampire, one who retains the abilities of blood drinking, <b class='enabled-link-b'>You used that knowledge to break her. Snapped her in half with such force her skin caught flame.</b> super 
-        strength, enhanced senses, and aura but to a lesser degree than her sire. She also lacks other reported mask vampire abilities, including <b class='enabled-link-b'>She stood by you. When you deserved it the least.</b> <span onClick={()=>{
+        Valentine being a “second generation” vampire, one who retains the abilities of blood drinking, <b className='enabled-link-b'>You used that knowledge to break her. Snapped her in half with such force her skin caught flame.</b> super 
+        strength, enhanced senses, and aura but to a lesser degree than her sire. She also lacks other reported mask vampire abilities, including <b className='enabled-link-b'>She stood by you. When you deserved it the least.</b> <span onClick={()=>{
                 corrupt(1);
-            }} class='interactive enabled-link-a no-select-text'>reanimation,</span> and freezing powers.</p>
+            }} className='interactive enabled-link-a no-select-text'>reanimation,</span> and freezing powers.</p>
 
-        <p style={{display: props.AmandaCorruption===29 ? 'block' : 'none'}}>Valentine was afflicted with vampirism in 1986 by <b class='enabled-link-b'>You read the report of his death a dozen times. Memorized it.</b> Her 
+        <p style={{display: props.AmandaCorruption===29 ? 'block' : 'none'}}>Valentine was afflicted with vampirism in 1986 by <b className='enabled-link-b'>You read the report of his death a dozen times. Memorized it.</b> Her 
         affliction was the result of a combination of exsanguination and blood ingestion, not the vampire mask. This process leads to 
-        Valentine being a “second generation” vampire, one who retains the abilities of blood drinking, <b class='enabled-link-b'>You used that knowledge to break her. Snapped her in half with such force her skin caught flame.</b> super 
-        strength, enhanced senses, and aura but to a lesser degree than her sire. She also lacks other reported mask vampire abilities, including <b class='enabled-link-b'>She stood by you. When you deserved it the least. Twice.</b> and <span onClick={()=>{
+        Valentine being a “second generation” vampire, one who retains the abilities of blood drinking, <b className='enabled-link-b'>You used that knowledge to break her. Snapped her in half with such force her skin caught flame.</b> super 
+        strength, enhanced senses, and aura but to a lesser degree than her sire. She also lacks other reported mask vampire abilities, including <b className='enabled-link-b'>She stood by you. When you deserved it the least. Twice.</b> and <span onClick={()=>{
                 corrupt(1);
-            }} class='interactive enabled-link-a no-select-text'>freezing powers.</span></p>
+            }} className='interactive enabled-link-a no-select-text'>freezing powers.</span></p>
 
         <p style={{display: props.AmandaCorruption>=30 ? 'block' : 'none'}}>{props.AmandaName[2]} was afflicted with vampirism in 1986 by <b style={{color: "red"}}>You read the report of his death a dozen times. Memorized it.</b> Her 
         affliction was the result of a combination of exsanguination and blood ingestion, not the vampire mask. This process leads to 
@@ -357,11 +361,12 @@ const Amanda = (props) => {
         </li>
         <li style={{display: props.AmandaCorruption===30 ? 'list-item' : 'none'}}onClick={()=>{
                 corrupt(1);
-            }} class='interactive enabled-link-a no-select-text'>_____ _________ ______</li>
-        <li style={{display: props.AmandaCorruption===31 ? 'list-item' : 'none'}}><b class='enabled-link-b'>Does it hurt more or less to not see <span onClick={()=>{
+                console.log("You're not there... or are you?");
+            }} className='interactive enabled-link-a no-select-text'>_____ _________ ______</li>
+        <li style={{display: props.AmandaCorruption===31 ? 'list-item' : 'none'}}><b className='enabled-link-b'>Does it hurt more or less to not see <span onClick={()=>{
                 corrupt(1);
-            }} class='interactive enabled-link-a no-select-text'>your name</span> on this list?</b></li>
-        <li style={{display: props.AmandaCorruption>=32 ? 'list-item' : 'none'}}><b class='enabled-link-b'>Does it hurt more or less to not see <span style={{color: 'red', textDecoration: 'bold', fontSize: '30px'}}>YOU DON'T HAVE ONE</span> on this list?</b></li>
+            }} className='interactive enabled-link-a no-select-text'>your name</span> on this list?</b></li>
+        <li style={{display: props.AmandaCorruption>=32 ? 'list-item' : 'none'}}><b className='enabled-link-b'>Does it hurt more or less to not see <span style={{color: 'red', textDecoration: 'bold', fontSize: '30px'}}>YOU DON'T HAVE ONE</span> on this list?</b></li>
         <li style={{display: props.AmandaCorruption>=32 ? 'list-item' : 'none', color: '#231516'}}><b style={{color: '#131516'}}>Brienne Williams: Coworker, close friend. Worked together for four years. <i>I wish it could've been more.</i></b></li>
     </ul>
     <div style={{display: props.AmandaCorruption<32 ? 'block' : 'none'}}>
@@ -375,7 +380,8 @@ const Amanda = (props) => {
     <div style={{display: props.AmandaCorruption===32 ? 'block' : 'none'}}>
     <h2>Psychological Profile <span onClick={()=>{
                 corrupt(1);
-            }} class='interactive enabled-link-a no-select-text'>(update)</span></h2>
+                console.log("You're looking for secrets, yeah? How about you try hovering.");
+            }} className='interactive enabled-link-a no-select-text'>(update)</span></h2>
     <p>{props.AmandaName[2]} is resilient but characteristically self destructive. She often chooses 
         the “easiest” path, whether that be running away from DIO or tanking Stand attacks head on and relying on vampiric healing. She responds 
         exceptionally well to praise. Over time, she has evolved into a deeply protective person, clinging to the friends she made at Informer Co 
@@ -384,7 +390,7 @@ const Amanda = (props) => {
     </div>
     <div style={{display: props.AmandaCorruption>=33 ? 'block' : 'none'}}>
     <h2>Psychological Profile</h2>
-    <p><b class='enabled-link-b'>She's dead. No psychology to it.</b></p>
+    <p><b className='enabled-link-b'>She's dead. No psychology to it.</b></p>
     </div>
     <h2>Author's Notes</h2>
     <p style={{display: props.AmandaCorruption<33 ? 'block' : 'none'}}>Valentine is loyal, reliable, and resilient. She has grown so much in the five years that I’ve known her. While our relationship began purely 
@@ -401,22 +407,23 @@ const Amanda = (props) => {
             }} onMouseLeave={()=>{
                 hoverOff();
             }}
-            class='interactive enabled-link-a no-select-text'>Valentine is loyal, reliable, and resilient. She has grown so much in the five years that I’ve known her. While our relationship began purely 
+            className='interactive enabled-link-a no-select-text'>Valentine is loyal, reliable, and resilient. She has grown so much in the five years that I’ve known her. While our relationship began purely 
     professionally, with a good bit of hesitation on my part due to her vampiric nature, I grew to trust her most deeply of all my employees. She is 
     my confidant, my sword, my first real friend.</p>
-    <p style={{display: props.AmandaCorruption>=34 ? 'block' : 'none'}}><b class='enabled-link-b'>N/A</b></p>
+    <p style={{display: props.AmandaCorruption>=34 ? 'block' : 'none'}}><b className='enabled-link-b'>N/A</b></p>
     <p style={{display: props.AmandaHover===1 && counter <=3 ? 'block' : 'none', color: 'rgb(51, 125, 255)', textAlign: 'right'}}><b>Wait!</b></p>
-    <p style={{display: props.AmandaHover===1 && counter >3 && counter <= 5 ? 'block' : 'none', textAlign: 'right'}} class='enabled-link-pbw'><b>Go on, do it.</b></p>
-    <p style={{display: props.AmandaHover===1 && counter > 5 && counter <= 8 ? 'block' : 'none', textAlign: 'right'}} class='enabled-link-pbw'><b>You've already altered the rest of the document.</b></p>
-    <p style={{display: props.AmandaHover===1 && counter > 8 && counter <= 11 ? 'block' : 'none', textAlign: 'right'}} class='enabled-link-pbw'><b>Why is this any different?</b></p>
+    <p style={{display: props.AmandaHover===1 && counter >3 && counter <= 5 ? 'block' : 'none', textAlign: 'right'}} className='enabled-link-pbw'><b>Go on, do it.</b></p>
+    <p style={{display: props.AmandaHover===1 && counter > 5 && counter <= 8 ? 'block' : 'none', textAlign: 'right'}} className='enabled-link-pbw'><b>You've already altered the rest of the document.</b></p>
+    <p style={{display: props.AmandaHover===1 && counter > 8 && counter <= 11 ? 'block' : 'none', textAlign: 'right'}} className='enabled-link-pbw'><b>Why is this any different?</b></p>
     <p style={{display: props.AmandaHover===1 && counter > 11 && counter <= 14 ? 'block' : 'none', color: 'rgb(51, 125, 255)', textAlign: 'right'}}><b>This... this is permanent.</b></p>
     <p style={{display: props.AmandaHover===1 && counter > 14 && counter <= 17 ? 'block' : 'none', color: 'rgb(51, 125, 255)', textAlign: 'right'}}><b>The file's almost completely corrupted. If I do this...</b></p>
     <p style={{display: props.AmandaHover===1 && counter > 17 && counter <= 22 ? 'block' : 'none', color: 'red', textAlign: 'right'}}><b>She'll be gone.</b></p>
-    <p style={{display: props.AmandaHover===1 && counter > 22 && counter <= 26 ? 'block' : 'none', textAlign: 'right'}} class='enabled-link-pbw'><b>And what is that, if not a reflection of the truth?</b></p>
-    <p style={{display: props.AmandaHover===1 && counter > 26 && counter <= 29 ? 'block' : 'none', textAlign: 'right'}} class='enabled-link-pbw'><b>That's all you've ever done.</b></p>
-    <p style={{display: props.AmandaHover===1 && counter > 29 && counter <= 33 ? 'block' : 'none', textAlign: 'right'}} class='enabled-link-pbw'><b>You sit at your desk editing your documents. Making sure they reflect reality.</b></p>
-    <p style={{display: props.AmandaHover===1 && counter > 33 && counter <= 36 ? 'block' : 'none', textAlign: 'right'}} class='enabled-link-pbw'><b>Come on now, Agent.</b></p>
-    <p style={{display: props.AmandaHover===1 && counter > 36 && counter <= 1000 ? 'block' : 'none', textAlign: 'right'}} class='enabled-link-pbw'><b>Do your duty.</b></p>
+    <p style={{display: props.AmandaHover===1 && counter > 22 && counter <= 26 ? 'block' : 'none', textAlign: 'right'}} className='enabled-link-pbw'><b>And what is that, if not a reflection of the truth?</b></p>
+    <p style={{display: props.AmandaHover===1 && counter > 26 && counter <= 29 ? 'block' : 'none', textAlign: 'right'}} className='enabled-link-pbw'><b>That's all you've ever done.</b></p>
+    <p style={{display: props.AmandaHover===1 && counter > 29 && counter <= 33 ? 'block' : 'none', textAlign: 'right'}} className='enabled-link-pbw'><b>You sit at your desk editing your documents. Making sure they reflect reality.</b></p>
+    <p style={{display: props.AmandaHover===1 && counter > 33 && counter <= 36 ? 'block' : 'none', textAlign: 'right'}} className='enabled-link-pbw'><b>Come on now, Agent.</b></p>
+    <p style={{display: props.AmandaHover===1 && counter > 36 && counter <= 1000 ? 'block' : 'none', textAlign: 'right'}} className='enabled-link-pbw'><b>Do your duty.</b></p>
+    <p style={{display: props.AmandaHover===1 && counter > 1000000 ? 'block' : 'none', textAlign: 'right'}} className='enabled-link-pbw'><b>Well hello there. This line of code isn't meant to be read on the page--just for the clever few who want to see if anything comes after "Do your duty". There isn't anything else. Don't worry, you've found your secret. And for your cleverness, take this word of advice: should you ever *have reason* to investigate a picture of Tony (you'll know when you know), try adjusting the brightness and contrast... Oh, and don't tell anyone about this yet, no one except the authors. Wouldn't want to spoil the fun for the rest of them.</b></p>
     {/* <p>
         <Link style={{color: 'red'}} to="/">Go Home</Link>
     </p> */}

@@ -21,7 +21,6 @@ const Page1 = () => {
         numClicks += 1;
         const displacement = numClicks*100;
         if (numClicks <= 3) {
-            // console.log(document.getElementsByClassName('pseudolink').style.left += numClicks*100);
             pseudoLinkDiv.style.left = displacement + 'px';
             textParagraph.textContent = displayText[numClicks]; 
         } else if (numClicks > 3 && numClicks <= 5) {
@@ -36,7 +35,7 @@ const Page1 = () => {
     return (
         <>
         <h1>Hello, Brienne.</h1>
-        <div id='pseudolink' class='no-select-text' style={{position: 'relative', width: 'fit-content', left: 0, top: 300}} onClick={handleClick}> 
+        <div id='pseudolink' className='no-select-text' style={{position: 'relative', width: 'fit-content', left: 0, top: 300}} onClick={handleClick}> 
             <p>{displayText[0]}</p>
         </div>
         <p id='nextPage' style={{fontSize: '30px', display: 'none'}}>

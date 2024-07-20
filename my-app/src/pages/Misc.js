@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 const Misc = () => {
     return (
     <><h1>Other Active Stand Users</h1>
-    <div class="wrapper">
-        <h1 class="glitch">Customizable Glitch Text</h1> {/* TO UPDATE THE GLITCH, CHANGE THIS TEXT, THEN GO TO APP.CSS AND MAKE THE CHANGES THERE */}
+    <div className="wrapper">
+        <h1 className="glitch">Customizable Glitch Text</h1> {/* TO UPDATE THE GLITCH, CHANGE THIS TEXT, THEN GO TO APP.CSS AND MAKE THE CHANGES THERE */}
     </div>
     <p>
         <Link color="red" to="/page2">Go Home</Link>
