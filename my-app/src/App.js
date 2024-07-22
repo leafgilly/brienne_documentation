@@ -4,9 +4,11 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Amanda from "./pages/Amanda";
 import Sally from "./pages/Sally";
+import Sally2 from "./pages/Sally2";
 import Morgan from "./pages/Morgan";
 import Rita from "./pages/Rita";
 import Brienne from "./pages/Brienne";
+import Brienne2 from "./pages/Brienne2";
 import Page2 from "./pages/Page2";
 import Misc from "./pages/Misc";
 import Styles from './Styles'
@@ -26,6 +28,8 @@ function App() {
         <Route path="Rita" element={<Rita />} />
         <Route path="theAgent" element={<Brienne />} />
         <Route path="misc" element={<Misc />} />
+        <Route path="Sally/goodend" element={<Sally2 />} />
+        <Route path="Brienne/goodend" element={<Brienne2 />} />
         </Route>
       </Routes>
     </BrowserRouter>

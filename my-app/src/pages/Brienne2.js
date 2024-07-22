@@ -64,6 +64,7 @@ const Brienne = (props) => {
 
     return (
     <>
+    <p>This is a NEW PAGE for the GOOD END.</p>
     <div className='openFolder'>
         <div className="openNametag"><p>
         <Link className='back-button' to="/">Go Back</Link>

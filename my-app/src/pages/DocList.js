@@ -59,7 +59,8 @@ const DocList = (props) => {
           </div>
         </div>
       </div>
-      <div className='post-it'>Informer Company: Internal Team Documentation</div>
+      <div style={{display: props.BrienneVisited===0 ? 'block' : 'none'}} className='post-it'>Informer Company: Internal Team Documentation</div>
+      <div style={{display: props.BrienneVisited===1 ? 'block' : 'none'}} className='post-it'>Just you now. You and me.</div>
       <Outlet />
       </div>
     </>
@@ -72,6 +73,7 @@ export default connect(function mapStateToProps(state){
       AmandaVisited: state.AmandaVisited,
       RitaVisited: state.RitaVisited,
       SallyVisited: state.SallyVisited,
+      BrienneVisited: state.BrienneVisited,
       MorganName: state.MorganName,
       AmandaName: state.AmandaName,
       RitaName: state.RitaName,

@@ -7,7 +7,7 @@ import music from '../audio/SweetDreams.mp3'
 import sallyImage from '../images/sally.png';
 import sallyImage2 from '../images/sally_scratch.png';
 
-const Sally = (props) => {
+const Sally2 = (props) => {
 
     const audio = document.getElementById('audio_tag');
     const [play, setPlay] = useState(false);
@@ -39,6 +39,7 @@ const Sally = (props) => {
     return (
     <>
     <div>
+        <p>This is a NEW PAGE for the GOOD END.</p>
     <div className='openFolder' style={{backgroundColor: play ? palette[counter] : '#D2BB89'}}>
         <div className="openNametag" style={{backgroundColor: play ? palette[counter] : '#D2BB89'}}><p>
         <Link className='back-button' to="/">Go Back</Link>
@@ -443,6 +444,6 @@ const Sally = (props) => {
         SallyCorruption: state.SallyCorruption,
         SallyVisited: state.SallyVisited,
     };
-  })(Sally);
+  })(Sally2);
   
   
