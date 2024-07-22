@@ -4,8 +4,10 @@ import {connect} from 'react-redux';
 
 import music from '../audio/SweetDreams.mp3'
 
+import Draggable from 'react-draggable';
+
 import sallyImage from '../images/sally.png';
-import sallyImage2 from '../images/sally_scratch.png';
+import sallyImage2 from '../images/sally_scratch_2.png';
 
 const Sally2 = (props) => {
 
@@ -35,22 +37,30 @@ const Sally2 = (props) => {
             value: amt,
         });
     }
+    
 
     return (
     <>
     <div>
-        <p>This is a NEW PAGE for the GOOD END.</p>
     <div className='openFolder' style={{backgroundColor: play ? palette[counter] : '#D2BB89'}}>
         <div className="openNametag" style={{backgroundColor: play ? palette[counter] : '#D2BB89'}}><p>
-        <Link className='back-button' to="/">Go Back</Link>
+        <Link className='back-button' to="/">Don't Go Back</Link>
     </p></div>
-    <div style={{display: props.SallyVisited===0 ? 'block' : 'none'}} className="picture-frame">
-        <img className='picture' src={sallyImage} alt="Sally Reed"></img>
+    <div style={{position: 'relative', left: '1000px', top: '81px', width: '300px'}}>
+        <p><b>Caesar Zeppeli - </b>01101000 01110100 01110100 01110000 01110011 00111010 00101111 00101111 01110100 01110110 01110100 01110010 01101111 01110000 01100101 01110011 00101110 01101111 01110010 01100111 00101111 01110000 01101101 01110111 01101001 01101011 01101001 00101111 01110000 01101101 01110111 01101001 01101011 01101001 00101110 01110000 01101000 01110000 00101111 01000110 01100001 01101110 01100110 01101001 01100011 00101111 01010011 01110100 01110010 01100101 01100101 01110100 01101100 01101001 01100111 01101000 01110100 01010000 01110101 01110010 01110011 01110101 01101001 01110100</p>
     </div>
-    <div style={{display: props.SallyVisited>=1 ? 'block' : 'none'}} className="picture-frame">
-        <img className='picture' src={sallyImage2} alt="A punk girl, inverted with scratched out eyes."></img>
+    <Draggable>
+    <div style={{display: props.SallyVisited===0 ? 'block' : 'none', top: '-300px'}} className="picture-frame">
+        <div className='picture' style={{background: `url(${sallyImage})`}}></div>
     </div>
-    <div className='document' style={{backgroundColor: 'black !important'}}>
+    </Draggable>
+    <Draggable>
+        <div style={{display: props.SallyVisited>=1 ? 'block' : 'none'}} className="picture-frame">
+        <div className='picture' style={{background: `url(${sallyImage2})`}}></div>
+        </div>
+    </Draggable>
+    {/* ADJUST THE FIRST MARGIN VARIABLE IF THE SIZE OF THE HIDDEN DIV EVER INCREASES */}
+    <div className='document' style={{backgroundColor: 'black !important', margin: '-910px 0px 10px 0px'}}>
      <audio id="audio_tag" src={music} loop />
     <h1 style={{textAlign: 'center', display: props.SallyCorruption===0 ? 'block' : 'none'}}><span onClick={()=>{
         corrupt(1);
