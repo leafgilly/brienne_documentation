@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/leafgilly.github.io/static/css/main.5212e6cd.css",
+    "main.js": "/leafgilly.github.io/static/js/main.08d452ff.js",
+    "static/js/453.ed3810f9.chunk.js": "/leafgilly.github.io/static/js/453.ed3810f9.chunk.js",
+    "static/media/paperback_rigby.wav": "/leafgilly.github.io/static/media/paperback_rigby.fc9cc158549fd744c567.wav",
+    "static/media/SweetDreams.mp3": "/leafgilly.github.io/static/media/SweetDreams.86b7bd6c22a15c8ba812.mp3",
+    "static/media/glass.jpg": "/leafgilly.github.io/static/media/glass.73a19a5089a07dcb64a0.jpg",
+    "static/media/Itim-Regular.ttf": "/leafgilly.github.io/static/media/Itim-Regular.38b1e6579a4ae98f4318.ttf",
+    "static/media/rice-paper-2.png": "/leafgilly.github.io/static/media/rice-paper-2.2334758e347080188b9e.png",
+    "static/media/RockinRobin.png": "/leafgilly.github.io/static/media/RockinRobin.b1f29588719ece5649fd.png",
+    "static/media/aloneintheuniverse.mp3": "/leafgilly.github.io/static/media/aloneintheuniverse.814d30048251baf4718c.mp3",
+    "static/media/sally_scratch_2.png": "/leafgilly.github.io/static/media/sally_scratch_2.2828b1412997d4fd97e6.png",
+    "static/media/morgan_scratch.png": "/leafgilly.github.io/static/media/morgan_scratch.1a25eb602e67ea387dae.png",
+    "static/media/morgan.png": "/leafgilly.github.io/static/media/morgan.9302d088486d5e0777b9.png",
+    "static/media/rita_scratch.png": "/leafgilly.github.io/static/media/rita_scratch.d3d8d944c6d6270cfcff.png",
+    "static/media/sally_scratch.png": "/leafgilly.github.io/static/media/sally_scratch.ed56144e687b2a5bb585.png",
+    "static/media/amanda_scratch.png": "/leafgilly.github.io/static/media/amanda_scratch.40cf6a761968f6cc5728.png",
+    "static/media/rita.png": "/leafgilly.github.io/static/media/rita.a5303f8acd7341f0f8d9.png",
+    "static/media/sally.png": "/leafgilly.github.io/static/media/sally.0a0d5889bcc52ff61132.png",
+    "static/media/amanda.png": "/leafgilly.github.io/static/media/amanda.360ba0fa3c364c5d565c.png",
+    "static/media/brienne.png": "/leafgilly.github.io/static/media/brienne.6486be8634abd5cca7d0.png",
+    "static/media/brienne_scratch.png": "/leafgilly.github.io/static/media/brienne_scratch.9ff0be92a00c010b3fd5.png",
+    "static/media/LEGS.png": "/leafgilly.github.io/static/media/LEGS.071b08ffd2f543515707.png",
+    "static/media/lined-paper-2.png": "/leafgilly.github.io/static/media/lined-paper-2.9c5e9911c7da0779bba3.png",
+    "static/media/groovepaper.png": "/leafgilly.github.io/static/media/groovepaper.33326b07913fac2781bb.png",
+    "static/media/rice-paper-3.png": "/leafgilly.github.io/static/media/rice-paper-3.999a112f335c8981975a.png",
+    "index.html": "/leafgilly.github.io/index.html",
+    "main.5212e6cd.css.map": "/leafgilly.github.io/static/css/main.5212e6cd.css.map",
+    "main.08d452ff.js.map": "/leafgilly.github.io/static/js/main.08d452ff.js.map",
+    "453.ed3810f9.chunk.js.map": "/leafgilly.github.io/static/js/453.ed3810f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5212e6cd.css",
+    "static/js/main.08d452ff.js"
+  ]
+}
