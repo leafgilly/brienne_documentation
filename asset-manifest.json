@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/brienne_documentation/static/css/main.63aca1bd.css",
-    "main.js": "/brienne_documentation/static/js/main.5d60c3ec.js",
+    "main.js": "/brienne_documentation/static/js/main.3bc6ae33.js",
     "static/js/453.ed3810f9.chunk.js": "/brienne_documentation/static/js/453.ed3810f9.chunk.js",
     "static/media/paperback_rigby.wav": "/brienne_documentation/static/media/paperback_rigby.fc9cc158549fd744c567.wav",
     "static/media/SweetDreams.mp3": "/brienne_documentation/static/media/SweetDreams.86b7bd6c22a15c8ba812.mp3",
@@ -27,11 +27,11 @@
     "static/media/rice-paper-3.png": "/brienne_documentation/static/media/rice-paper-3.999a112f335c8981975a.png",
     "index.html": "/brienne_documentation/index.html",
     "main.63aca1bd.css.map": "/brienne_documentation/static/css/main.63aca1bd.css.map",
-    "main.5d60c3ec.js.map": "/brienne_documentation/static/js/main.5d60c3ec.js.map",
+    "main.3bc6ae33.js.map": "/brienne_documentation/static/js/main.3bc6ae33.js.map",
     "453.ed3810f9.chunk.js.map": "/brienne_documentation/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.63aca1bd.css",
-    "static/js/main.5d60c3ec.js"
+    "static/js/main.3bc6ae33.js"
   ]
 }
