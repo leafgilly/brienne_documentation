@@ -21,7 +21,7 @@ const Sally2 = (props) => {
     const [eurythmics, setEurythmics] = React.useState('');
 
     React.useEffect(() => {
-        if (props.SallyCorruption>=4 && play) {
+        if (props.Sally2Corruption>=4 && play) {
                 const timer =
             setInterval(() => setCounter(counter + 1), 948);
             if (counter === 4) {
@@ -29,11 +29,11 @@ const Sally2 = (props) => {
             }
             return () => clearInterval(timer);
         }
-    }, [counter, props.SallyCorruption, play]);
+    }, [counter, props.Sally2Corruption, play]);
 
     function corrupt (amt) {
         props.dispatch({
-            type: 'corruptSally',
+            type: 'corruptSally2',
             value: amt,
         });
     }
@@ -44,38 +44,38 @@ const Sally2 = (props) => {
     <div>
     <div className='openFolder' style={{backgroundColor: play ? palette[counter] : '#D2BB89'}}>
         <div className="openNametag" style={{backgroundColor: play ? palette[counter] : '#D2BB89'}}><p>
-        <Link className='back-button' to="/">Don't Go Back</Link>
+        {/* <Link className='back-button' to="/">Don't Go Back</Link> */}
     </p></div>
     <div style={{position: 'relative', left: '1000px', top: '81px', width: '300px'}}>
         <p><b>Caesar Zeppeli - </b>01101000 01110100 01110100 01110000 01110011 00111010 00101111 00101111 01110100 01110110 01110100 01110010 01101111 01110000 01100101 01110011 00101110 01101111 01110010 01100111 00101111 01110000 01101101 01110111 01101001 01101011 01101001 00101111 01110000 01101101 01110111 01101001 01101011 01101001 00101110 01110000 01101000 01110000 00101111 01000110 01100001 01101110 01100110 01101001 01100011 00101111 01010011 01110100 01110010 01100101 01100101 01110100 01101100 01101001 01100111 01101000 01110100 01010000 01110101 01110010 01110011 01110101 01101001 01110100</p>
     </div>
     <Draggable>
-    <div style={{display: props.SallyVisited===0 ? 'block' : 'none', top: '-300px'}} className="picture-frame">
+    <div style={{display: props.Sally2Visited===0 ? 'block' : 'none', top: '-300px'}} className="picture-frame">
         <div className='picture' style={{background: `url(${sallyImage})`}}></div>
     </div>
     </Draggable>
     <Draggable>
-        <div style={{display: props.SallyVisited>=1 ? 'block' : 'none', top: '-300px'}} className="picture-frame">
+        <div style={{display: props.Sally2Visited>=1 ? 'block' : 'none', top: '-300px'}} className="picture-frame">
         <div className='picture' style={{background: `url(${sallyImage2})`}}></div>
         </div>
     </Draggable>
     {/* ADJUST THE FIRST MARGIN VARIABLE IF THE SIZE OF THE HIDDEN DIV EVER INCREASES */}
     <div className='document' style={{backgroundColor: 'black !important', margin: '-910px 0px 10px 0px'}}>
      <audio id="audio_tag" src={music} loop />
-    <h1 style={{textAlign: 'center', display: props.SallyCorruption===0 ? 'block' : 'none'}}><span onClick={()=>{
+    <h1 style={{textAlign: 'center', display: props.Sally2Corruption===0 ? 'block' : 'none'}}><span onClick={()=>{
         corrupt(1);
     }} className='interactive enabled-link-s no-select-text'>Sally</span> Joanna Reed</h1>
-    <h1 style={{textAlign: 'center', display: props.SallyCorruption===1 ? 'block' : 'none'}}><b className="enabled-link-b">One beat,</b> <span onClick={()=>{
+    <h1 style={{textAlign: 'center', display: props.Sally2Corruption===1 ? 'block' : 'none'}}><b className="enabled-link-b">One beat,</b> <span onClick={()=>{
         corrupt(1);
     }} className='interactive enabled-link-s no-select-text'>Joanna</span> Reed</h1>
-    <h1 style={{textAlign: 'center', display: props.SallyCorruption===2 ? 'block' : 'none'}}><b className="enabled-link-b">One beat, two beats,</b> <span onClick={()=>{
+    <h1 style={{textAlign: 'center', display: props.Sally2Corruption===2 ? 'block' : 'none'}}><b className="enabled-link-b">One beat, two beats,</b> <span onClick={()=>{
         corrupt(1);
     }} className='interactive enabled-link-s no-select-text'>Reed</span></h1>
-    <h1 style={{textAlign: 'center', display: props.SallyCorruption>=3 ? 'block' : 'none'}}><b className="enabled-link-b">One beat, two beats, three beats,</b></h1>
+    <h1 style={{textAlign: 'center', display: props.Sally2Corruption>=3 ? 'block' : 'none'}}><b className="enabled-link-b">One beat, two beats, three beats,</b></h1>
     
-    <h2 style={{textAlign: 'center', display: props.SallyCorruption<3 ? 'block' : 'none'}}>Threat Level: D</h2>
-    <h2 style={{textAlign: 'center', display: props.SallyCorruption>=3 && props.SallyCorruption<12 && !play && audio ? 'block' : 'none'}}>Threat Level: <span onClick={()=>{
-        if (props.SallyCorruption===3) {
+    <h2 style={{textAlign: 'center', display: props.Sally2Corruption<3 ? 'block' : 'none'}}>Threat Level: D</h2>
+    <h2 style={{textAlign: 'center', display: props.Sally2Corruption>=3 && props.Sally2Corruption<12 && !play && audio ? 'block' : 'none'}}>Threat Level: <span onClick={()=>{
+        if (props.Sally2Corruption===3) {
             corrupt(1);
         }
         play ? setPlay(false) : setPlay(true);
@@ -83,7 +83,7 @@ const Sally2 = (props) => {
         audio.volume = 0.2;
         console.log("Looking in here for some help, are you?");
     }} className='interactive enabled-link-s no-select-text'>D</span></h2>
-    <div style={{display: props.SallyCorruption>=4 && props.SallyCorruption<12 && !play && !audio ? 'inline' : 'none'}}>
+    <div style={{display: props.Sally2Corruption>=4 && props.Sally2Corruption<12 && !play && !audio ? 'inline' : 'none'}}>
         <h2 style={{textAlign: 'center'}}>Threat Level: <span onClick={() => {
             corrupt(0.5);
             corrupt(-0.5);
@@ -91,7 +91,7 @@ const Sally2 = (props) => {
             }} className='interactive enabled-link-s no-select-text'>Bring the Beat Back!
         </span></h2>
     </div>
-    <div style={{display: props.SallyCorruption>=2 && play ? 'inline' : 'none'}}>
+    <div style={{display: props.Sally2Corruption>=2 && play ? 'inline' : 'none'}}>
         <h2 style={{textAlign: 'center'}}>Threat Level: <span onClick={() => {
             play ? setPlay(false) : setPlay(true);
             play ? audio.pause() : audio.play();
@@ -100,56 +100,56 @@ const Sally2 = (props) => {
         </span></h2>
     </div>
 
-    <h2 style={{display: props.SallyCorruption<4 ? 'block' : 'none'}}>Previous Names and Aliases</h2>
-    <h2 style={{display: props.SallyCorruption===4 && play && counter===0 ? 'block' : 'none'}}><span onClick={()=>{
+    <h2 style={{display: props.Sally2Corruption<4 ? 'block' : 'none'}}>Previous Names and Aliases</h2>
+    <h2 style={{display: props.Sally2Corruption===4 && play && counter===0 ? 'block' : 'none'}}><span onClick={()=>{
         corrupt(1);
     }} className='interactive enabled-link-s no-select-text'>Previous</span> Names and Aliases</h2>
-    <h2 style={{display: props.SallyCorruption===4 && play && counter===1 ? 'block' : 'none'}}>Previous <span onClick={()=>{
+    <h2 style={{display: props.Sally2Corruption===4 && play && counter===1 ? 'block' : 'none'}}>Previous <span onClick={()=>{
         corrupt(1);
     }} className='interactive enabled-link-s no-select-text'>Names</span> and Aliases</h2>
-    <h2 style={{display: props.SallyCorruption===4 && play && counter===2 ? 'block' : 'none'}}>Previous Names <span onClick={()=>{
+    <h2 style={{display: props.Sally2Corruption===4 && play && counter===2 ? 'block' : 'none'}}>Previous Names <span onClick={()=>{
         corrupt(1);
     }} className='interactive enabled-link-s no-select-text'>and</span> Aliases</h2>
-    <h2 style={{display: props.SallyCorruption===4 && play && counter===3 ? 'block' : 'none'}}>Previous Names and <span onClick={()=>{
+    <h2 style={{display: props.Sally2Corruption===4 && play && counter===3 ? 'block' : 'none'}}>Previous Names and <span onClick={()=>{
         corrupt(1);
     }} className='interactive enabled-link-s no-select-text'>Aliases</span></h2>
-    <ul style={{display: props.SallyCorruption<5 ? 'block' : 'none'}}>
+    <ul style={{display: props.Sally2Corruption<5 ? 'block' : 'none'}}>
         <li>n/a</li>
     </ul>
 
-    <div style={{display: props.SallyCorruption>=5 ? 'block' : 'none'}}>
+    <div style={{display: props.Sally2Corruption>=5 ? 'block' : 'none'}}>
         <h2>Previous Names and Aliases</h2>
         <ul>
             <li><b className='enabled-link-b'>For a brief stint in college, she had a fake id with the name 'Elaine Baker'.</b></li>
         </ul>
     </div>
 
-    <h2 style={{display: props.SallyCorruption<5 ? 'block' : 'none'}}>Stand and Supernatural Abilities</h2>
-    <h2 style={{display: props.SallyCorruption===5 && play && counter===0 ? 'block' : 'none'}}><span onClick={()=>{
+    <h2 style={{display: props.Sally2Corruption<5 ? 'block' : 'none'}}>Stand and Supernatural Abilities</h2>
+    <h2 style={{display: props.Sally2Corruption===5 && play && counter===0 ? 'block' : 'none'}}><span onClick={()=>{
         corrupt(1);
     }} className='interactive enabled-link-s no-select-text'>Stand</span> and Supernatural Abilities</h2>
-    <h2 style={{display: props.SallyCorruption===5 && play && counter===1 ? 'block' : 'none'}}>Stand <span onClick={()=>{
+    <h2 style={{display: props.Sally2Corruption===5 && play && counter===1 ? 'block' : 'none'}}>Stand <span onClick={()=>{
         corrupt(1);
     }} className='interactive enabled-link-s no-select-text'>and</span> Supernatural Abilities</h2>
-    <h2 style={{display: props.SallyCorruption===5 && play && counter===2 ? 'block' : 'none'}}>Stand and <span onClick={()=>{
+    <h2 style={{display: props.Sally2Corruption===5 && play && counter===2 ? 'block' : 'none'}}>Stand and <span onClick={()=>{
         corrupt(1);
     }} className='interactive enabled-link-s no-select-text'>Supernatural</span> Abilities</h2>
-    <h2 style={{display: props.SallyCorruption===5 && play && counter===3 ? 'block' : 'none'}}>Stand and Supernatural <span onClick={()=>{
+    <h2 style={{display: props.Sally2Corruption===5 && play && counter===3 ? 'block' : 'none'}}>Stand and Supernatural <span onClick={()=>{
         corrupt(1);
     }} className='interactive enabled-link-s no-select-text'>Abilities</span></h2>
 
-<div style={{display: props.SallyCorruption>=6 && props.SallyCorruption<7 ? 'block' : 'none'}}>
+<div style={{display: props.Sally2Corruption>=6 && props.Sally2Corruption<7 ? 'block' : 'none'}}>
         <h2 style={{display: !play ? 'inline' : 'none'}}><b className='enabled-link-b'>The World's ??? Stand</b></h2>
     </div>
 
-    <div style={{display: props.SallyCorruption>=6 && props.SallyCorruption<7 ? 'block' : 'none'}}>
+    <div style={{display: props.Sally2Corruption>=6 && props.Sally2Corruption<7 ? 'block' : 'none'}}>
         <h2 style={{display: play && counter===0 ? 'inline' : 'none'}}><b className='enabled-link-b'>The World's <span style={{color: 'red'}}>Greatest</span> Stand</b></h2>
         <h2 style={{display: play && counter===1 ? 'inline' : 'none'}}><b className='enabled-link-b'>The World's <span style={{color: 'purple'}}>Funkiest</span> Stand</b></h2>
         <h2 style={{display: play && counter===2 ? 'inline' : 'none'}}><b className='enabled-link-b'>The World's <span style={{color: 'pink'}}>Smartest</span> Stand</b></h2>
         <h2 style={{display: play && counter===3 ? 'inline' : 'none'}}><b className='enabled-link-b'>The World's <span style={{color: 'yellow'}}>Coolest</span> Stand</b></h2>
     </div>
 
-    <div style={{display: props.SallyCorruption>=7 ? 'block' : 'none'}}>
+    <div style={{display: props.Sally2Corruption>=7 ? 'block' : 'none'}}>
         <h2 style={{display: eurythmics==='Greatest' ? 'inline' : 'none'}}><b className='enabled-link-b'>The World's <span style={{color: 'red'}}>{eurythmics}</span> Stand</b></h2>
         <h2 style={{display: eurythmics==='Funkiest' ? 'inline' : 'none'}}><b className='enabled-link-b'>The World's <span style={{color: 'purple'}}>Funkiest</span> Stand</b></h2>
         <h2 style={{display: eurythmics==='Smartest' ? 'inline' : 'none'}}><b className='enabled-link-b'>The World's <span style={{color: 'pink'}}>Smartest</span> Stand</b></h2>
@@ -157,29 +157,29 @@ const Sally2 = (props) => {
         <h2 style={{display: eurythmics==='' ? 'inline' : 'none'}}><b className='enabled-link-b'>The World's ??? Stand</b></h2>
     </div>
 
-    <h2 style={{display: props.SallyCorruption<6 ? 'block' : 'none'}}>Eurythmics</h2>
-    <h2 style={{display: props.SallyCorruption===6 && play && counter===0 ? 'block' : 'none'}}><span onClick={()=>{
+    <h2 style={{display: props.Sally2Corruption<6 ? 'block' : 'none'}}>Eurythmics</h2>
+    <h2 style={{display: props.Sally2Corruption===6 && play && counter===0 ? 'block' : 'none'}}><span onClick={()=>{
         corrupt(1);
         console.log("She was all of them in your heart.");
         setEurythmics('Greatest');
     }} className='interactive enabled-link-s no-select-text'>Eurythmics</span></h2>
-    <h2 style={{display: props.SallyCorruption===6 && play && counter!==0 ? 'block' : 'none'}}>Eurythmics</h2>
+    <h2 style={{display: props.Sally2Corruption===6 && play && counter!==0 ? 'block' : 'none'}}>Eurythmics</h2>
 
-    <p style={{display: props.SallyCorruption<6 ? 'block' : 'none'}}>Eurythmics is a fully sentient robotic Stand that can play music from the speakers in its chest and mouth. It can access public 
+    <p style={{display: props.Sally2Corruption<6 ? 'block' : 'none'}}>Eurythmics is a fully sentient robotic Stand that can play music from the speakers in its chest and mouth. It can access public 
         radio waves as well as play music it knows. If anyone moves to the beat of the song Eurythmics plays for four beats, Eurythmics 
         can take control of their body. This ability is single target and can be broken if the user is harmed/distracted. 
     </p>
 
-    <p style={{display: props.SallyCorruption===6 && !play ? 'block' : 'none'}}>Eurythmics is a fully sentient robotic Stand that can play music from the speakers in its chest and mouth. It can access public 
+    <p style={{display: props.Sally2Corruption===6 && !play ? 'block' : 'none'}}>Eurythmics is a fully sentient robotic Stand that can play music from the speakers in its chest and mouth. It can access public 
         radio waves as well as play music it knows. If anyone moves to the beat of the song Eurythmics plays for four beats, Eurythmics 
         can take control of their body. This ability is single target and can be broken if the user is harmed/distracted. 
     </p>
 
-    <p style={{display: props.SallyCorruption===6 && play && counter===0 ? 'block' : 'none'}}>Eurythmics is a fully sentient robotic Stand that can play music from the speakers in its chest and mouth. It can access public 
+    <p style={{display: props.Sally2Corruption===6 && play && counter===0 ? 'block' : 'none'}}>Eurythmics is a fully sentient robotic Stand that can play music from the speakers in its chest and mouth. It can access public 
         radio waves as well as play music it knows. If anyone moves to the beat of the song Eurythmics plays for four beats, Eurythmics 
         can take control of their body. This ability is single target and can be broken if the user is harmed/distracted. 
     </p>
-    <p style={{display: props.SallyCorruption===6 && play && counter===1 ? 'block' : 'none'}}><span onClick={()=>{
+    <p style={{display: props.Sally2Corruption===6 && play && counter===1 ? 'block' : 'none'}}><span onClick={()=>{
         corrupt(1);
         console.log("She was all of them in your heart.");
         setEurythmics('Funkiest');
@@ -187,7 +187,7 @@ const Sally2 = (props) => {
         radio waves as well as play music it knows. If anyone moves to the beat of the song Eurythmics plays for four beats, Eurythmics 
         can take control of their body. This ability is single target and can be broken if the user is harmed/distracted. 
     </p>
-    <p style={{display: props.SallyCorruption===6 && play && counter===2 ? 'block' : 'none'}}>Eurythmics is a fully sentient robotic Stand that can play music from the speakers in its chest and mouth. It can access public 
+    <p style={{display: props.Sally2Corruption===6 && play && counter===2 ? 'block' : 'none'}}>Eurythmics is a fully sentient robotic Stand that can play music from the speakers in its chest and mouth. It can access public 
         radio waves as well as play music it knows. If anyone moves to the beat of the song <span onClick={()=>{
         corrupt(1);
         console.log("She was all of them in your heart.");
@@ -195,7 +195,7 @@ const Sally2 = (props) => {
     }} className='interactive enabled-link-s no-select-text'>Eurythmics</span> plays for four beats, Eurythmics 
         can take control of their body. This ability is single target and can be broken if the user is harmed/distracted. 
     </p>
-    <p style={{display: props.SallyCorruption===6 && play && counter===3 ? 'block' : 'none'}}>Eurythmics is a fully sentient robotic Stand that can play music from the speakers in its chest and mouth. It can access public 
+    <p style={{display: props.Sally2Corruption===6 && play && counter===3 ? 'block' : 'none'}}>Eurythmics is a fully sentient robotic Stand that can play music from the speakers in its chest and mouth. It can access public 
         radio waves as well as play music it knows. If anyone moves to the beat of the song Eurythmics plays for four beats, <span onClick={()=>{
         corrupt(1);
         console.log("She was all of them in your heart.");
@@ -204,71 +204,71 @@ const Sally2 = (props) => {
         take control of their body. This ability is single target and can be broken if the user is harmed/distracted. 
     </p>
 
-    <h2 style={{display: props.SallyCorruption>=7 ? 'block' : 'none'}}>Eurythmics</h2>
-    <p style={{display: props.SallyCorruption>=7 ? 'block' : 'none'}}>Eurythmics <b className="enabled-link-b">was</b> a fully sentient robotic 
+    <h2 style={{display: props.Sally2Corruption>=7 ? 'block' : 'none'}}>Eurythmics</h2>
+    <p style={{display: props.Sally2Corruption>=7 ? 'block' : 'none'}}>Eurythmics <b className="enabled-link-b">was</b> a fully sentient robotic 
         Stand that <b className="enabled-link-b">could</b> play music from the speakers in its chest and mouth. It <b className="enabled-link-b">could</b> access public 
         radio waves as well as play music it <b className="enabled-link-b">knew</b>. If anyone <b className="enabled-link-b">moved</b> to the beat of the song Eurythmics <b className="enabled-link-b">played</b> for four beats,  
         Eurythmics <b className="enabled-link-b">could</b> take control of their body. This ability <b className="enabled-link-b">was</b> single target and <b className="enabled-link-b">could</b> be broken if the user <b className="enabled-link-b">was</b> harmed/distracted. 
     </p>
 
-    <ul style={{display: props.SallyCorruption<7 ? 'block' : 'none'}}>
+    <ul style={{display: props.Sally2Corruption<7 ? 'block' : 'none'}}>
         <li>Note: The single target nature of this Stand is absolute except in unique instances of hivemind crowds.</li>
     </ul>
 
-    <ul style={{display: props.SallyCorruption===7 && !play ? 'block' : 'none'}}>
+    <ul style={{display: props.Sally2Corruption===7 && !play ? 'block' : 'none'}}>
         <li>Note: The single target nature of this Stand is absolute except in unique instances of hivemind crowds.</li>
     </ul>
 
     <ul>
-    <li style={{display: props.SallyCorruption===7 && play && counter===0 ? 'list-item' : 'none'}}>Note: The single target nature of this Stand is absolute <span onClick={()=>{
+    <li style={{display: props.Sally2Corruption===7 && play && counter===0 ? 'list-item' : 'none'}}>Note: The single target nature of this Stand is absolute <span onClick={()=>{
         corrupt(1);
     }} className='interactive enabled-link-s no-select-text'>except</span> in unique instances of hivemind crowds.</li>
-    <li style={{display: props.SallyCorruption===7 && play && counter===1 ? 'list-item' : 'none'}}>Note: The single target nature of this Stand is absolute except <span onClick={()=>{
+    <li style={{display: props.Sally2Corruption===7 && play && counter===1 ? 'list-item' : 'none'}}>Note: The single target nature of this Stand is absolute except <span onClick={()=>{
         corrupt(1);
     }} className='interactive enabled-link-s no-select-text'>in</span> unique instances of hivemind crowds.</li>
-    <li style={{display: props.SallyCorruption===7 && play && counter===2 ? 'list-item' : 'none'}}>Note: The single target nature of this Stand is absolute except in <span onClick={()=>{
+    <li style={{display: props.Sally2Corruption===7 && play && counter===2 ? 'list-item' : 'none'}}>Note: The single target nature of this Stand is absolute except in <span onClick={()=>{
         corrupt(1);
     }} className='interactive enabled-link-s no-select-text'>unique</span> instances of hivemind crowds.</li>
-    <li style={{display: props.SallyCorruption===7 && play && counter===3 ? 'list-item' : 'none'}}>Note: The single target nature of this Stand is absolute except in unique <span onClick={()=>{
+    <li style={{display: props.Sally2Corruption===7 && play && counter===3 ? 'list-item' : 'none'}}>Note: The single target nature of this Stand is absolute except in unique <span onClick={()=>{
         corrupt(1);
     }} className='interactive enabled-link-s no-select-text'>instances</span> of hivemind crowds.</li>
     </ul>
-    <ul style={{display: props.SallyCorruption>=8 ? 'block' : 'none'}}>
+    <ul style={{display: props.Sally2Corruption>=8 ? 'block' : 'none'}}>
         <li><b className="enabled-link-b">It tried so hard to save her. It buried its fingers in her flesh, trying to pull the arrow out.</b> Except in unique instances, <b className="enabled-link-b">it always knew how to protect her.</b></li>
     </ul>
 
-    <p style={{display: props.SallyCorruption<8 ? 'block' : 'none'}}>Eurythmics has a strong personality, manifesting in unique mannerisms and preferences for varying its visual appearance. This Stand 
+    <p style={{display: props.Sally2Corruption<8 ? 'block' : 'none'}}>Eurythmics has a strong personality, manifesting in unique mannerisms and preferences for varying its visual appearance. This Stand 
         has been observed having the ability to change its physical manifestation at will (i.e. Michael Jackson’s Thriller jumpsuit, 
         two feather boas instead of one).</p>
-    <p style={{display: props.SallyCorruption===8 && play && counter===0 ? 'block' : 'none'}}>Eurythmics has a strong personality, manifesting in unique mannerisms and preferences for varying its visual appearance. This Stand 
+    <p style={{display: props.Sally2Corruption===8 && play && counter===0 ? 'block' : 'none'}}>Eurythmics has a strong personality, manifesting in unique mannerisms and preferences for varying its visual appearance. This Stand 
         has been observed having the ability to change its physical manifestation at will (i.e. Michael Jackson’s Thriller jumpsuit,&nbsp;
             <span onClick={()=>{
         corrupt(1);
     }} className='interactive enabled-link-s no-select-text'>two</span> feather boas instead of one).</p>
-    <p style={{display: props.SallyCorruption===8 && play && counter===1 ? 'block' : 'none'}}>Eurythmics has a strong personality, manifesting in unique mannerisms and preferences for varying its visual appearance. This Stand 
+    <p style={{display: props.Sally2Corruption===8 && play && counter===1 ? 'block' : 'none'}}>Eurythmics has a strong personality, manifesting in unique mannerisms and preferences for varying its visual appearance. This Stand 
         has been observed having the ability to change its physical manifestation at will (i.e. Michael Jackson’s Thriller jumpsuit, 
         two feather boas <span onClick={()=>{
         corrupt(1);
     }} className='interactive enabled-link-s no-select-text'>instead</span> of one).</p>
-    <p style={{display: props.SallyCorruption===8 && play && counter===2 ? 'block' : 'none'}}>Eurythmics has a strong personality, manifesting in unique mannerisms and preferences for varying its visual appearance. This Stand 
+    <p style={{display: props.Sally2Corruption===8 && play && counter===2 ? 'block' : 'none'}}>Eurythmics has a strong personality, manifesting in unique mannerisms and preferences for varying its visual appearance. This Stand 
         has been observed having the ability to change its physical manifestation at will (i.e. Michael Jackson’s Thriller jumpsuit, 
         two feather boas instead <span onClick={()=>{
         corrupt(1);
     }} className='interactive enabled-link-s no-select-text'>of</span> one).</p>
-    <p style={{display: props.SallyCorruption===8 && play && counter===3 ? 'block' : 'none'}}>Eurythmics has a strong personality, manifesting in unique mannerisms and preferences for varying its visual appearance. This Stand 
+    <p style={{display: props.Sally2Corruption===8 && play && counter===3 ? 'block' : 'none'}}>Eurythmics has a strong personality, manifesting in unique mannerisms and preferences for varying its visual appearance. This Stand 
         has been observed having the ability to change its physical manifestation at will (i.e. Michael Jackson’s Thriller jumpsuit, 
         two feather boas instead of <span onClick={()=>{
         corrupt(1);
     }} className='interactive enabled-link-s no-select-text'>one</span>).</p>
-    <p style={{display: props.SallyCorruption===8 && !play ? 'block' : 'none'}}>Eurythmics has a strong personality, manifesting in unique mannerisms and preferences for varying its visual appearance. This Stand 
+    <p style={{display: props.Sally2Corruption===8 && !play ? 'block' : 'none'}}>Eurythmics has a strong personality, manifesting in unique mannerisms and preferences for varying its visual appearance. This Stand 
         has been observed having the ability to change its physical manifestation at will (i.e. Michael Jackson’s Thriller jumpsuit, 
         two feather boas instead of one).</p>
-    <p style={{display: props.SallyCorruption>=9 ? 'block' : 'none'}}>Eurythmics has a strong personality <b className='enabled-link-b'>just like mine</b>, manifesting in <b className='enabled-link-b'>queer behavior</b> and preferences for <b className='enabled-link-b'>affecting my</b> visual appearance. This Stand 
+    <p style={{display: props.Sally2Corruption>=9 ? 'block' : 'none'}}>Eurythmics has a strong personality <b className='enabled-link-b'>just like mine</b>, manifesting in <b className='enabled-link-b'>queer behavior</b> and preferences for <b className='enabled-link-b'>affecting my</b> visual appearance. This Stand 
         has been observed having the ability to <b className='enabled-link-b'>rewrite a life at will</b> (i.e. <b className='enabled-link-b'>I'm sorry I'm sorry I'M SORRY</b>).</p>
 
 
     <h2>Known Relationships</h2>
-    <ul style={{display: props.SallyCorruption<9 ? 'block' : 'none'}}>
+    <ul style={{display: props.Sally2Corruption<9 ? 'block' : 'none'}}>
         <li>Norman Reed: father. Amicable but distant relationship. He is a man of few words, she struggled to broach that.
         </li>
         <li>Lydia Reed: mother. Strained relationship. Wishes she worried over Sally’s academics more than grandchildren.
@@ -283,7 +283,7 @@ const Sally2 = (props) => {
         </li>
     </ul>
 
-    <ul style={{display: props.SallyCorruption===9 && play ? 'block' : 'none'}}>
+    <ul style={{display: props.Sally2Corruption===9 && play ? 'block' : 'none'}}>
         <li style={{display: counter===0 ? 'list-item' : 'none'}}>Norman Reed: father. <span onClick={()=>{
         corrupt(1);
         console.log("A       e      a d      a ?");
@@ -319,7 +319,7 @@ const Sally2 = (props) => {
         </li>
     </ul>
 
-    <ul style={{display: props.SallyCorruption===9 && !play ? 'block' : 'none'}}>
+    <ul style={{display: props.Sally2Corruption===9 && !play ? 'block' : 'none'}}>
         <li>Norman Reed: father. Amicable but distant relationship. He is a man of few words, she struggled to broach that.
         </li>
         <li>Lydia Reed: mother. Strained relationship. Wishes she worried over Sally’s academics more than grandchildren.
@@ -333,7 +333,7 @@ const Sally2 = (props) => {
             but appreciates her for being her most normal friend at work.
         </li>
     </ul>
-    <ul style={{display: props.SallyCorruption>=10 ? 'block' : 'none'}}>
+    <ul style={{display: props.Sally2Corruption>=10 ? 'block' : 'none'}}>
         <li>Norman Reed: <b className='enabled-link-b'>fa&nbsp;&nbsp;e&nbsp;.&nbsp;A&nbsp;&nbsp;cab&nbsp;e&nbsp;b&nbsp;&nbsp;&nbsp;d
             &nbsp;&nbsp;a&nbsp;&nbsp;&nbsp;&nbsp;e&nbsp;a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;e&nbsp;&nbsp;&nbsp;
             a&nbsp;&nbsp;a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d&nbsp;,&nbsp;&nbsp;&nbsp;e&nbsp;&nbsp;&nbsp;&nbsp;
@@ -365,13 +365,13 @@ const Sally2 = (props) => {
         </li>
     </ul>
 
-    <div style={{display: props.SallyCorruption<10 ? 'block' : 'none'}}><h2>Psychological Profile</h2>
+    <div style={{display: props.Sally2Corruption<10 ? 'block' : 'none'}}><h2>Psychological Profile</h2>
     <p>Reed is highly intelligent and perceptive with great aptitude for leadership, although she struggles with being unable to perfectly 
         control people. The latter quality has developed into a form of survivor’s guilt: she hates watching people get injured to save 
         her. While she is outwardly suave, she has a penchant for trickery and carefree fun. This is more clearly seen in Eurythmics, 
         who often encourages or instigates harmless pranks.</p>
     </div>
-    <div style={{display: props.SallyCorruption===10 && play ? 'block' : 'none'}}><h2>Psychological Profile</h2>
+    <div style={{display: props.Sally2Corruption===10 && play ? 'block' : 'none'}}><h2>Psychological Profile</h2>
     <p style={{display: counter<=1 ? 'block' : 'none'}}>Reed is highly intelligent and perceptive with great aptitude for leadership, although she struggles with being unable to perfectly 
         control people. The latter quality has developed into a form of <span onClick={()=>{
         corrupt(1);
@@ -385,24 +385,24 @@ const Sally2 = (props) => {
         her. While she is outwardly suave, she has a penchant for trickery and carefree fun. This is more clearly seen in Eurythmics, 
         who often encourages or instigates harmless pranks.</p>
     </div>
-    <div style={{display: props.SallyCorruption===10 && !play ? 'block' : 'none'}}><h2>Psychological Profile</h2>
+    <div style={{display: props.Sally2Corruption===10 && !play ? 'block' : 'none'}}><h2>Psychological Profile</h2>
     <p>Reed is highly intelligent and perceptive with great aptitude for leadership, although she struggles with being unable to perfectly 
         control people. The latter quality has developed into a form of survivor’s guilt: she hates watching people get injured to save 
         her. While she is outwardly suave, she has a penchant for trickery and carefree fun. This is more clearly seen in Eurythmics, 
         who often encourages or instigates harmless pranks.</p>
     </div>
-    <div style={{display: props.SallyCorruption>=11 ? 'block' : 'none'}}><h2><b className='enabled-link-b'>Survivor's Guilt</b></h2>
+    <div style={{display: props.Sally2Corruption>=11 ? 'block' : 'none'}}><h2><b className='enabled-link-b'>Survivor's Guilt</b></h2>
     <p><i style={{color: 'slateblue'}}>“I absolutely cannot and will not live with the knowledge that I voted for nonlethal force, and that led to one of you getting killed. I don’t like it, and I don’t agree with it, but I will trade that discomfort in exchange for your lives and the lives of the whole city any day.”</i></p>
     </div>
     
-    <div style={{display: props.SallyCorruption<11 ? 'block' : 'none'}}>
+    <div style={{display: props.Sally2Corruption<11 ? 'block' : 'none'}}>
     <h2>Author's Notes</h2>
     <p>Reed is unerringly logical, even in interpersonal relationships, which is something I’ve valued deeply throughout our time working 
         together. While I was resentful of her during our initial meeting—Amanda returned with her and not the Stand arrow—I quickly grew 
         to value her academic background and leader’s demeanor. She is my most reliable employee, my mind, my protégé.</p>
     </div>
 
-    <div style={{display: props.SallyCorruption===11 && play ? 'block' : 'none'}}>
+    <div style={{display: props.Sally2Corruption===11 && play ? 'block' : 'none'}}>
     <h2 style={{display: counter===2 ? 'block' : 'none'}}><span onClick={()=>{
         corrupt(1);
         // play ? setPlay(false) : setPlay(true);
@@ -410,7 +410,7 @@ const Sally2 = (props) => {
         audio.volume = 0.01;
         console.log("There's only one thing to say: keep looking. It's here this time. Just... maybe not in the document itself.");
         props.dispatch({
-            type: 'visitSally',
+            type: 'visitSally2',
             value: 1,
         });
     }} className='interactive enabled-link-s no-select-text'>Author's Notes</span></h2>
@@ -420,19 +420,19 @@ const Sally2 = (props) => {
         to value her academic background and leader’s demeanor. She is my most reliable employee, my mind, my protégé.</p>
     </div>
 
-    <div style={{display: props.SallyCorruption===11 && !play ? 'block' : 'none'}}>
+    <div style={{display: props.Sally2Corruption===11 && !play ? 'block' : 'none'}}>
     <h2>Author's Notes</h2>
     <p>Reed is unerringly logical, even in interpersonal relationships, which is something I’ve valued deeply throughout our time working 
         together. While I was resentful of her during our initial meeting—Amanda returned with her and not the Stand arrow—I quickly grew 
         to value her academic background and leader’s demeanor. She is my most reliable employee, my mind, my protégé.</p>
     </div>
     
-    <div style={{display: props.SallyCorruption>=12 ? 'block' : 'none'}}>
+    <div style={{display: props.Sally2Corruption>=12 ? 'block' : 'none'}}>
     <h2><b style={{color: 'red'}}>Author's Notes</b></h2>
     <p>She <b className='enabled-link-b'>was</b> my most reliable employee, my mind, my protégé. <b className='enabled-link-b'>She had an uncanny ability
         to survive the worst, often at the cost of others.</b></p>
     </div>
-    <p style={{display: props.SallyCorruption===12 ? 'block' : 'none'}}><b style={{color: 'red'}}>And yet you survived even her.</b></p>
+    <p style={{display: props.Sally2Corruption===12 ? 'block' : 'none'}}><b style={{color: 'red'}}>And yet you survived even her.</b></p>
     </div>
 
 
@@ -451,8 +451,8 @@ const Sally2 = (props) => {
         MorganName: state.MorganName,
         AmandaName: state.AmandaName,
         RitaName: state.RitaName,
-        SallyCorruption: state.SallyCorruption,
-        SallyVisited: state.SallyVisited,
+        Sally2Corruption: state.Sally2Corruption,
+        Sally2Visited: state.Sally2Visited,
     };
   })(Sally2);
   

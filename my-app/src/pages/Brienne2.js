@@ -9,22 +9,59 @@ import brienneImage from '../images/brienne.png';
 import brienneImage2 from '../images/brienne_scratch.png';
 
 const Brienne = (props) => {
-    // function handleSubmit(e) {
-    //     // Prevent the browser from reloading the page
-    //     e.preventDefault();
     
-    //     // Read the form data
-    //     const form = e.target;
-    //     const formData = new FormData(form);
-    
-    //     // Or you can work with it as a plain object:
-    //     const formJson = Object.fromEntries(formData.entries());
-    //     console.log(formJson);
-    // }
+    const [text, setText] = useState('');
+    const [BrienneEntry, setBrienneEntry] = useState(false);
+    const [AmandaEntry, setAmandaEntry] = useState(false);
+    const [MorganEntry, setMorganEntry] = useState(false);
+    const [RitaEntry, setRitaEntry] = useState(false);
+    const [SallyEntry, setSallyEntry] = useState(false);
 
-    // function revealTextBox() {
-    //     document.getElementById("appearingTextBox").style.display = 'inherit';
-    // }
+    const validEntries = [
+        'brienne williams', 
+        'amanda valentine', 
+        'morgan becquerel', 
+        'rita zeppeli', 
+        'sally reed', 
+        'stella morgan becquerel', 
+        'stella becquerel', 
+        'margarita zeppeli', 
+        'sally joanna reed',
+        'amanda valentina',];
+
+    function handleSubmit(e) {
+        // Prevent the browser from reloading the page
+        e.preventDefault();
+    
+        // Read the form data
+        const form = e.target;
+        const formData = new FormData(form);
+    
+        // Or you can work with it as a plain object:
+        const formJson = Object.fromEntries(formData.entries());
+        console.log(formJson);
+        setText(formJson.myInput.toLowerCase());
+    }
+
+    React.useEffect(() => {
+        console.log(text);
+        if (validEntries.includes(text)) {
+            setBrienneEntry(text === 'brienne williams');
+            setAmandaEntry(text === 'amanda valentine' || text === 'amanda valentina');
+            setMorganEntry(text === 'morgan becquerel' || text === 'stella morgan becquerel' || text === 'stella becquerel');
+            setRitaEntry(text === 'rita zeppeli' || text === 'margarita zeppeli');
+            setSallyEntry(text === 'sally reed' || text === 'sally joanna reed');
+            // console.log('Brienne:' + BrienneEntry);
+            // console.log('Amanda:' + AmandaEntry);
+            // console.log('Morgan:' + MorganEntry);
+            // console.log('Rita:' + RitaEntry);
+            // console.log('Sally:' + SallyEntry);
+        }
+    }, [handleSubmit, text, validEntries, BrienneEntry]);
+
+    function revealTextBox() {
+        document.getElementById("appearingTextBox").style.display = 'inherit';
+    }
 
     const audio = document.getElementById('audio_tag');
     const alone_audio = document.getElementById('alone_audio');
@@ -55,19 +92,23 @@ const Brienne = (props) => {
             value: amt,
         });
     }
-    // function rename (amt, amt2) {
-    //     props.dispatch({
-    //         type: 'renameBrienne',
-    //         value: [amt, amt2]
-    //     });
-    // }
+    function rename (amt, amt2) {
+        props.dispatch({
+            type: 'renameBrienne',
+            value: [amt, amt2]
+        });
+    }
 
     return (
     <>
-    <p>This is a NEW PAGE for the GOOD END.</p>
+    <p style={{display: BrienneEntry ? 'block' : 'none'}}>BRIENNE IS TRUE</p>
+    <p style={{display: AmandaEntry ? 'block' : 'none'}}>AMANDA IS TRUE</p>
+    <p style={{display: MorganEntry ? 'block' : 'none'}}>MORGAN IS TRUE</p>
+    <p style={{display: RitaEntry ? 'block' : 'none'}}>RITA IS TRUE</p>
+    <p style={{display: SallyEntry ? 'block' : 'none'}}>SALLY IS TRUE</p>
     <div className='openFolder'>
         <div className="openNametag"><p>
-        <Link className='back-button' to="/">Go Back</Link>
+        {/* <Link className='back-button' to="/">Go Back</Link> */}
     </p></div>
     <div style={{display: props.BrienneVisited===0 ? 'block' : 'none'}} className="picture-frame">
         <img className='picture' src={brienneImage} alt="You. Agent Paperback Writer."></img>
@@ -92,7 +133,7 @@ const Brienne = (props) => {
         audio.volume = 0.2;
     }} className='interactive enabled-link-pbw no-select-text'>S</span></h1>
     <h1 style={{display: props.BrienneCorruption>=2 ? 'block' : 'none', textAlign: 'center'}}> Threat Level: <b className='enabled-link-b'>S+</b></h1>
-    {/* <h1 style={{textAlign: 'center'}} onClick={revealTextBox}>Threat Level: S (previously E)</h1>
+    <h1 style={{textAlign: 'center'}} onClick={revealTextBox}>Threat Level: S (previously E)</h1>
     <div id="appearingTextBox" style={{textAlign:'center', display:'none'}}>
         <form method="post" onSubmit={handleSubmit}>
             <label>
@@ -101,7 +142,7 @@ const Brienne = (props) => {
             <br></br>
             <button type="submit" style={{marginTop:"0.5%"}}>Enter</button>
         </form>
-    </div> */}
+    </div>
     
     <h3 style={{display: props.BrienneCorruption===2 && props.BrienneTracker>=1 && !play ? 'block' : 'none', textAlign: 'center'}}><span onClick={()=>{
         corrupt(0.5);

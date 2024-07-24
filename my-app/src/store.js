@@ -8,6 +8,7 @@ const initialState = {
     AmandaVisited: 0,
     RitaVisited: 0,
     SallyVisited: 0,
+    Sally2Visited: 0,
     BrienneVisited: 0,
     //MORGAN VALUES
     MorganName: ['Morgan', ' ', 'Becquerel'],
@@ -25,6 +26,7 @@ const initialState = {
     //SALLY VALUES
     SallyName: ['Sally', ' ', 'Reed'],
     SallyCorruption: 0,
+    Sally2Corruption: 0,
 
     //BRIENNE VALUES
     BrienneName: ['Agent', ' ', 'Paperback Writer'],
@@ -73,7 +75,12 @@ function reducer(state, action) {
         const newState = {...state};
         newState.SallyCorruption += action.value;
         return newState;
-    } else if (action.type === 'visitRita') {
+    } else if (action.type === 'corruptSally2') {
+        const newState = {...state};
+        newState.Sally2Corruption += action.value;
+        return newState;
+    }
+     else if (action.type === 'visitRita') {
         const newState = {...state};
         newState.RitaVisited += action.value;
         return newState;
@@ -88,6 +95,10 @@ function reducer(state, action) {
         newState.SallyVisited += action.value;
         newState.SallyName[0] = 'S16Al13Ly̸̡͂3';
         newState.SallyName[2] = 'Re75Ę̵̀d101';
+        return newState;
+    } else if (action.type === 'visitSally2') {
+        const newState = {...state};
+        newState.Sally2Visited += action.value;
         return newState;
     } else if (action.type === 'corruptBrienne') {
         const newState = {...state};
