@@ -226,7 +226,7 @@ const Sally = (props) => {
         <li><b className="enabled-link-b">It tried so hard to save her. It buried its fingers in her flesh, trying to pull the arrow out.</b> Except in unique instances, <b className="enabled-link-b">it always knew how to protect her.</b></li>
     </ul>
 
-    <p style={{display: props.SallyCorruption<8 ? 'block' : 'none'}}>!Eurythmics has a strong personality, manifesting in unique mannerisms and preferences for varying its visual appearance. This Stand 
+    <p style={{display: props.SallyCorruption<8 ? 'block' : 'none'}}>Eurythmics has a strong personality, manifesting in unique mannerisms and preferences for varying its visual appearance. This Stand 
         has been observed having the ability to change its physical manifestation at will (i.e. Michael Jackson’s Thriller jumpsuit, 
         two feather boas instead of one).</p>
     <p style={{display: props.SallyCorruption===8 && play && counter===0 ? 'block' : 'none'}}>Eurythmics has a strong personality, manifesting in unique mannerisms and preferences for varying its visual appearance. This Stand 

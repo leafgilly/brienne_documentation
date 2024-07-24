@@ -55,7 +55,7 @@ const Sally2 = (props) => {
     </div>
     </Draggable>
     <Draggable>
-        <div style={{display: props.SallyVisited>=1 ? 'block' : 'none'}} className="picture-frame">
+        <div style={{display: props.SallyVisited>=1 ? 'block' : 'none', top: '-300px'}} className="picture-frame">
         <div className='picture' style={{background: `url(${sallyImage2})`}}></div>
         </div>
     </Draggable>
@@ -81,7 +81,7 @@ const Sally2 = (props) => {
         play ? setPlay(false) : setPlay(true);
         play ? audio.pause() : audio.play();
         audio.volume = 0.2;
-        console.log("Hope you didn't blow your eardrums out here. You still need them.");
+        console.log("Looking in here for some help, are you?");
     }} className='interactive enabled-link-s no-select-text'>D</span></h2>
     <div style={{display: props.SallyCorruption>=4 && props.SallyCorruption<12 && !play && !audio ? 'inline' : 'none'}}>
         <h2 style={{textAlign: 'center'}}>Threat Level: <span onClick={() => {
@@ -237,7 +237,7 @@ const Sally2 = (props) => {
         <li><b className="enabled-link-b">It tried so hard to save her. It buried its fingers in her flesh, trying to pull the arrow out.</b> Except in unique instances, <b className="enabled-link-b">it always knew how to protect her.</b></li>
     </ul>
 
-    <p style={{display: props.SallyCorruption<8 ? 'block' : 'none'}}>!Eurythmics has a strong personality, manifesting in unique mannerisms and preferences for varying its visual appearance. This Stand 
+    <p style={{display: props.SallyCorruption<8 ? 'block' : 'none'}}>Eurythmics has a strong personality, manifesting in unique mannerisms and preferences for varying its visual appearance. This Stand 
         has been observed having the ability to change its physical manifestation at will (i.e. Michael Jackson’s Thriller jumpsuit, 
         two feather boas instead of one).</p>
     <p style={{display: props.SallyCorruption===8 && play && counter===0 ? 'block' : 'none'}}>Eurythmics has a strong personality, manifesting in unique mannerisms and preferences for varying its visual appearance. This Stand 
@@ -408,7 +408,7 @@ const Sally2 = (props) => {
         // play ? setPlay(false) : setPlay(true);
         // play ? audio.pause() : audio.play();
         audio.volume = 0.01;
-        console.log("And another one(?) bites the dust.");
+        console.log("There's only one thing to say: keep looking. It's here this time. Just... maybe not in the document itself.");
         props.dispatch({
             type: 'visitSally',
             value: 1,
