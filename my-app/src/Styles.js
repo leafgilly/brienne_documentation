@@ -10,12 +10,9 @@ const btn = (light, dark) => css`
   &:visited {
     color: white;
   }
-  background-image: linear-gradient(${light}, ${dark});
   border: 1px solid ${dark};
   &:hover {
-    background-image: linear-gradient(${light}, ${dark});
     &[disabled] {
-      background-image: linear-gradient(${light}, ${dark});
     }
   }
   &:visited {
@@ -56,10 +53,7 @@ export default styled.div`
   form {
     max-width: 500px;
     margin: 10px auto;
-    border: 1px solid #ccc;
     padding: 20px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    border-radius: 3px;
 
     & > div {
       display: flex;

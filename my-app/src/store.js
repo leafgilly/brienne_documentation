@@ -31,6 +31,7 @@ const initialState = {
     //BRIENNE VALUES
     BrienneName: ['Agent', ' ', 'Paperback Writer'],
     BrienneCorruption: 0,
+    Brienne2Corruption: 0,
     BrienneTracker: 0,
 };
 
@@ -103,6 +104,10 @@ function reducer(state, action) {
     } else if (action.type === 'corruptBrienne') {
         const newState = {...state};
         newState.BrienneCorruption += action.value;
+        return newState;
+    } else if (action.type === 'corruptBrienne2') {
+        const newState = {...state};
+        newState.Brienne2Corruption += action.value;
         return newState;
     } else if (action.type === 'visitBrienne') {
         const newState = {...state};
