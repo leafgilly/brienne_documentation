@@ -27,7 +27,7 @@ function App() {
         <Route path="/Morgan" element={<Morgan />} />
         <Route path="/Rita" element={<Rita />} />
         <Route path="/theAgent" element={<Brienne />} />
-        <Route path="/misc" element={<Misc />} />
+        <Route path="/acknowledgements" element={<Misc />} />
         <Route path="/Sally/prank" element={<Sally2 />} />
         <Route path="/Brienne/tryAgain" element={<Brienne2 />} />
         </Route>

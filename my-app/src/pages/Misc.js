@@ -2,22 +2,33 @@ import { Link } from "react-router-dom";
 
 const Misc = () => {
     return (
-    <><h1>Other Active Stand Users</h1>
-    <div className="wrapper">
-        <h1 className="glitch">Customizable Glitch Text</h1> {/* TO UPDATE THE GLITCH, CHANGE THIS TEXT, THEN GO TO APP.CSS AND MAKE THE CHANGES THERE */}
-    </div>
-    <p>
-        <Link color="red" to="/page2">Go Home</Link>
-    </p>
-    <h2>Persons of Interest</h2>
+    <>
+    <div className='openFolder'>
+        <div className="openNametag">
+            <p><Link className='back-button' to="/">Go Back</Link></p>
+        </div>
+    <div className="document" style={{margin: '-200px 0px 10px 0px'}}>
+    <h1 style={{textAlign: 'center'}}>Acknowledgements</h1>
+    <p style={{textAlign: 'center'}}><a className="interactive enabled-link-b" href="https://archiveofourown.org/works/20467010/chapters/48563963">Streetlight Pursuit</a> is 
+    a Jojo's Bizarre Adventure fanfiction featuring an entirely original cast. It acts as a Part 3.5 and centers around the adventures of five 
+    female detectives in 1993 New York as they investigate a missing Stand arrow, the remnants of DIO, and all the other supernatural forces
+    at play in Manhattan.</p>
+    <p style={{textAlign: 'center'}}>The fic is written by Pianolote and Leafgilly, with additions from Digitalpen and FluffyRoRo.</p>
+    <p style={{textAlign: 'center'}} className='enabled-link-a'>This website experience was created, written, and developed by Leafgilly.</p>
+    <h2>Development Help</h2>
     <ul>
-        <li>Pianolote (PL)</li>
-        <li>Leafgilly (LG) </li>
-        <li>Digitalpen (DP) </li>
-        <li>FluffyRoro (FR) </li>
+        <li><span className="enabled-link-r">Pianolote</span> - creative consultant, debugger, and general best coauthor</li>
+        <li><span style={{color: '#69359c'}}>Syntaxblitz</span> - helped out so much with getting started in React</li>
+        <li><span style={{color: '#89CFF0'}}>dondonhei</span> - post Dota debugging</li>
+        <li><span style={{color: '#28282B', backgroundColor: 'white'}}>Big Boopy</span> - debugging and general coding advice</li>
+        <li><span style={{color: '#059194'}}>bpolishuk</span> - helping me with Github hosting</li>
+        <li><span style={{color: '#34e718'}}>pigserpent</span> - composed Paperback Rigby for Brienne's page of the site</li>
     </ul>
-    <h2>All Caught Up update</h2>
-    <ul>
+    <h2>Readers, Friends, and Supporters</h2>
+    <p style={{textAlign: 'center'}}>Whether you've read the whole fic, made art, or just sent a kind word our way, your support genuinely means so much to us. We set out to
+        write a fic that made us--the authors--happy. The fact that other people found joy from it too? That makes it all the more worth it. Thank you!
+    </p>
+    <ul className='credits'>
         <li>Fizzywizard</li>
         <li>Arc</li>
         <li>CG the Bird</li>
@@ -44,9 +55,10 @@ const Misc = () => {
         <li>Maxtot</li>
         <li>Wilbur D Rake</li>
         <li>fauxmantis</li>
-    </ul>
-    <h2>Friends of the Show/Did Art</h2>
-    <ul>
+        <li>AzraelTheStoryteller</li>
+        <li>eldestreyne</li>
+        <li>rainyblueshroom</li>
+        <li>yuri_aglaya</li>
         <li>Mal</li>
         <li>Fetuspie</li>
         <li>Governor_Explosion</li>
@@ -65,12 +77,7 @@ const Misc = () => {
         <li>koalahobbit</li>
         <li>TheGoodSamaritan</li>
         <li>bonvoyage_noona</li>
-        <li>Pigserpent</li>
-        <li>Syntaxblitz</li>
         <li>0plus2equals1</li>
-    </ul>
-    <h2>Read A Bit; Passive Audience</h2>
-    <ul>
         <li>Jin</li>
         <li>Ella</li>
         <li>Shaft</li>
@@ -95,6 +102,7 @@ const Misc = () => {
         <li>banquetBeggar</li>
         <li>SomethingYouSaid</li>
         <li>The_Baleful_King</li>
+        <li>Android</li>
         <li>Leggoeggo</li>
         <li>HeroOfTime1435</li>
         <li>koleoffline</li>
@@ -108,9 +116,12 @@ const Misc = () => {
         <li>hit_that_target</li>
         <li>cOnTaGiOuS_ThOuGhTs</li>
         <li>YeetTheAngels</li>
-    </ul>
-    <h2>Engaged in Some Capacity/Supported Us</h2>
-    <ul>
+        <li>Cosmica</li>
+        <li>Ryan_Z3R0</li>
+        <li>FremderFreundin</li>
+        <li>AirKat</li>
+        <li>plumedy</li>
+        <li>furiousbenson11</li>
         <li>Jigglypuffo</li>
         <li>Melonbottle</li>
         <li>carol</li>
@@ -119,6 +130,7 @@ const Misc = () => {
         <li>winter_bark</li>
         <li>crowofgayness</li>
         <li>toasteroven</li>
+        <li>jojo_eyo</li>
         <li>Glass Paper</li>
         <li>Carol</li>
         <li>Wynaut</li>
@@ -140,6 +152,7 @@ const Misc = () => {
         <li>gooseman</li>
         <li>ro boat</li>
         <li>tos</li>
+        <li>plus</li>
         <li>nitchtuna</li>
         <li>captainblood</li>
         <li>the_original_insomniac</li>
@@ -153,10 +166,9 @@ const Misc = () => {
         <li>cakeh</li>
         <li>gale_sparkleglow</li>
         <li>grandadmiralchee</li>
+        <li>Gold</li>
     </ul>
-    <p>
-        <Link style={{color: 'red'}} to="/">Go Home</Link>
-    </p></>
+    </div></div></>
     );
     
   };

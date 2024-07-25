@@ -44,7 +44,7 @@ export default styled.div`
   }
 
   a {
-    display: block;
+    // display: block;
     // text-align: center;
     // color: #222;
     // color: black;
