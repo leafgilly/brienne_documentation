@@ -58,7 +58,7 @@ a {
 @media screen and (max-width: 540px) {
 
   .openFolder {
-    background-color: #D2BB89 !important;
+    background-color: #D2BB89;
     height: 1000px;
     width: 1500px;
     margin: 50px;

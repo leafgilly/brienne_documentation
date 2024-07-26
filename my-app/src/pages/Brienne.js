@@ -124,7 +124,7 @@ const Brienne = (props) => {
     }} className='interactive enabled-link-pbw no-select-text'><i>Did you have fun, moving through these files?</i></span></h3>
     <h3 style={{display: props.BrienneTracker>=129 && props.BrienneCorruption===4 ? 'block' : 'none', textAlign: 'center'}}> <span onClick={()=>{
         corrupt(1);
-    }} style={{color: 'red !important'}} className='interactive enabled-link-pbw no-select-text'>Destroying everything?</span></h3>
+    }} style={{color: 'red'}} className='interactive enabled-link-pbw no-select-text'>Destroying everything?</span></h3>
     <h3 style={{display: props.BrienneTracker>=129 && props.BrienneCorruption===5 ? 'block' : 'none', textAlign: 'center'}}> <span onClick={()=>{
         corrupt(1);
         console.log("A necessary wound, though. You can't control me as you are.");
@@ -134,7 +134,7 @@ const Brienne = (props) => {
     }} className='interactive no-select-text'>killed them.</span></h3>
     <h3 style={{display: props.BrienneTracker>=129 && props.BrienneCorruption===7 ? 'block' : 'none', textAlign: 'center'}}><span style={{color: '#909098', fontFamily: 'Arial, Helvetica, sans-serif'}}><i>Everyone you love is dead. You</i></span> <span onClick={()=>{
         corrupt(1);
-    }} style={{color: 'yellow !important'}} className='interactive enabled-link-a no-select-text'>burnt them.</span></h3>
+    }} style={{color: 'yellow'}} className='interactive enabled-link-a no-select-text'>burnt them.</span></h3>
     <h3 style={{display: props.BrienneTracker>=129 && props.BrienneCorruption===8 ? 'block' : 'none', textAlign: 'center'}}><span style={{color: '#909098', fontFamily: 'Arial, Helvetica, sans-serif'}}><i>Everyone you love is dead. You</i></span> <span style={{color: 'yellow'}}>burnt them,</span> <span onClick={()=>{
         corrupt(1);
     }} style={{color: 'pink'}} className='interactive enabled-link-m no-select-text'>snuffed them.</span></h3>
@@ -157,7 +157,7 @@ const Brienne = (props) => {
     <h3 style={{display: props.BrienneTracker>=129 && props.BrienneCorruption===14 ? 'block' : 'none', textAlign: 'center'}}> <span onClick={()=>{
         corrupt(1);
         console.log("Or was it ever here to begin with?");
-    }} style={{color: 'red !important'}} className='interactive enabled-link-pbw no-select-text'>Gone forever.</span></h3>
+    }} style={{color: 'red'}} className='interactive enabled-link-pbw no-select-text'>Gone forever.</span></h3>
     <h4 style={{display: props.BrienneTracker>=129 && props.BrienneCorruption===15 ? 'block' : 'none', textAlign: 'center'}}> <span onClick={()=>{
         corrupt(1);
     }} className='interactive enabled-link-pbw no-select-text'><i>It's just us now.</i></span></h4>

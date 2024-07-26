@@ -22,7 +22,7 @@ const Misc = () => {
         <li><span style={{color: '#89CFF0'}}>dondonhei</span> - post Dota debugging</li>
         <li><span style={{color: '#28282B', backgroundColor: 'white'}}>Big Boopy</span> - debugging and general coding advice</li>
         <li><span style={{color: '#059194'}}>bpolishuk</span> - helping me with Github hosting</li>
-        <li><span style={{color: '#34e718'}}>pigserpent</span> - composed Paperback Rigby for Brienne's page of the site</li>
+        <li><span style={{color: '#34e718'}}>pigserpent</span> - composed Paperback Rigby for Agent Paperback Writer's page of the site</li>
     </ul>
     <h2>Readers, Friends, and Supporters</h2>
     <p style={{textAlign: 'center'}}>Whether you've read the whole fic, made art, or just sent a kind word our way, your support genuinely means so much to us. We set out to
@@ -130,7 +130,7 @@ const Misc = () => {
         <li>winter_bark</li>
         <li>crowofgayness</li>
         <li>toasteroven</li>
-        <li>jojo_eyo</li>
+        <li>jojoeyo</li>
         <li>Glass Paper</li>
         <li>Carol</li>
         <li>Wynaut</li>

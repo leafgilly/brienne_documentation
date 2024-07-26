@@ -61,7 +61,7 @@ const DocList = (props) => {
       </div>
       <div style={{display: props.BrienneVisited===0 ? 'block' : 'none'}} className='post-it'>Informer Company: Internal Team Documentation</div>
       <div style={{display: props.BrienneVisited===1 ? 'block' : 'none'}} className='post-it'>Just you now. You and me.</div>
-      <div style={{display: props.BrienneVisited===1 ? 'block' : 'none', margin: '425px 0px 0px 400px'}} className='post-it'><Link className='interactive enabled-link-b' to="/acknowledgements">Acknowledge-&nbsp;ments</Link></div>
+      <div style={{display: props.BrienneVisited===1 ? 'block' : 'none', margin: '425px 0px 0px 400px', fontSize: 17}} className='post-it'><Link className='interactive enabled-link-b' to="/acknowledgements">Acknowledgements</Link></div>
       <Outlet />
       </div>
     </>
