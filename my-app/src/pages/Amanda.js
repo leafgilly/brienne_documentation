@@ -167,7 +167,7 @@ const Amanda = (props) => {
             }} className='interactive enabled-link-a no-select-text'>is</span> <b className='enabled-link-b'>turned to hide the coward underneath.</b>
                 </li>
                 <li style={{display: props.AmandaCorruption>=8 ? 'list-item' : 'none'}}>
-                    <b className='enabled-link-b'>A brave face, smiling when her back</b> <b style={{color: 'red'}}>"""WAS""" (important distinction)</b> <b className='enabled-link-b'>turned to hide the coward underneath.</b>
+                    <b className='enabled-link-b'>A brave face, smiling when her back</b> <b style={{color: 'red'}}>WAS</b> <b className='enabled-link-b'>turned to hide the coward underneath.</b>
                 </li>
                 <li style={{display: props.AmandaCorruption<8 ? 'list-item' : 'none'}}>
                 Ability: A general range and duration increase. Additionally, the previous text about whether Valentine or Disturbia would turn into 

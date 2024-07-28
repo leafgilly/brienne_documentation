@@ -250,7 +250,7 @@ const Brienne = (props) => {
         <li style={{display: props.BrienneTracker===54 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Jane Doe</b> - coroner's alias</li>
         <li style={{display: props.BrienneTracker>=55 ? 'list-item' : 'none'}}></li>
     </ul>
-    <h3>Identites Borrowed by Living or Once Living Persons</h3>
+    <h3>Identites Borrowed from Living or Once Living Persons</h3>
     <ul>
     <li style={{display: props.BrienneCorruption<7 ? 'list-item' : 'none'}}>{props.AmandaName}</li>
     <li style={{display: props.BrienneCorruption===7 ? 'list-item' : 'none'}} className='enabled-link-a'><b>{props.AmandaName}</b></li>

@@ -129,11 +129,11 @@ const Rita = (props) => {
         Notice of Stand Evolution: During an encounter with Crab Louie Zeppeli’s <b className='enabled-link-b'>you kept her from the truth</b>, Rockin’ Robin&nbsp; 
         <b className='enabled-link-b'>because you thought her weak</b> enhanced speed and <b className='enabled-link-b'>but she possessed the greatest potential <span onClick={()=>{
         corrupt(2);
-    }} className='interactive enabled-link-r no-select-text'>out of all of</span> you</b> full sentience.
+    }} className='interactive enabled-link-r no-select-text'>out of all of you</span></b> full sentience.
         </li>
         <li style={{display: props.RitaCorruption>=24 ? 'list-item' : 'none'}}>
         Notice of Stand Evolution: During an encounter with Crab Louie Zeppeli’s <b className='enabled-link-b'>you kept her from the truth</b>, Rockin’ Robin&nbsp; 
-        <b className='enabled-link-b'>because you thought her weak</b> enhanced speed and <b className='enabled-link-b'>but she possessed the greatest potential <b style={{color: 'red'}}>except for</b> you</b> full sentience.
+        <b className='enabled-link-b'>because you thought her weak</b> enhanced speed and <b className='enabled-link-b'>but she possessed the greatest potential <b style={{color: 'red'}}>except for you</b></b> full sentience.
         </li>
     </ul>
     <h3>Hamon</h3>
@@ -170,7 +170,7 @@ const Rita = (props) => {
     }} className='interactive enabled-link-r no-select-text'>Known Relationships</span></h2>
     <h2 style={{display: props.RitaCorruption>=41 ? 'block' : 'none'}}> <b className='enabled-link-b'>Skip ahead. No time. Small words.</b></h2>
     <ul>
-        <li>Crab Louie Zeppeli: father, deceased. She misses him deeply, even if she’s since found peace.
+        <li>Crab Louie Zeppeli [deceased]: father. She misses him deeply, even if she’s since found peace.
         </li>
         <li>Betsey Zeppeli: mother. Best friends, even before Betsey was widowed. Is deeply grateful for her unwavering love and support.
         </li>
@@ -281,9 +281,6 @@ const Rita = (props) => {
     }} className='interactive enabled-link-r no-select-text'>my greatest success</span>.
     </p>
     </div>
-    <p>
-        <Link style={{color: 'red'}} to="/">Go Home</Link>
-    </p>
     </div>
 
     <div style={{display: props.RitaCorruption>=50 ? 'block' : 'none', margin: 'auto', width: '0%'}}>
@@ -364,9 +361,6 @@ const Rita = (props) => {
         <b className='enabled-link-b'>{props.RitaName[0]}</b><br /></p>
         <p><i style={{color: 'crimson'}}>"For this mission to come, can I trust you? That you haven’t kept anything from me this time, and that you’re gonna act in the best interests of the team?"</i></p>
     <b className='enabled-link-b'>?{props.RitaName[0]}</b><br />
-    {/* <p>
-        <Link style={{color: 'red'}} to="/">Go Home</Link>
-    </p> */}
     </div>
     </div>
     <img style={{marginLeft: '-230px', marginTop: '-10px'}} src={LEGS} alt="Rockin' Robin's legs, extending into oblivion..."></img>

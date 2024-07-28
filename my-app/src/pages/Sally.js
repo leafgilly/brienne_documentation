@@ -81,11 +81,7 @@ const Sally = (props) => {
         </span></h2>
     </div>
     <div style={{display: props.SallyCorruption>=2 && play ? 'inline' : 'none'}}>
-        <h2 style={{textAlign: 'center'}}>Threat Level: <span onClick={() => {
-            play ? setPlay(false) : setPlay(true);
-            play ? audio.pause() : audio.play();
-            audio.volume = 0.2;
-            }} className='enabled-link-b'><i>Disco</i>
+        <h2 style={{textAlign: 'center'}}>Threat Level: <span className='enabled-link-b'><i>Disco</i>
         </span></h2>
     </div>
 

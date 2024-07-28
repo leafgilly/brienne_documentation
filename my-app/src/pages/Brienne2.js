@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import {connect} from 'react-redux';
 
 import brienneImage from '../images/brienne.png';
-import brienneImage2 from '../images/brienne_scratch.png';
 
 const Brienne = (props) => {
     
