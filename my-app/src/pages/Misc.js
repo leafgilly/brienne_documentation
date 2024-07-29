@@ -20,10 +20,18 @@ const Misc = () => {
         <li><span className="enabled-link-r">Pianolote</span> - creative consultant, debugger, and general best coauthor</li>
         <li><span style={{color: '#69359c'}}>Syntaxblitz</span> - helped out so much with getting started in React</li>
         <li><span style={{color: '#89CFF0'}}>dondonhei</span> - post Dota debugging</li>
-        <li><span style={{color: '#28282B', backgroundColor: 'white'}}>Big Boopy</span> - debugging, general coding advice, and playtesting</li>
+        <li><span style={{color: '#28282B', backgroundColor: 'white'}}>Big Boopy</span> - debugging and general coding advice</li>
         <li><span style={{color: '#059194'}}>bpolishuk</span> - helping with Github hosting and playtesting</li>
-        <li><span style={{color: '#34e718'}}>pigserpent</span> - composed Paperback Rigby for Agent Paperback Writer's page of the site</li>
-        <li><span style={{color: 'pink'}}>FluffyRoRo</span> - playtesting</li>
+        <li><span style={{color: '#8BCF00'}}>pigserpent</span> - composed Paperback Rigby for Agent Paperback Writer's page of the site</li>
+    </ul>
+    <h2>Playtesters</h2>
+    <ul className='credits'>
+        <li><span style={{color: 'red'}}>Pianolote</span></li>
+        <li><span style={{color: 'purple'}}>Digitalpen</span></li>
+        <li><span style={{color: 'pink'}}>FluffyRoRo</span></li>
+        <li><span style={{color: '#059194'}}>bpolishuk</span></li>
+        <li><span style={{color: '#28282B', backgroundColor: 'white'}}>Big Boopy</span></li>
+
     </ul>
     <h2>Readers, Friends, and Supporters</h2>
     <p style={{textAlign: 'center'}}>Whether you've read the whole fic, made art, or just sent a kind word our way, your support genuinely means so much to us. We set out to
