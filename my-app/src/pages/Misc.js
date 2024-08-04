@@ -68,6 +68,10 @@ const Misc = () => {
         <li>eldestreyne</li>
         <li>rainyblueshroom</li>
         <li>yuri_aglaya</li>
+        <li>Lisa1127</li>
+        <li>go_lurk</li>
+        <li>mixnmatt1</li>
+        <li>chouettechasses</li>
         <li>Mal</li>
         <li>Fetuspie</li>
         <li>Governor_Explosion</li>
@@ -139,7 +143,6 @@ const Misc = () => {
         <li>winter_bark</li>
         <li>crowofgayness</li>
         <li>toasteroven</li>
-        <li>jojoeyo</li>
         <li>Glass Paper</li>
         <li>Carol</li>
         <li>Wynaut</li>
