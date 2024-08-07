@@ -87,7 +87,7 @@ const Brienne = (props) => {
     <div id="appearingTextBox" style={{textAlign:'center', display:'none'}}>
         <form method="post" onSubmit={handleSubmit} className='brienne-form'>
             <label>
-                <input style={{fontFamily: 'Itim', color: 'rgb(51, 125, 255)'}} name="myInput" placeholder="Write here..." />
+                <input style={{fontFamily: 'Itim', color: 'rgb(51, 125, 255)'}} name="myInput" placeholder="Bring them back..." />
             </label>
             <br></br>   
             <button type="submit" className='brienne-button'>REWRITE</button>
@@ -121,9 +121,9 @@ const Brienne = (props) => {
         corrupt(1);
         console.log("You've got this.");
     }}>My name is Brienne Williams, and if there is no way out of this, I'll write a new one.</p>
-    <p style={{display: props.Brienne2Corruption>=2 && BrienneEntry && AmandaEntry && MorganEntry && RitaEntry && SallyEntry ? 'block' : 'none', textAlign: 'center', color: 'red'}} onClick={()=>{
+    <p style={{display: props.Brienne2Corruption>=2 && BrienneEntry && AmandaEntry && MorganEntry && RitaEntry && SallyEntry ? 'block' : 'none', textAlign: 'center'}} onClick={()=>{
         corrupt(1);
-    }}><b>THIS IS THE CLUE TO THE ARG GOOD END</b></p>
+    }}><b><a className='interactive enabled-link-pbw' style={{color: 'red'}} href='https://youtu.be/gAb5KwBXCjY'>Starting here.</a></b></p>
     </div>
     </div>
     </>
