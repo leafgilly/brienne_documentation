@@ -419,6 +419,7 @@ const Sally = (props) => {
     </div>
     <p style={{display: props.SallyCorruption===12 ? 'block' : 'none'}}><b style={{color: 'red'}}>And yet you survived even her.</b></p>
     </div>
+    <div style={{display: 'none'}}>Good catch. J-O-E-S-T-A-R</div>
 
 
     {/* <p>

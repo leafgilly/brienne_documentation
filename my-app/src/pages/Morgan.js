@@ -86,6 +86,7 @@ const Morgan = (props) => {
     <div style={{display: props.MorganVisited>=1 ? 'block' : 'none'}} className="picture-frame">
         <img className='picture' src={morganImage2} alt="A kind-looking stranger, inverted with her eyes scratched out."></img>
     </div>
+    <div style={{visibility: 'hidden'}}>Is this... a tip for later? M-A-S-K-D-E-N</div>
     <div className='document' style={{backgroundColor: props.MorganCorruption>=14 ? 'rgba(' + props.MorganLight + ',' + props.MorganLight + ',' + props.MorganLight + ')' : 'black', color: 'white'}}>
 
         {/* BRIENNE'S INTERACTIONS */}

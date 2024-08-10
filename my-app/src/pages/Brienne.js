@@ -66,7 +66,7 @@ const Brienne = (props) => {
     <>
     <div className='openFolder'>
         <div className="openNametag"><p>
-        <Link className='back-button' to="/">Go Back</Link>
+        <Link style={{display: props.BrienneCorruption>=17 ? 'block' : 'none'}} className='back-button' to="/">Go Back</Link>
     </p></div>
     <div style={{display: props.BrienneVisited===0 ? 'block' : 'none'}} className="picture-frame">
         <img className='picture' src={brienneImage} alt="You. Agent Paperback Writer."></img>
@@ -274,8 +274,8 @@ const Brienne = (props) => {
     <li style={{display: props.BrienneTracker<60 ? 'list-item' : 'none'}}>CG the Bird - birdwatcher (pigeon)</li>
     <li style={{display: props.BrienneTracker===60 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>CG the Bird</b> - birdwatcher (pigeon)</li>
     <li style={{display: props.BrienneTracker>=61 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<62 ? 'list-item' : 'none'}}>Cream - 4 year anniversary award winner</li>
-    <li style={{display: props.BrienneTracker===62 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Cream</b> - 4 year anniversary award winner</li>
+    <li style={{display: props.BrienneTracker<62 ? 'list-item' : 'none'}}>Simpingforcreamsoda - 4 year anniversary award winner</li>
+    <li style={{display: props.BrienneTracker===62 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Simpingforcreamsoda</b> - 4 year anniversary award winner</li>
     <li style={{display: props.BrienneTracker>=63 ? 'list-item' : 'none'}}></li>
     <li style={{display: props.BrienneTracker<64 ? 'list-item' : 'none'}}>Artemisia - crystals are a girl's best friend</li>
     <li style={{display: props.BrienneTracker===64 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Artemisia</b> - crystals are a girl's best friend</li>
@@ -286,11 +286,11 @@ const Brienne = (props) => {
     <li style={{display: props.BrienneTracker<68 ? 'list-item' : 'none'}}>Jadedsabre - Woman Supporter</li>
     <li style={{display: props.BrienneTracker===68 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Jadedsabre</b> - Woman Supporter</li>
     <li style={{display: props.BrienneTracker>=69 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<70 ? 'list-item' : 'none'}}>lsdfmoe - official visual documentarian</li>
-    <li style={{display: props.BrienneTracker===70 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>lsdfmoe</b> - official visual documentarian</li>
+    <li style={{display: props.BrienneTracker<70 ? 'list-item' : 'none'}}>LSDFMoe - official visual documentarian</li>
+    <li style={{display: props.BrienneTracker===70 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>LSDFMoe</b> - official visual documentarian</li>
     <li style={{display: props.BrienneTracker>=71 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<72 ? 'list-item' : 'none'}}>Mylesss - strongest stronger soldier</li>
-    <li style={{display: props.BrienneTracker===72 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Mylesss</b> - strongest stronger soldier</li>
+    <li style={{display: props.BrienneTracker<72 ? 'list-item' : 'none'}}>Mylessss - strongest stronger soldier</li>
+    <li style={{display: props.BrienneTracker===72 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Mylessss</b> - strongest stronger soldier</li>
     <li style={{display: props.BrienneTracker>=73 ? 'list-item' : 'none'}}></li>
     <li style={{display: props.BrienneTracker<74 ? 'list-item' : 'none'}}>NewbietoKnights - most perceptive reader</li>
     <li style={{display: props.BrienneTracker===74 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>NewbietoKnights</b> - most perceptive reader</li>
@@ -298,8 +298,8 @@ const Brienne = (props) => {
     <li style={{display: props.BrienneTracker<76 ? 'list-item' : 'none'}}>NotDaedalus - the secret 5th author (diversity hire (male))</li>
     <li style={{display: props.BrienneTracker===76 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>NotDaedalus</b> - the secret 5th author (diversity hire (male))</li>
     <li style={{display: props.BrienneTracker>=77 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<78 ? 'list-item' : 'none'}}>Gote - will go down with the ship</li>
-    <li style={{display: props.BrienneTracker===78 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Gote</b> - will go down with the ship</li>
+    <li style={{display: props.BrienneTracker<78 ? 'list-item' : 'none'}}>BarrierTrio - will go down with the ship</li>
+    <li style={{display: props.BrienneTracker===78 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>BarrierTrio</b> - will go down with the ship</li>
     <li style={{display: props.BrienneTracker>=79 ? 'list-item' : 'none'}}></li>
     <li style={{display: props.BrienneTracker<80 ? 'list-item' : 'none'}}>Poutinerie - 👇nerd</li>
     <li style={{display: props.BrienneTracker===80 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Poutinerie</b> - 👇nerd</li>
@@ -319,17 +319,17 @@ const Brienne = (props) => {
     <li style={{display: props.BrienneTracker<90 ? 'list-item' : 'none'}}>Stupisms - character design pioneer/Jojo-ifier</li>
     <li style={{display: props.BrienneTracker===90 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Stupisms</b> - character design pioneer/Jojo-ifier</li>
     <li style={{display: props.BrienneTracker>=91 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<92 ? 'list-item' : 'none'}}>Torch - but really really fast</li>
-    <li style={{display: props.BrienneTracker===92 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Torch</b> - but really really fast</li>
+    <li style={{display: props.BrienneTracker<92 ? 'list-item' : 'none'}}>Torch_dreemurr - but really really fast</li>
+    <li style={{display: props.BrienneTracker===92 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Torch_dreemurr</b> - but really really fast</li>
     <li style={{display: props.BrienneTracker>=93 ? 'list-item' : 'none'}}></li>
     <li style={{display: props.BrienneTracker<94 ? 'list-item' : 'none'}}>Weaponx06 - music distributor</li>
     <li style={{display: props.BrienneTracker===94 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Weaponx06</b> - music distributor</li>
     <li style={{display: props.BrienneTracker>=95 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<96 ? 'list-item' : 'none'}}>TheWinterComet - beloved commenter</li>
-    <li style={{display: props.BrienneTracker===96 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>TheWinterComet</b> - beloved commenter</li>
+    <li style={{display: props.BrienneTracker<96 ? 'list-item' : 'none'}}>Thewintercomet - beloved commenter</li>
+    <li style={{display: props.BrienneTracker===96 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Thewintercomet</b> - beloved commenter</li>
     <li style={{display: props.BrienneTracker>=97 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<98 ? 'list-item' : 'none'}}>Wise - atomic bomb defuser</li>
-    <li style={{display: props.BrienneTracker===98 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Wise</b> - atomic bomb defuser</li>
+    <li style={{display: props.BrienneTracker<98 ? 'list-item' : 'none'}}>Thewisefriend - atomic bomb defuser</li>
+    <li style={{display: props.BrienneTracker===98 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Thewisefriend</b> - atomic bomb defuser</li>
     <li style={{display: props.BrienneTracker>=99 ? 'list-item' : 'none'}}></li>
     <li style={{display: props.BrienneTracker<100 ? 'list-item' : 'none'}}>EggheadGandu - original tvtropes fan</li>
     <li style={{display: props.BrienneTracker===100 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>EggheadGandu</b> - original tvtropes fan</li>
@@ -352,14 +352,14 @@ const Brienne = (props) => {
     <li style={{display: props.BrienneTracker<112 ? 'list-item' : 'none'}}>Armesstein - punk ass artist</li>
     <li style={{display: props.BrienneTracker===112 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Armesstein</b> - punk ass artist</li>
     <li style={{display: props.BrienneTracker>=113 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<114 ? 'list-item' : 'none'}}>MildlyAnxious - on track to read this in 2025</li>
-    <li style={{display: props.BrienneTracker===114 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>MildlyAnxious</b> - on track to read this in 2025</li>
+    <li style={{display: props.BrienneTracker<114 ? 'list-item' : 'none'}}>MildlyAnxious - on track to read this in 2027</li>
+    <li style={{display: props.BrienneTracker===114 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>MildlyAnxious</b> - on track to read this in 2027</li>
     <li style={{display: props.BrienneTracker>=115 ? 'list-item' : 'none'}}></li>
     <li style={{display: props.BrienneTracker<116 ? 'list-item' : 'none'}}>Kal - carries the legacy to new narratives</li>
     <li style={{display: props.BrienneTracker===116 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Kal</b> - carries the legacy to new narratives</li>
     <li style={{display: props.BrienneTracker>=117 ? 'list-item' : 'none'}}></li>
-    <li style={{display: props.BrienneTracker<118 ? 'list-item' : 'none'}}>Garplatinum - Gar from Streetlight</li>
-    <li style={{display: props.BrienneTracker===118 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Garplatinum</b> - Gar from Streetlight</li>
+    <li style={{display: props.BrienneTracker<118 ? 'list-item' : 'none'}}>Eldestreyne - archive regular</li>
+    <li style={{display: props.BrienneTracker===118 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Eldestreyne</b> - archive regular</li>
     <li style={{display: props.BrienneTracker>=119 ? 'list-item' : 'none'}}></li>
     <li style={{display: props.BrienneTracker<120 ? 'list-item' : 'none'}}>Cozmic - most wholesome artist</li>
     <li style={{display: props.BrienneTracker===120 ? 'list-item' : 'none'}}><b style={{textDecoration: 'line-through'}} className='enabled-link-b'>Cozmic</b> - most wholesome artist</li>
@@ -390,10 +390,8 @@ const Brienne = (props) => {
     <h2>Author's Notes</h2>
     <p><i className='enabled-link-b'>"I would like to close this report with one final statement. I do not believe in ‘good’ and ‘bad’ people. If I did, I’d surely consider myself to be in the latter category. Rather, I believe in good and bad actions."</i></p>
     <h3 style={{display: props.BrienneTracker>=129 && props.BrienneCorruption===2 ? 'block' : 'none', textAlign: 'center'}}> <span style={{color: '#909098'}} className='no-select-text'><i>You're moving in the wrong direction. Go up.</i></span></h3>
-    {/* <p>
-        <Link style={{color: 'red'}} to="/">Go Home</Link>
-    </p> */}
     </div>
+    <div style={{display: props.BrienneTracker>=129 && props.BrienneCorruption===2 ? 'block' : 'none', textAlign: 'left', marginTop: '1000px', color: '#909098'}}>There are four secrets hidden throughout. Did you find them all?</div>
     </div>
     </>
     );

@@ -363,7 +363,8 @@ const Rita = (props) => {
     <b className='enabled-link-b'>?{props.RitaName[0]}</b><br />
     </div>
     </div>
-    <img style={{marginLeft: '-230px', marginTop: '-10px'}} src={LEGS} alt="Rockin' Robin's legs, extending into oblivion..."></img>
+    <div className='aHint'>J< br />-< br />O< br />-< br />E< br />-< br />S< br />-< br />T< br />-< br />A< br />-< br />R</div>
+    <img style={{marginLeft: '-155px', marginTop: '-258px'}} src={LEGS} alt="Rockin' Robin's legs, extending into oblivion..."></img>
     </div>
     </>
     );

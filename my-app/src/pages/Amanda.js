@@ -375,7 +375,7 @@ const Amanda = (props) => {
                 corrupt(1);
             }} className='interactive enabled-link-a no-select-text'>your name</span> on this list?</b></li>
         <li style={{display: props.AmandaCorruption>=32 ? 'list-item' : 'none'}}><b className='enabled-link-b'>Does it hurt more or less to not see <span style={{color: 'red', textDecoration: 'bold', fontSize: '30px'}}>YOU DON'T HAVE ONE</span> on this list?</b></li>
-        <li style={{display: props.AmandaCorruption>=32 ? 'list-item' : 'none', color: '#231516'}}><b style={{color: '#131516'}}>Brienne Williams: Coworker, close friend. Worked together for four years. <i>I wish it could've been more.</i></b></li>
+        <li style={{display: props.AmandaCorruption>=32 ? 'list-item' : 'none', color: '#231516'}}><b style={{color: '#131516'}}>Brienne Williams: Coworker, close friend. Worked together for five years. <i>I wish it could've been more.</i></b></li>
     </ul>
     <div style={{display: props.AmandaCorruption<32 ? 'block' : 'none'}}>
     <h2>Psychological Profile</h2>
@@ -431,7 +431,7 @@ const Amanda = (props) => {
     <p style={{display: props.AmandaHover===1 && counter > 29 && counter <= 33 ? 'block' : 'none', textAlign: 'right'}} className='enabled-link-pbw'><b>You sit at your desk editing your documents. Making sure they reflect reality.</b></p>
     <p style={{display: props.AmandaHover===1 && counter > 33 && counter <= 36 ? 'block' : 'none', textAlign: 'right'}} className='enabled-link-pbw'><b>Come on now, Agent.</b></p>
     <p style={{display: props.AmandaHover===1 && counter > 36 && counter <= 1000 ? 'block' : 'none', textAlign: 'right'}} className='enabled-link-pbw'><b>Do your duty.</b></p>
-    <p style={{display: props.AmandaHover===1 && counter > 1000000 ? 'block' : 'none', textAlign: 'right'}} className='enabled-link-pbw'><b>Well hello there. This line of code isn't meant to be read on the page--just for the clever few who want to see if anything comes after "Do your duty". There isn't anything else. Don't worry, you've found your secret. And for your cleverness, take this word of advice: should you ever *have reason* to investigate a picture of Tony (you'll know when you know), try adjusting the brightness and contrast... Oh, and don't tell anyone about this yet, no one except the authors. Wouldn't want to spoil the fun for the rest of them.</b></p>
+    <p style={{display: props.AmandaHover===1 && counter > 1000000 ? 'block' : 'none', textAlign: 'right'}} className='enabled-link-pbw'><b>You've found the most hidden secret of the bunch. For your cleverness, take this word of advice: should you ever *have reason* to investigate a picture of Tony (you'll know when you know), try adjusting the brightness and contrast... Oh, and don't tell anyone about this yet, no one except the authors. Wouldn't want to spoil the fun for the rest of them.</b></p>
     {/* <p>
         <Link style={{color: 'red'}} to="/">Go Home</Link>
     </p> */}

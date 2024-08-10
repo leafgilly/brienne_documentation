@@ -360,6 +360,10 @@ input::placeholder {
   height: 300px;
 }
 
+.aHint {
+  color: #306999;
+}
+
 .credits {
   -webkit-column-count: 3;
   -moz-column-count: 3;
